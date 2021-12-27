@@ -1,0 +1,373 @@
+# 演習3: オリジナルの nginx のイメージを作る
+
+### 手動作業によるイメージのビルド
+
+
+`Docker Hub`からダウンロードした`親イメージ`に、自分のアプリケーションとファイルを追加して新しいイメージを作ります。
+
+ここで行う作業の流れを図示すると以下の通りです。
+
+![image.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/99425/b49906d5-82a3-2b88-afc9-7434897b9aae.png)
+
+`親イメージ`に、ファイルを追加したり、コンテナ実行時のコマンドを設定して、新しい`イメージ`を作る事を`ビルド`と言います。
+
+この`親イメージ`として、Linuxベンダーが提供している`ベース・イメージ`を `Docker Hub`から取得する所からはじめます。
+
+通常、コンテナの`イメージ`は、一つの`親イメージ`に修正を積みかさねる事で新しい`イメージ`を作っていきますが、`ベース・イメージ`とは、それ以上の親がいない大元の`イメージ`を指します。
+
+###  ベース・イメージをダウンロードする
+
+ここでは`Red Hat`が提供する `RHEL8`のベースイメージである `ubi8`を`Docker Hub`からダウンロード(`pull`)して使用します。
+
+![image.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/99425/681a179d-3480-cd38-c561-e5fe061e08e7.png)
+`Docker Hub`上の`redhat/ubi8`のレポジトリへの[リンクはこちら](https://hub.docker.com/r/redhat/ubi8/tags)です。
+
+イメージを作成する場合は、適当なイメージを使用するとマルウェアなどが含まれている可能性があるので、提供元のわかっているイメージを使用するようにしましょう。
+
+以下のコマンドを実行して、`Red Hat`社のUBIイメージをダウンロード(`pull`)します。
+
+```
+$ docker pull redhat/ubi8
+```
+
+特にドメイン名を指定していませんが、お約束として `Docker Hub`に`redhat/ubi8`を探しに行って`pull`しています。
+
+`pull`した`イメージ`を `docker images`コマンドで確認します。
+
+```
+$ docker images
+REPOSITORY                                                TAG       IMAGE ID       CREATED        SIZE
+redhat/ubi8                                               latest    cc0656847854   7 days ago     216MB
+$
+```
+
+`pull` したイメージを元に `nginx-ubi8` という名前のコンテナを作成します。
+
+
+```
+$ docker run -dit -p 8080:80 --name nginx-ubi8 redhat/ubi8:latest
+```
+
+`docker ps` で起動を確認します。
+
+```
+$ docker ps
+CONTAINER ID   IMAGE                COMMAND       CREATED         STATUS         PORTS                  NAMES
+76304e983f34   redhat/ubi8:latest   "/bin/bash"   4 seconds ago   Up 3 seconds   0.0.0.0:8080->80/tcp   nginx-ubi8
+$
+```
+
+`docker exec` コマンドを使い、コンテ内に新規にシェルを起動しコンテナの中に入ります。
+
+```
+$ docker exec -it nginx-ubi8  /bin/bash
+[root@76304e983f34 /]#
+```
+
+コンテナの中に入ると、プロンプトが `$` から `[root@76304e983f34 /]` 等に変わっているはずです。
+
+この`コンテナ`には特に何もアプリケーションがインストールされていないので、インストールしていきます。
+
+ここからの作業は普通の `Linux`と殆ど同じです。
+
+### yum で nginx をインストール
+
+コンテナ内で、`yum`コマンド等で`nginx`をインストールします。
+
+```
+yum install -y nginx
+```
+
+### nginx.conf を編集して 標準出力にログを吐くように変更
+
+`nginx.conf` (nginxの構成ファイル）の編集は、コンテナを動かす事だけ考えるのであれば必須ではないですが、将来必ず通る道なので、コンテナ向きに少しカスタマイズします。
+
+`コンテナ`では、`コンテナ`内のファイルシステムに書き込まれたデータは、`コンテナ`の削除時に消えてしまいます。
+
+基本的に`コンテナ`は作って、廃棄して、また作って。を繰り返すものなので、保存したいデータは`コンテナ`の外に書き出す作法になっています。ログも残したい場合は、その作法に従います。
+
+Docker では標準出力と標準エラー出力を`コンテナ`を動かしているホスト上に残す事ができ、吐き出したログは`docker logs`コマンドでホスト上で確認できます。
+
+`nginx`の構成ファイルである`nginx.conf`を編集して、nginx のログを標準出力、標準エラー出力に書き出すように編集します。
+
+
+編集は `vi` で行います。`vi`の使い方はここでは省略します。
+
+```/etc/nginx/nginx.conf
+# For more information on configuration, see:
+#   * Official English Documentation: http://nginx.org/en/docs/
+#   * Official Russian Documentation: http://nginx.org/ru/docs/
+
+user nginx;
+worker_processes auto;
+# error_log /var/log/nginx/error.log;
+error_log /dev/stderr; #(1) stderrに出力先を変更
+pid /run/nginx.pid;
+
+# Load dynamic modules. See /usr/share/doc/nginx/README.dynamic.
+include /usr/share/nginx/modules/*.conf;
+
+events {
+    worker_connections 1024;
+}
+
+http {
+    log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
+                      '$status $body_bytes_sent "$http_referer" '
+                      '"$http_user_agent" "$http_x_forwarded_for"';
+
+    access_log  /dev/stdout  main; #(2) stdoutに出力先を変更する
+
+    sendfile            on;
+    tcp_nopush          on;
+    tcp_nodelay         on;
+    keepalive_timeout   65;
+    types_hash_max_size 2048;
+
+    include             /etc/nginx/mime.types;
+    default_type        application/octet-stream;
+
+    # Load modular configuration files from the /etc/nginx/conf.d directory.
+    # See http://nginx.org/en/docs/ngx_core_module.html#include
+    # for more information.
+    include /etc/nginx/conf.d/*.conf;
+
+    server {
+        listen       80 default_server;
+        listen       [::]:80 default_server;
+        server_name  _;
+        root         /usr/share/nginx/html;
+
+        # Load configuration files for the default server block.
+        include /etc/nginx/default.d/*.conf;
+
+        location / {
+        }
+
+        error_page 404 /404.html;
+            location = /40x.html {
+        }
+
+        error_page 500 502 503 504 /50x.html;
+            location = /50x.html {
+        }
+    }
+
+# Settings for a TLS enabled server.
+#
+#    server {
+#        listen       443 ssl http2 default_server;
+#        listen       [::]:443 ssl http2 default_server;
+#        server_name  _;
+#        root         /usr/share/nginx/html;
+#
+#        ssl_certificate "/etc/pki/nginx/server.crt";
+#        ssl_certificate_key "/etc/pki/nginx/private/server.key";
+#        ssl_session_cache shared:SSL:1m;
+#        ssl_session_timeout  10m;
+#        ssl_ciphers PROFILE=SYSTEM;
+#        ssl_prefer_server_ciphers on;
+#
+#        # Load configuration files for the default server block.
+#        include /etc/nginx/default.d/*.conf;
+#
+#        location / {
+#        }
+#
+#        error_page 404 /404.html;
+#            location = /40x.html {
+#        }
+#
+#        error_page 500 502 503 504 /50x.html;
+#            location = /50x.html {
+#        }
+#    }
+
+}
+
+```
+
+ログの出力先の変更は2箇所で行ってます。
+何かあった時もコンテナに入って確認してくも、コンテナの外からログを確認できるので便利です。
+
+###nginx を起動します。
+
+コンテナ内で`nginx`を起動します。
+
+```
+nginx
+```
+
+このベースイメージには ps コマンドが入ってないのでここでは起動を確認せず、後でホストOSから curlでアクセス確認します。
+`yum -y install procps`で psコマンドをインストールするしてもOKですが、コンテナは基本的に小さく作る事が作法になっているので、できるだけ不要なものは入れないようにします。
+
+###コンテナからexit します。
+
+```
+exit
+```
+
+###nginx にアクセスできる事を確認します。
+
+```
+$ curl localhost:8080
+```
+
+###コンテナ内にコンテナの外の index.html をコピーする
+
+デフォルトの `index.html` は、実験用としては少し懲りすぎているので、以下のようなシンプルな `index.html` ファイルをテキストエディタで作成します。
+
+```index.html
+<html>
+    <head>
+        <title>Test Page for the Nginx HTTP Server on Red Hat Enterprise Linux</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    </head>
+    <body>
+       <p> Hello World </p>
+    </body>
+</html>
+```
+
+`docker cp` コマンドを使うとホストOS上のファイルを、コンテナ内にコピーでいます。
+以下のコマンドで、作成した `index.html`をコンテナ内の`/usr/share/nginx/html/index.html`に上書きします。
+
+
+```
+$ docker cp index.html nginx-ubi8:/usr/share/nginx/html/index.html
+```
+
+###イメージを Commit する
+
+今、稼働している`コンテナ`、`nginx-ubi8`をイメージ化します。
+イメージ名はタグ`1.0`を付加して`nginx-ubi8:1.0` とする事にします。
+
+これは`docker container commit` というコマンドで実行できます。
+
+```
+$ docker container commit -c 'ENTRYPOINT ["nginx"]'  -c 'CMD ["-g","daemon off;"]'  nginx-ubi8  nginx-ubi8:1.0
+```
+
+ここで付けたオプションは以下の通りです。
+
+`-c 'ENTRYPOINT ["nginx"]'`: ENTRYPOINTはコンテナ実行時に、実行するコマンドと引数です。コンテナ開始時にnginxが実行されます。
+`-c 'CMD ["-g","daemon off;"]'`: CMDの指定値は、ENTRYPOINTの指定がある場合は、その引数となります。
+`nginx-ubi8`: 生成するイメージの元になるコンテナ名です。
+`nginx-ubi8:1.0`:コンテナから作成するイメージの名前です。
+
+`-c` で指定している `ENTRYPOINT` や、`CMD`の少し難しく見えますが結果として、`nginx -g "daemon off;"` というコマンドがコンテナ起動時に実行されて、nginx が起動する事になります。
+
+`daemon off`は、nginx のオプションで、通常だとバックグラウンドプロセスとして稼働する nginx をフォアグラウンドプロセスとして実行するためのオプションです。
+
+これはコンテナがフォアグラウンドプロセスが無いと終了してしまうために、通常バックグラウンドでデーモンとして稼働する nginx をフォアグラウンドプロセスにするためのオプションです。コンテナが稼働し続けるにはフォアグラウンドで稼働し続けるプロセスが必要です。
+
+### 作成したイメージの確認
+
+イメージが作成されたか確認します。
+
+```
+$ docker images
+REPOSITORY                                                TAG       IMAGE ID       CREATED         SIZE
+nginx-ubi8                                                1.0       3b9b3870655f   5 seconds ago   303MB
+redhat/ubi8                                               latest    cc0656847854   7 days ago           216MB
+```
+
+`nginx-ubi8` で、`TAG` が `1.0` のつまり ` nginx-ubi8:1.0` が作成されているのがわかります。
+
+
+###自分が作成したイメージからコンテナを作る
+
+自分が作成したイメージがきちんと使えるかコンテナを作って確認してみます。
+
+イメージ名 `nginx-ubi8:1.0` を指定して以下のように実行します。
+`8080`ポートが使ったコンテナが動いてなけれれば`8080`を使っても良いですが、今度は`8090`を使ってみます。
+
+```
+$ docker run -d -p 8090:80 --name my-ubi-nginx nginx-ubi8:1.0
+```
+
+curl で確認してみると以下のような出力が返ってくるはずです。
+
+```
+$ curl localhost:8090
+<html>
+    <head>
+        <title>Test Page for the Nginx HTTP Server on Red Hat Enterprise Linux</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    </head>
+    <body>
+       <p> Hello World </p>
+    </body>
+</html>
+$
+```
+
+
+またアクセスログをコンテナ内のファイルに吐く設定から、標準出力に出すように変更したので、`docker logs`コマンドで nginx のアクセスログが確認できるはずです。先ほど `curl` でアクセスしたので以下のようにログが出ているはずです。
+
+```
+$ docker logs my-ubi-nginx
+172.17.0.1 - - [16/Dec/2021:08:06:39 +0000] "GET / HTTP/1.1" 200 305 "-" "curl/7.58.0" "-"
+$
+```
+
+### Docker Hubに push する。
+
+せっかくなので作成したイメージを `Docker Hub` にアカウントを作って保管します。
+
+1) [Docker Hub](https://hub.docker.com/) にアカウントを作ります。(詳細は省略します）
+2) コマンドラインから Docker Hub にログインします。
+
+```
+$ docker login
+Login with your Docker ID to push and pull images from Docker Hub. If you don't have a Docker ID, head over to https://hub.docker.com to create one.
+Username: <username>
+Password: 
+Login Succeeded
+$ 
+```
+
+3) Docker Hub 用の名前を付ける
+
+ローカルで作成したイメージ `nginx-ibu8:1.0` に対して、レポジトリに保管するための別の名前を付けます。
+`Docker Hub`に保管するための名前は、`<username>`/`nginx-ibu8:1.0` のフォーマットである必要があります。
+
+間に`/`が入る名前ははじめは少々気持ち悪いですが、Dockerの世界はこういうものだと割り切りましょう。
+
+`docker tag` コマンドで以下のようにする事で、別の名前のイメージができます。
+
+```
+$  docker tag nginx-ubi8:1.0 <username>/nginx-ubi8:1.0
+```
+
+これで新しい名前のイメージができているはずです。
+`docker images` を確認します。全く同じものですが、頭に `<username>`が付加された名前のイメージができているはずです。
+
+ここでの<username>は、`yuhkih` という私のテスト・アカウント名を使っています。
+
+```
+$ docker images
+REPOSITORY                                                TAG       IMAGE ID       CREATED         SIZE
+nginx-ubi8                                                1.0       bee26a68d934   3 days ago      303MB
+yuhkih/nginx-ubi8                                         1.0       bee26a68d934   3 days ago      303MB
+$
+```
+
+別名のイメージができたら、後は `Docker Hub` に `push`するだけです。
+`docker push`　コマンドで`PUSH`します。
+
+```
+$ docker push yuhkih/nginx-ubi8:1.0
+The push refers to repository [docker.io/yuhkih/nginx-ubi8]
+6f0e4904cc79: Pushed
+0488bd866f64: Mounted from redhat/ubi8
+0d3f22d60daf: Mounted from redhat/ubi8
+1.0: digest: sha256:d77410be816bfede89bf99abf4b3b43b82c8bbe31c4d817b09a99ea7b03a16bb size: 949
+$ 
+```
+
+以上で、`Docker Hub`への`push`は完了です。
+
+これでどこに居ても、どの端末を使っても`Docker Hub`に繋がる環境であれば、自分が作成したイメージを`pull`して使えるようになりました。
+
+以上で演習3は完了です。お疲れ様でした。

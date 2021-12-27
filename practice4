@@ -1,0 +1,227 @@
+# 演習4 : Dockerfile を使ってオリジナルの nginx のイメージを作る
+
+今度は演習3と同じ内容を`Dockerfile`を使用して行います。`Dockerfile`でビルドの作業をスクリプト化できます。
+
+![image.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/99425/1ec03b31-0c53-5c63-115d-02a4be68ffb1.png)
+
+
+### Dockerfile を書く
+
+`Dockerfile` を使うと、演習3でやった元ネタになるイメージのダウンロード、イメージへの nginx のインストールまでの各種作業をスクリプト化できます。
+
+演習3でやった作業を `Dockerfile` にすると以下になります。
+
+
+```Dockerfile
+FROM redhat/ubi8
+RUN yum install -y nginx
+COPY index.html /usr/bin/share/nginx/html/index.html
+COPY nginx.conf /etc/nginx/nginx.conf
+CMD ["-g","daemon off;"]   
+ENTRYPOINT ["nginx"]
+```
+
+このファイル名は`Dockerfile`という名前にします。この名前は docker で決められている名前です。
+変更もできますが、変更した場合は、変更後の名前を引数で指定する必要があり、コマンドが長くなるので、ここではデフォルトの名前を使用します。
+
+`Dockerfile`の中身の解説は以下の通りです。
+
+`FROM redhat/ubi8` : Docker Hub から redhat/ubi8 を PULLします。
+`RUN yum install -y nginx` :  redhat/ubi8 に nginx をインストールします。
+`COPY index.html /usr/share/nginx/html/index.html`: ホストOS上の[index.html]をコンテナ内の[/usr/share/nginx/html/index.html]にコピーします。
+`COPY nginx.conf /etc/nginx/nginx.conf` :　ホストOS上の[nginx.conf]をコンテナ内の[/etc/nginx/nginx.conf]にコピーします。
+`CMD ["-g","daemon off;"]`: コンテナ実行時に実行するコマンドのオプションです。演習3で[docker container comit]で指定したのと同じものです。
+`ENTRYPOINT ["nginx"]` : コンテナ実行時に実行するコマンドです。演習3で[docker container comit]で指定したのと同じものです
+
+
+次にコンテナ内にコピーする `nginx.conf` と `index.html`を作ります。コピペ用に以下に内容を書きますが、内容は演習3で作成したものと全く同じです。
+
+演習3では、`nginx.conf` はコンテナ内で直接編集しましたが(外で作成したものをコンテナ内にコピーしても良かったのですが、たまたまです）、ここではホストOS上に`nginx.conf`を作ります。
+
+```/etc/nginx/nginx.conf
+# For more information on configuration, see:
+#   * Official English Documentation: http://nginx.org/en/docs/
+#   * Official Russian Documentation: http://nginx.org/ru/docs/
+
+user nginx;
+worker_processes auto;
+# error_log /var/log/nginx/error.log;
+error_log /dev/stderr; #(1) stderrに出力先を変更
+pid /run/nginx.pid;
+
+# Load dynamic modules. See /usr/share/doc/nginx/README.dynamic.
+include /usr/share/nginx/modules/*.conf;
+
+events {
+    worker_connections 1024;
+}
+
+http {
+    log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
+                      '$status $body_bytes_sent "$http_referer" '
+                      '"$http_user_agent" "$http_x_forwarded_for"';
+
+    access_log  /dev/stdout  main; #(2) stdoutに出力先を変更する
+
+    sendfile            on;
+    tcp_nopush          on;
+    tcp_nodelay         on;
+    keepalive_timeout   65;
+    types_hash_max_size 2048;
+
+    include             /etc/nginx/mime.types;
+    default_type        application/octet-stream;
+
+    # Load modular configuration files from the /etc/nginx/conf.d directory.
+    # See http://nginx.org/en/docs/ngx_core_module.html#include
+    # for more information.
+    include /etc/nginx/conf.d/*.conf;
+
+    server {
+        listen       80 default_server;
+        listen       [::]:80 default_server;
+        server_name  _;
+        root         /usr/share/nginx/html;
+
+        # Load configuration files for the default server block.
+        include /etc/nginx/default.d/*.conf;
+
+        location / {
+        }
+
+        error_page 404 /404.html;
+            location = /40x.html {
+        }
+
+        error_page 500 502 503 504 /50x.html;
+            location = /50x.html {
+        }
+    }
+
+# Settings for a TLS enabled server.
+#
+#    server {
+#        listen       443 ssl http2 default_server;
+#        listen       [::]:443 ssl http2 default_server;
+#        server_name  _;
+#        root         /usr/share/nginx/html;
+#
+#        ssl_certificate "/etc/pki/nginx/server.crt";
+#        ssl_certificate_key "/etc/pki/nginx/private/server.key";
+#        ssl_session_cache shared:SSL:1m;
+#        ssl_session_timeout  10m;
+#        ssl_ciphers PROFILE=SYSTEM;
+#        ssl_prefer_server_ciphers on;
+#
+#        # Load configuration files for the default server block.
+#        include /etc/nginx/default.d/*.conf;
+#
+#        location / {
+#        }
+#
+#        error_page 404 /404.html;
+#            location = /40x.html {
+#        }
+#
+#        error_page 500 502 503 504 /50x.html;
+#            location = /50x.html {
+#        }
+#    }
+
+}
+```
+
+```index.html
+<html>
+    <head>
+        <title>Test Page for the Nginx HTTP Server on Red Hat Enterprise Linux</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    </head>
+    <body>
+       <p> Hello World </p>
+    </body>
+</html>
+```
+
+これらのファイルは`Dockerfile`と一緒に同じディレクトリに置きます。
+必要なファイルが揃っていれば以下のようになっているはずです。
+
+```
+$ ls -ltr
+total 16
+-rw-r--r-- 1 yuhki yuhki  305 Dec 23 11:33 index.html
+-rw-r--r-- 1 yuhki yuhki  178 Dec 23 14:19 Dockerfile
+-rw-r--r-- 1 yuhki yuhki 2551 Dec 23 15:15 nginx.conf
+$
+```
+
+### build する
+
+`docker build`コマンドを実行すると、コマンドの実行ディレクトリにある`Dockerfile`という名前のファイルを探してきてその内容の作業を実行して、新しいイメージを作成してくれます。`Dockerfile`という名前は変更もできますが、変更した場合は変更後のファイルを引数で指定する必要があります。
+
+新しく生成されるイメージ名を`yuhkih/nginx-ubi8-2:1.0`にします。
+
+以下のコマンドでビルドを実行します。
+
+```
+$ docker build . -t yuhkih/nginx-ubi8-2:1.0
+```
+
+`.`で、カレントディレクトリの`Dockerfile`を探しに行きます。
+
+
+この名前は
+
+`yuhkih`  : 筆者の Docker Hub のユーザー名
+`nginx-unbi8-2` : このイメージの名前のコア部分
+`1.0` : このイメージのタグ
+
+をくっつけたものです。
+`Docker Hub` のユーザー名を先頭につけたのは、後で `Docker Hub` にこのイメージを`push`する事を考えているためです。
+`Docker Hub`に保管するイメージは、イメージ名の先頭に`<ユーザー名>/`を付ける事が決まりになっているため、イメージ作成時にあらかじめ付けておきます。逆に言うと、`Docker Hub`にイメージを`push`せずにローカルで使うだけであれば、こう言った名前の付け方は必要ありません。
+
+最後に`1.0`という名前のタグを付けていますが、これを付けなかった場合は、`latest`というタグが自動で付きます。
+
+名前の付け方にいろいろルールがあり面倒ですが、このネーミング・ルールになれる必要があります。
+
+### ビルドしたイメージの確認
+
+`docker images`コマンドで、ビルドされたイメージを確認します。
+
+```
+$ docker images
+REPOSITORY                                                TAG       IMAGE ID       CREATED         SIZE
+yuhkih/nginx-ubi8-2                                       1.0       9539618c5467   5 hours ago     307MB
+...
+```
+
+### Docker Hub に push する。
+
+作成したイメージを `Docker Hub` に `push`します。
+
+Docker Hub にログインします。
+
+```
+$ docker login -u yuhkih -p <パスワード>
+```
+
+`Docker Hub` に `push`します。イメージ名の先頭が`<user名>/`のフォーマットになっている必要があります。
+
+```
+$ docker push yuhkih/nginx-ubi8
+```
+
+### Docker Hub に 上がった事を確認する
+
+`Repository` 名を引数に `docker search` する事で `docker Hub` 上のイメージを確認できます。
+
+```
+$ docker search yuhkih
+NAME                  DESCRIPTION   STARS     OFFICIAL   AUTOMATED
+yuhkih/nginx-ubi8-2                 0
+...
+```
+
+無事に `docker Hub` に上がっている事が確認できました。
+
+以上で演習4は完了です。お疲れ様でした。
