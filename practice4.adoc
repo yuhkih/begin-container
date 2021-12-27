@@ -1,13 +1,13 @@
 # 演習4 : Dockerfile を使ってオリジナルの nginx のイメージを作る
 
-今度は演習3と同じ内容を`Dockerfile`を使用して行います。`Dockerfile`でビルドの作業をスクリプト化できます。
+今度は演習3と同じ内容を `Dockerfile` を使用して行います。 `Dockerfile` でビルドの作業をスクリプト化できます。
 
 ![image.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/99425/1ec03b31-0c53-5c63-115d-02a4be68ffb1.png)
 
 
 ### Dockerfile を書く
 
-`Dockerfile` を使うと、演習3でやった元ネタになるイメージのダウンロード、イメージへの nginx のインストールまでの各種作業をスクリプト化できます。
+`Dockerfile` を使うと、演習3でやった元ネタになるイメージのダウンロード、イメージへの `nginx` のインストールまでの各種作業をスクリプト化できます。
 
 演習3でやった作業を `Dockerfile` にすると以下になります。
 
@@ -21,22 +21,22 @@ CMD ["-g","daemon off;"]
 ENTRYPOINT ["nginx"]
 ```
 
-このファイル名は`Dockerfile`という名前にします。この名前は docker で決められている名前です。
+このファイル名は `Dockerfile` という名前にします。この名前は `Docker` で決められている名前です。
 変更もできますが、変更した場合は、変更後の名前を引数で指定する必要があり、コマンドが長くなるので、ここではデフォルトの名前を使用します。
 
-`Dockerfile`の中身の解説は以下の通りです。
+`Dockerfile` の中身の解説は以下の通りです。
 
 `FROM redhat/ubi8` : Docker Hub から redhat/ubi8 を PULLします。
 `RUN yum install -y nginx` :  redhat/ubi8 に nginx をインストールします。
-`COPY index.html /usr/share/nginx/html/index.html`: ホストOS上の[index.html]をコンテナ内の[/usr/share/nginx/html/index.html]にコピーします。
+`COPY index.html /usr/share/nginx/html/index.html` : ホストOS上の[index.html]をコンテナ内の[/usr/share/nginx/html/index.html]にコピーします。
 `COPY nginx.conf /etc/nginx/nginx.conf` :　ホストOS上の[nginx.conf]をコンテナ内の[/etc/nginx/nginx.conf]にコピーします。
-`CMD ["-g","daemon off;"]`: コンテナ実行時に実行するコマンドのオプションです。演習3で[docker container comit]で指定したのと同じものです。
+`CMD ["-g","daemon off;"]` : コンテナ実行時に実行するコマンドのオプションです。演習3で[docker container comit]で指定したのと同じものです。
 `ENTRYPOINT ["nginx"]` : コンテナ実行時に実行するコマンドです。演習3で[docker container comit]で指定したのと同じものです
 
 
-次にコンテナ内にコピーする `nginx.conf` と `index.html`を作ります。コピペ用に以下に内容を書きますが、内容は演習3で作成したものと全く同じです。
+次にコンテナ内にコピーする `nginx.conf` と `index.html` を作ります。コピペ用に以下に内容を書きますが、内容は演習3で作成したものと全く同じです。
 
-演習3では、`nginx.conf` はコンテナ内で直接編集しましたが(外で作成したものをコンテナ内にコピーしても良かったのですが、たまたまです）、ここではホストOS上に`nginx.conf`を作ります。
+演習3では、 `nginx.conf` はコンテナ内で直接編集しましたが(外で作成したものをコンテナ内にコピーしても良かったのですが、たまたまです）、ここではホストOS上に `nginx.conf` を作ります。
 
 ```/etc/nginx/nginx.conf
 # For more information on configuration, see:
@@ -143,7 +143,7 @@ http {
 </html>
 ```
 
-これらのファイルは`Dockerfile`と一緒に同じディレクトリに置きます。
+これらのファイルは `Dockerfile` と一緒に同じディレクトリに置きます。
 必要なファイルが揃っていれば以下のようになっているはずです。
 
 ```
@@ -157,9 +157,9 @@ $
 
 ### build する
 
-`docker build`コマンドを実行すると、コマンドの実行ディレクトリにある`Dockerfile`という名前のファイルを探してきてその内容の作業を実行して、新しいイメージを作成してくれます。`Dockerfile`という名前は変更もできますが、変更した場合は変更後のファイルを引数で指定する必要があります。
+`docker build` コマンドを実行すると `Dockerfile` という名前のファイルを探してきてその内容の作業を実行して、新しいイメージを作成してくれます。 `Dockerfile` という名前は変更もできますが、変更した場合は変更後のファイルを引数で指定する必要があります。
 
-新しく生成されるイメージ名を`yuhkih/nginx-ubi8-2:1.0`にします。
+新しく生成されるイメージ名を　`yuhkih/nginx-ubi8-2:1.0`　にします。
 
 以下のコマンドでビルドを実行します。
 
@@ -177,16 +177,16 @@ $ docker build . -t yuhkih/nginx-ubi8-2:1.0
 `1.0` : このイメージのタグ
 
 をくっつけたものです。
-`Docker Hub` のユーザー名を先頭につけたのは、後で `Docker Hub` にこのイメージを`push`する事を考えているためです。
-`Docker Hub`に保管するイメージは、イメージ名の先頭に`<ユーザー名>/`を付ける事が決まりになっているため、イメージ作成時にあらかじめ付けておきます。逆に言うと、`Docker Hub`にイメージを`push`せずにローカルで使うだけであれば、こう言った名前の付け方は必要ありません。
+`Docker Hub` のユーザー名を先頭につけたのは、後で `Docker Hub` にこのイメージを　`push`　する事を考えているためです。
+`Docker Hub`　に保管するイメージは、イメージ名の先頭に　`<ユーザー名>/`　を付ける事が決まりになっているため、イメージ作成時にあらかじめ付けておきます。逆に言うと、　`Docker Hub`　にイメージを`push`　せずにローカルで使うだけであれば、こう言った名前の付け方は必要ありません。
 
-最後に`1.0`という名前のタグを付けていますが、これを付けなかった場合は、`latest`というタグが自動で付きます。
+最後に　`1.0`　という名前のタグを付けていますが、これを付けなかった場合は、　`latest`　というタグが自動で付きます。
 
 名前の付け方にいろいろルールがあり面倒ですが、このネーミング・ルールになれる必要があります。
 
 ### ビルドしたイメージの確認
 
-`docker images`コマンドで、ビルドされたイメージを確認します。
+`docker images`　コマンドで、ビルドされたイメージを確認します。
 
 ```
 $ docker images
@@ -197,15 +197,15 @@ yuhkih/nginx-ubi8-2                                       1.0       9539618c5467
 
 ### Docker Hub に push する。
 
-作成したイメージを `Docker Hub` に `push`します。
+作成したイメージを `Docker Hub`　に `push`　します。
 
-Docker Hub にログインします。
+`Docker Hub` にログインします。
 
 ```
 $ docker login -u yuhkih -p <パスワード>
 ```
 
-`Docker Hub` に `push`します。イメージ名の先頭が`<user名>/`のフォーマットになっている必要があります。
+`Docker Hub` に `push` します。イメージ名の先頭が `<user名>/` のフォーマットになっている必要があります。
 
 ```
 $ docker push yuhkih/nginx-ubi8
