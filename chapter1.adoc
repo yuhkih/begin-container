@@ -191,7 +191,7 @@ redhat/ubi8                                               latest    cc0656847854
 ubuntu                                                    latest    ba6acccedd29   2 months ago    72.8MB
 ```
 
-ヘッダー部分の所に`REPOSITORY`と書いています。
+ヘッダー部分の所に `REPOSITORY` と書いています。
 
 少し前のステップで、イメージの削除は `docker rmi <REPOSITORY名:TAG>` で行う。とさらっと書きましたが、直感的には `イメージ名` で良いような気もします。この `REPOSITORY` とは何でしょうか。
 
