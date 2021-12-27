@@ -230,7 +230,7 @@ $
 
 ただ、一般的には `タグ` を抜いた `レポジトリ名` の事を `イメージ` 名と呼ばれるケースもあり、 `イメージ(名)` の定義はきちんと定まっておらず曖昧に使われているのが現状です。ここは初学者にはツライ所です。
 
-以下は `docker tag` コマンドのヘルプですが、 `レポジトリ名` と解釈される所は `SOURCE_IMAGE/TARGET_IMAGE` と記載されていて `[:TAG]` を付ける事ができるとされています。つまり、ここでは`SOURCE_IMAGE/TARGET_IMAGE` 名が `REPOSITORY` 名と同じ意味で使われています。
+以下は `docker tag` コマンドのヘルプですが、 `レポジトリ名` と解釈される所は `SOURCE_IMAGE/TARGET_IMAGE` と記載されていて `[:TAG]` を付ける事ができるとされています。つまり、ここでは `SOURCE_IMAGE/TARGET_IMAGE` 名が `REPOSITORY` 名と同じ意味で使われています。
 
 ```
 $ docker tag --help
