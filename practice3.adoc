@@ -32,7 +32,7 @@ $ docker pull redhat/ubi8
 
 特にドメイン名を指定していませんが、お約束として `Docker Hub` に `redhat/ubi8` を探しに行って `pull` しています。
 
-`pull` した `イメージ `を `docker images` コマンドで確認します。
+`pull` した `イメージ` を `docker images` コマンドで確認します。
 
 ```
 $ docker images
