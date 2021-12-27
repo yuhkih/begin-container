@@ -20,7 +20,7 @@
 ここでは `Red Hat` が提供する `RHEL8` のベースイメージである `ubi8` を `Docker Hub` からダウンロード( `pull` )して使用します。
 
 ![image.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/99425/681a179d-3480-cd38-c561-e5fe061e08e7.png)
-`Docker Hub`上の`redhat/ubi8`のレポジトリへの[リンクはこちら](https://hub.docker.com/r/redhat/ubi8/tags)です。
+`Docker Hub` 上の `redhat/ubi8` のレポジトリへの[リンクはこちら](https://hub.docker.com/r/redhat/ubi8/tags)です。
 
 イメージを作成する場合は、適当なイメージを使用するとマルウェアなどが含まれている可能性があるので、提供元のわかっているイメージを使用するようにしましょう。
 
