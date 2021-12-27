@@ -17,7 +17,7 @@ Status: Downloaded newer image for ubuntu:latest
 $
 ```
 
-ここでは、単にイメージ名として `ubuntu` とだけ指定しているので、 `Docker Hub` で公開されている [ubuntu](https://hub.docker.com/_/ubuntu) の `latest` のタグが付いたイメージがダウンロード( `pull` )されます。
+ここでは、単にイメージ名として `ubuntu` とだけ指定しているので、 `Docker Hub` で公開されている https://hub.docker.com/_/ubuntu[ubuntu^] の `latest` のタグが付いたイメージがダウンロード( `pull` )されます。
 
 稼働しているかどうか `docker ps` で確認してみます。
 
@@ -42,7 +42,7 @@ $
 
 これを見ると `bash` が一瞬実行されたものの、すぐに終了した事がわかります。このようにコンテナでは、フォアグラウンドで稼働するプロセスが無いとすぐに終了してしまいます。
 
-イメージの作りがどのようになっているかは、 [Docker Hub](https://hub.docker.com/layers/ubuntu/library/ubuntu/latest/images/sha256-f3113ef2fa3d3c9ee5510737083d6c39f74520a2da6eab72081d896d8592c078?context=explore) のページで確認ができますが、 `CMD["bash"]` と書かれており、これはコンテナ起動時に `bash` が実行されるように作られている事を意味します。が、この `bash` は、特にする事もないので、プロセスとしてはすぐに終了します。
+イメージの作りがどのようになっているかは、 https://hub.docker.com/layers/ubuntu/library/ubuntu/latest/images/sha256-f3113ef2fa3d3c9ee5510737083d6c39f74520a2da6eab72081d896d8592c078?context=explore[Docker Hub^] のページで確認ができますが、 `CMD["bash"]` と書かれており、これはコンテナ起動時に `bash` が実行されるように作られている事を意味します。が、この `bash` は、特にする事もないので、プロセスとしてはすぐに終了します。
 ![image.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/99425/dfcb4931-3538-34e8-e7f2-4f1b86015ee2.png)
 
 
