@@ -12,18 +12,18 @@ docker pull nginx
 
 でダウンロード(`PULL`)する事ができます。
 
-`docker run` というコマンドを前の章で使いましたが、実は、`docker run` コマンドは `docker pull` と `docker create` と `docker start`の3つのコマンドをまとめたコマンドです。
+`docker run` というコマンドを前の章で使いましたが、実は、 `docker run` コマンドは `docker pull` と `docker create` と `docker start` の3つのコマンドをまとめたコマンドです。
 
-以下に docker で良く使うコマンドの関係性を図示してみました。
+以下に `docker` で良く使うコマンドの関係性を図示してみました。
 
 ![image.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/99425/53f7ff15-06a5-6aa7-cefc-10e708943004.png)
 
 
-`docker run` が、`pull` `create` `start`　をまとめたものである事がわかると思います。
+`docker run` が、`pull` `create` `start` をまとめたものである事がわかると思います。
 
-既にローカルに`pull`されたイメージがある場合は、`docker run`を実行してもインターネットから再ダウンロード(`pull`)される事はありません。
+既にローカルに `pull` されたイメージがある場合は、`docker run` を実行してもインターネットから再ダウンロード( `pull` )される事はありません。
 
-`create`と`start`はとりあえず置いておいて、ここでは `pull` に注目します。
+`create` と `start` はとりあえず置いておいて、ここでは `pull` に注目します。
 
 
 ```
@@ -31,9 +31,9 @@ docker pull nginx
 ```
 
 
-では、単に`nginx`と指定していますが、幾つかの暗黙の省略が含まれています。
+では、単に `nginx` と指定していますが、幾つかの暗黙の省略が含まれています。
 
-`docker` コマンドでは、`nginx` と指定しただけで [Docker Hub](https://hub.docker.com) というコンテナレジストリにアクセスして、`nginx`という名前のコンテナで`latest`というタグが付いたものを探してダウンロード(`pull`)してきます。
+`docker` コマンドでは、 `nginx` と指定しただけで [Docker Hub](https://hub.docker.com) というコンテナレジストリにアクセスして、 `nginx` という名前のコンテナで `latest` というタグが付いたものを探してダウンロード( `pull` )してきます。
 
 なので省略されていますが、上のコマンドは以下のものと同じになります。
 
@@ -41,13 +41,13 @@ docker pull nginx
 docker pull nginx:latest
 ```
 
-タグは、`:(コロン)`を挟んで付加します。タグの `latest` 部分は、`1.20`のようにバージョンを付ける事もあります。
+タグは、 `:(コロン)` を挟んで付加します。タグの `latest` 部分は、 `1.20` のようにバージョンを付ける事もあります。
 
 ```
 docker pull nginx:1.20
 ```
 
-Registry 上のイメージにどんなタグが付いているかの一覧の取得は、標準の `docker` コマンドではサポートされておらず、[Docker Hub](https://registry.hub.docker.com/_/nginx?tab=tags) にアクセスして確認する必要があります。
+`Registry` 上のイメージにどんなタグが付いているかの一覧の取得は、標準の `docker` コマンドではサポートされておらず、[Docker Hub](https://registry.hub.docker.com/_/nginx?tab=tags) にアクセスして確認する必要があります。
 
 
 ## 2.2. Docker Hub 以外のイメージを使用する
@@ -58,7 +58,7 @@ Registry 上のイメージにどんなタグが付いているかの一覧の�
 docker run quay.io/centos/centos
 ```
 
-は、`quay.io` という`Red Hat`社のコンテナレジストリの `centos/centos` というコンテナイメージの`latest`タグが付いたものを(ローカルに無ければ) ダウンロード(`pull`)して実行します。
+は、 `quay.io` という `Red Hat` 社のコンテナレジストリの `centos/centos` というコンテナイメージの `latest` タグが付いたものを(ローカルに無ければ) ダウンロード( `pull` )して実行します。
 
 上記のコマンドは以下と同じになります。
 
@@ -66,4 +66,4 @@ docker run quay.io/centos/centos
 docker run quay.io/centos/centos:latest
 ```
 
-ダウンロードしてきた `nginx`というイメージは、ローカルに保存され、次回、同じイメージが要求された時には、既にダウンロードされたものが使用されます。
+ダウンロードしてきた `nginx` というイメージは、ローカルに保存され、次回、同じイメージが要求された時には、既にダウンロードされたものが使用されます。
