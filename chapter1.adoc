@@ -102,7 +102,7 @@ $
 
 **コンテナIDでコンテナを停止**
 
-さっきは `eager_benz` というコンテナ名を指定してを停止させましたが、`CONTAINER ID`を使って以下のように停止させる事もできます。
+さっきは `eager_benz` というコンテナ名を指定してを停止させましたが、 `CONTAINER ID` を使って以下のように停止させる事もできます。
 
 ```
 $ docker stop b0d570e09018     # 最後の IDは docker ps で表示されていた CONTAINER ID
