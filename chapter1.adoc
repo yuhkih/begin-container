@@ -15,7 +15,7 @@ https://www.docker.com/products/docker-desktop
 
 ## 1.2.コンテナを動かしてみる
 
-例として、 `nginx` のコンテナを動かしてみます。このコンテナは [Docker Hub](https://hub.docker.com/) 上に既にあるものを使用します。
+例として、 `nginx` のコンテナを動かしてみます。このコンテナは https://hub.docker.com/[Docker Hub^] 上に既にあるものを使用します。
 
 コンテナは覚えなければいけない概念などがいろいろありますが、細かい話は後に譲るとして、このセクションでは、まずは単純に動かしてみて、「雰囲気」を掴んでみる事にしてみます。
 
@@ -77,7 +77,7 @@ $
 
 一番後ろの `NAMES` のコラムを見ると `eager_benz` と名前が付いてます。
 この名前は自分が指定した名前も付ける事ができますが、**ユーザーが指定しなければ勝手につけられます。**
-ランダムな名前は、「形容詞」+「著名人の名前」の形で生成されています。namesgenerator というパッケージで生成されておりソースは [こちら](https://github.com/moby/moby/blob/master/pkg/namesgenerator/names-generator.go) です。
+ランダムな名前は、「形容詞」+「著名人の名前」の形で生成されています。namesgenerator というパッケージで生成されておりソースは https://github.com/moby/moby/blob/master/pkg/namesgenerator/names-generator.go[こちら^] です。
 
 `CONTAINER ID (b0d570e09018)` と `NAME (eager_benz)` は、自動で付けられるユニークな値で、コンテナの停止や開始時に識別子として使用する事ができます。
 
@@ -220,7 +220,7 @@ nginx-ubi8                                                1.0       6c364457d832
 
 **Docker のイメージ名とは？**
 
-Docker のマニュアルを `イメージ名(image name)` で検索すると、 `imagne name` という言葉の使われている場所は非常に少ないのですが、例えば、[Get an instance’s image name](https://docs.docker.com/engine/reference/commandline/inspect/#get-an-instances-image-name) で紹介されている `docker inspect` コマンドで得られる `imagne name` とされるものは `tag` を含んだ値が得られます。(タグがlatestの場合は省略)。
+Docker のマニュアルを `イメージ名(image name)` で検索すると、 `imagne name` という言葉の使われている場所は非常に少ないのですが、例えば、https://docs.docker.com/engine/reference/commandline/inspect/#get-an-instances-image-name[Get an instance’s image name^] で紹介されている `docker inspect` コマンドで得られる `imagne name` とされるものは `tag` を含んだ値が得られます。(タグがlatestの場合は省略)。
 
 ```docker
 $ docker inspect --format='{{.Config.Image}}' c3775755f851
