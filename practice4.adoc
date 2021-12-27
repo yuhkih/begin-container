@@ -172,8 +172,10 @@ $ docker build . -t yuhkih/nginx-ubi8-2:1.0
 
 この名前は
 
-`yuhkih` : 筆者の Docker Hub のユーザー名+ 
-`nginx-unbi8-2` : このイメージの名前のコア部分+ 
+`yuhkih` : 筆者の Docker Hub のユーザー名
+
+`nginx-unbi8-2` : このイメージの名前のコア部分
+
 `1.0` : このイメージのタグ
 
 をくっつけたものです。
