@@ -154,7 +154,7 @@ $
 
 関係を図示すると以下のようになります。
 ![image.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/99425/15dd82f7-623a-f89c-8528-3f8dc2f407b5.png)
-docker`イメージ`から作成されるのが docker`コンテナ`になります。
+docker `イメージ` から作成されるのが docker `コンテナ` になります。
 
 
 **イメージの削除**
