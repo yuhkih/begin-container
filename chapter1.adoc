@@ -79,7 +79,7 @@ $
 この名前は自分が指定した名前も付ける事ができますが、**ユーザーが指定しなければ勝手につけられます。**
 ランダムな名前は、「形容詞」+「著名人の名前」の形で生成されています。namesgenerator というパッケージで生成されておりソースは[こちら](https://github.com/moby/moby/blob/master/pkg/namesgenerator/names-generator.go)です。
 
-`CONTAINER ID (b0d570e09018) ` と `NAME (eager_benz)` は、勝手に付けられるユニークな値で、コンテナの停止や開始時に識別子として使用する事ができます。
+`CONTAINER ID (b0d570e09018)` と `NAME (eager_benz)` は、自動で付けられるユニークな値で、コンテナの停止や開始時に識別子として使用する事ができます。
 
 **コンテナ名でコンテナを停止**
 
