@@ -9,7 +9,7 @@
 https://www.docker.com/products/docker-desktop
 
 何が一番楽でお金がかからないだろうか。と考えた結果、 `Mac` でも `Windows` でも共通に使えて、作業も楽なので、 `Docker Desktop` を選択してみました。
-`Linux` の仮想マシンを立てて、そこで `docker` を動かすなど選択肢はたくさんあると思いますのでお好きなものでどうぞ。
+`Linux` の仮想マシンを立てて、そこで `docker` を動かすなど選択肢はたくさんあると思いますのでお好きなもので構いません。
 
 このドキュメントを書いた、筆者の環境は 「Windows 10」 + 「Docker Desktop for Windows」 + 「WSL2」 です。
 
