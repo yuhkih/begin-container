@@ -230,7 +230,7 @@ $ curl localhost:8080
 ```
 
 `docker cp` コマンドを使うとホストOS上のファイルを、コンテナ内にコピーでいます。
-以下のコマンドで、作成した `index.html`をコンテナ内の`/usr/share/nginx/html/index.html`に上書きします。
+以下のコマンドで、作成した `index.html` をコンテナ内の `/usr/share/nginx/html/index.html` に上書きします。
 
 
 ```
