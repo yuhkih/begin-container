@@ -17,7 +17,7 @@ Status: Downloaded newer image for ubuntu:latest
 $
 ```
 
-ここでは、単にイメージ名として `ubuntu` とだけ指定しているので、 `Docker Hub` で公開されている[ubuntu](https://hub.docker.com/_/ubuntu)の`latest`のタグが付いたイメージがダウンロード( `pull` )されます。
+ここでは、単にイメージ名として `ubuntu` とだけ指定しているので、 `Docker Hub` で公開されている [ubuntu](https://hub.docker.com/_/ubuntu) の `latest` のタグが付いたイメージがダウンロード( `pull` )されます。
 
 稼働しているかどうか `docker ps` で確認してみます。
 
