@@ -220,7 +220,7 @@ nginx-ubi8                                                1.0       6c364457d832
 
 **Docker のイメージ名とは？**
 
-Docker のマニュアルを `イメージ名(image name)` で検索すると、 `imagne name` という言葉の使われている場所は非常に少ないのですが、例えば、https://docs.docker.com/engine/reference/commandline/inspect/#get-an-instances-image-name[Get an instance’s image name^] で紹介されている `docker inspect` コマンドで得られる `imagne name` とされるものは `tag` を含んだ値が得られます。(タグがlatestの場合は省略)。
+Docker のマニュアルを `イメージ名(image name)` で検索すると、 `imagne name` という言葉の使われている場所は非常に少ないのですが、例えば、 https://docs.docker.com/engine/reference/commandline/inspect/#get-an-instances-image-name[Get an instance’s image name^] で紹介されている `docker inspect` コマンドで得られる `imagne name` とされるものは `tag` を含んだ値が得られます。(タグがlatestの場合は省略)。
 
 ```docker
 $ docker inspect --format='{{.Config.Image}}' c3775755f851
