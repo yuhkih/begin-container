@@ -237,7 +237,7 @@ $ curl localhost:8080
 $ docker cp index.html nginx-ubi8:/usr/share/nginx/html/index.html
 ```
 
-###イ メージを Commit する
+### イメージを Commit する
 
 今、稼働している `コンテナ` 、 `nginx-ubi8` をイメージ化します。
 イメージ名はタグ `1.0` を付加して `nginx-ubi8:1.0` とする事にします。
