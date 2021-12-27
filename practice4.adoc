@@ -167,7 +167,7 @@ $
 $ docker build . -t yuhkih/nginx-ubi8-2:1.0
 ```
 
-`.`で、カレントディレクトリの`Dockerfile`を探しに行きます。
+`.` で、カレントディレクトリの `Dockerfile` を探しに行きます。
 
 
 この名前は
