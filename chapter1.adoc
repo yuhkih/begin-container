@@ -15,7 +15,7 @@ https://www.docker.com/products/docker-desktop
 
 ## 1.2.コンテナを動かしてみる
 
-例として、 `nginx` のコンテナを動かしてみます。このコンテナは[Docker Hub](https://hub.docker.com/)上に既にあるものを使用します。
+例として、 `nginx` のコンテナを動かしてみます。このコンテナは [Docker Hub](https://hub.docker.com/) 上に既にあるものを使用します。
 
 コンテナは覚えなければいけない概念などがいろいろありますが、細かい話は後に譲るとして、このセクションでは、まずは単純に動かしてみて、「雰囲気」を掴んでみる事にしてみます。
 
