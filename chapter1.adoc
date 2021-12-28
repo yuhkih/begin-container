@@ -153,7 +153,7 @@ $
 `イメージ` と `コンテナ` は、大半のコンテキストで同じ意味の言葉として使用でき、合体させて `コンテナ・イメージ` 等と曖昧に使うケースもありますが、 `docker` コマンドの世界では、 `dockerイメージ` と `dockerコンテナ` は、明確に違うものを示します。
 
 関係を図示すると以下のようになります。
-![image.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/99425/15dd82f7-623a-f89c-8528-3f8dc2f407b5.png)
+image::<images/1-2-image-and-container.png>[align="left"]
 docker `イメージ` から作成されるのが docker `コンテナ` になります。
 
 
