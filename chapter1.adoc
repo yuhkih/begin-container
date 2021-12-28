@@ -154,7 +154,7 @@ $
 
 関係を図示すると以下のようになります。
 
-image::<images/1-2-image-and-container.png>[align="left"]
+image::<./images/1-2-image-and-container.png>[align="left"]
 
 docker `イメージ` から作成されるのが docker `コンテナ` になります。
 
