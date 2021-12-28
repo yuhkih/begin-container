@@ -16,7 +16,7 @@ docker pull nginx
 
 以下に `docker` で良く使うコマンドの関係性を図示してみました。
 
-![image.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/99425/53f7ff15-06a5-6aa7-cefc-10e708943004.png)
+image::images/2-1-dockerhub.png[left]
 
 
 `docker run` が、`pull` `create` `start` をまとめたものである事がわかると思います。

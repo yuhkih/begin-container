@@ -2,8 +2,7 @@
 
 今度は演習3と同じ内容を `Dockerfile` を使用して行います。 `Dockerfile` でビルドの作業をスクリプト化できます。
 
-![image.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/99425/1ec03b31-0c53-5c63-115d-02a4be68ffb1.png)
-
+image::images/practice4-procedure.png[left]
 
 ### Dockerfile を書く
 

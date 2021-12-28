@@ -43,8 +43,8 @@ $
 これを見ると `bash` が一瞬実行されたものの、すぐに終了した事がわかります。このようにコンテナでは、フォアグラウンドで稼働するプロセスが無いとすぐに終了してしまいます。
 
 イメージの作りがどのようになっているかは、 https://hub.docker.com/layers/ubuntu/library/ubuntu/latest/images/sha256-f3113ef2fa3d3c9ee5510737083d6c39f74520a2da6eab72081d896d8592c078?context=explore[Docker Hub^] のページで確認ができますが、 `CMD["bash"]` と書かれており、これはコンテナ起動時に `bash` が実行されるように作られている事を意味します。が、この `bash` は、特にする事もないので、プロセスとしてはすぐに終了します。
-![image.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/99425/dfcb4931-3538-34e8-e7f2-4f1b86015ee2.png)
 
+image::images/practice2-ubuntu-image.png[left]
 
 演習1では、 `nginx` がフォアグラウンドで稼働していたのでコンテナが稼働し続けてましたが、稼働し続けるプロセスが無いとこのようにコンテナ自体が終了してしまいます。
 
@@ -57,9 +57,9 @@ docker run -itd --name my-ubuntu2 ubuntu
 ここで `-itd` というオプションは、使っていると意味をだんだんと忘れてしまい手が勝手に動くようになりますが、以下のような意味があります。
 
 ### オプション -itd 
-`-i` : interactive. Keep STDIN open even if not attached. 
-`-t` : Allocate a pseudo-TTY. コンテナに疑似tty(pseudo-TTY)を作る。
-`-d` : Run container in background and print container ID。デタッチ。コンテナをバックグラウンドで動かす。
+`-i` : interactive. Keep STDIN open even if not attached. + 
+`-t` : Allocate a pseudo-TTY. コンテナに疑似tty(pseudo-TTY)を作る。 +
+`-d` : Run container in background and print container ID.デタッチ。コンテナをバックグラウンドで動かす。
 
 これらはバラバラのオプションなので `-it -d` や、 `-i -t -d` のようにバラバラに指定もできます。
 殆どの用途で `-it` はセットで使われ、 `-it` や `-itd` のように使われます。
