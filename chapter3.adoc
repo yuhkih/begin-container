@@ -55,15 +55,17 @@ docker pull nginx:1.20
 コンテナのイメージを  https://hub.docker.com[Docker Hub^] 以外のレジストリからダウンロード(`pull`)してきたい場合は、明示的に指定する必要があります。例えば、
 
 ```
-docker run quay.io/centos/centos
+docker pull quay.io/centos/centos
 ```
 
-は、 `quay.io` という `Red Hat` 社のコンテナレジストリの `centos/centos` というコンテナイメージの `latest` タグが付いたものを(ローカルに無ければ) ダウンロード( `pull` )して実行します。
+は、 `quay.io` という `Red Hat` 社のコンテナレジストリの `centos/centos` という `レポジトリ` 名 の `latest` という `タグ` が付いたものを(ローカルに無ければ) ダウンロード( `pull` )してきます。
+
+この例であげている `レポジトリ` 名 `centos/centos` は、名前の中に `/` が入っています。 `レポジトリ` 名は、このように `/` が中に入っていたり、単純に `centos` のように `/` が無い名前までいろいろあり得ます。必ずしも `/` があるからと言って、 `レポジトリ` 名と `レジストリ` 名の区切りという訳ではないので、慣れる必要があります。
 
 上記のコマンドは以下と同じになります。
 
 ```
-docker run quay.io/centos/centos:latest
+docker pull quay.io/centos/centos:latest
 ```
 
 ダウンロードしてきた `nginx` というイメージは、ローカルに保存され、次回、同じイメージが要求された時には、既にダウンロードされたものが使用されます。
