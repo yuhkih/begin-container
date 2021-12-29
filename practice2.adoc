@@ -1,3 +1,5 @@
+:toc: left
+
 # 演習2:  OSのコンテナの実行
 
 演習1では `nginx` のコンテナを実行しました。
@@ -59,7 +61,7 @@ docker run -itd --name my-ubuntu2 ubuntu
 ### オプション -itd 
 `-i` : interactive. Keep STDIN open even if not attached. + 
 `-t` : Allocate a pseudo-TTY. コンテナに疑似tty(pseudo-TTY)を作る。 +
-`-d` : Run container in background and print container ID.デタッチ。コンテナをバックグラウンドで動かす。
+`-d` : Run container in background and print container ID. デタッチ。コンテナをバックグラウンドで動かす。
 
 これらはバラバラのオプションなので `-it -d` や、 `-i -t -d` のようにバラバラに指定もできます。
 殆どの用途で `-it` はセットで使われ、 `-it` や `-itd` のように使われます。

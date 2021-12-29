@@ -1,3 +1,5 @@
+:toc: left
+
 # 2.コンテナを使う上での暗黙の了解とPULL
 
 ここでは、演習に入る前に、少し寄り道して `docker pull` について学んでみます。
@@ -17,7 +19,6 @@ docker pull nginx
 以下に `docker` で良く使うコマンドの関係性を図示してみました。
 
 image::images/2-1-dockerhub.png[left]
-
 
 `docker run` が、`pull` `create` `start` をまとめたものである事がわかると思います。
 
