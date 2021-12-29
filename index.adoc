@@ -1143,13 +1143,15 @@ ENTRYPOINT ["nginx"]
 
 `Dockerfile` の中身の解説は以下の通りです。
 
-`FROM redhat/ubi8` : Docker Hub から redhat/ubi8 を PULLします。 + 
-`RUN yum install -y nginx` :  redhat/ubi8 に nginx をインストールします。 + 
-`COPY index.html /usr/share/nginx/html/index.html` : ホストOS上の[index.html]をコンテナ内の[/usr/share/nginx/html/index.html]にコピーします。 +
-`COPY nginx.conf /etc/nginx/nginx.conf` :　ホストOS上の[nginx.conf]をコンテナ内の[/etc/nginx/nginx.conf]にコピーします。 +
-`CMD ["-g","daemon off;"]` : コンテナ実行時に実行するコマンドのオプションです。演習3で[docker container comit]で指定したのと同じものです。 +
-`ENTRYPOINT ["nginx"]` : コンテナ実行時に実行するコマンドです。演習3で[docker container comit]で指定したのと同じものです
-
+[NOTE]
+====
+**FROM redhat/ubi8** : Docker Hub から redhat/ubi8 を PULLします。 + 
+**RUN yum install -y nginx** :  redhat/ubi8 に nginx をインストールします。 + 
+**COPY index.html /usr/share/nginx/html/index.html** : ホストOS上の `index.html` をコンテナ内の[/usr/share/nginx/html/index.html]にコピーします。 +
+**COPY nginx.conf /etc/nginx/nginx.conf** :ホストOS上の `nginx.conf` をコンテナ内の `/etc/nginx/nginx.conf` にコピーします。 +
+**CMD ["-g","daemon off;"]** : コンテナ実行時に実行するコマンドのオプションです。演習3で `docker container comit` コマンドの引数で指定したのと同じものです。 +
+**ENTRYPOINT ["nginx"]** : コンテナ実行時に実行するコマンドです。演習3で `docker container comit` コマンドの引数で指定したのと同じものです
+====
 
 次にコンテナ内にコピーする `nginx.conf` と `index.html` を作ります。コピペ用に以下に内容を書きますが、内容は演習3で作成したものと全く同じです。
 

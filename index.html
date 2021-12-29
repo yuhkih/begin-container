@@ -1975,13 +1975,24 @@ ENTRYPOINT ["nginx"]</code></pre>
 <div class="paragraph">
 <p><code>Dockerfile</code> の中身の解説は以下の通りです。</p>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
 <div class="paragraph">
-<p><code>FROM redhat/ubi8</code> : Docker Hub から redhat/ubi8 を PULLします。<br>
-<code>RUN yum install -y nginx</code> :  redhat/ubi8 に nginx をインストールします。<br>
-<code>COPY index.html /usr/share/nginx/html/index.html</code> : ホストOS上の[index.html]をコンテナ内の[/usr/share/nginx/html/index.html]にコピーします。<br>
-<code>COPY nginx.conf /etc/nginx/nginx.conf</code> :　ホストOS上の[nginx.conf]をコンテナ内の[/etc/nginx/nginx.conf]にコピーします。<br>
-<code>CMD ["-g","daemon off;"]</code> : コンテナ実行時に実行するコマンドのオプションです。演習3で[docker container comit]で指定したのと同じものです。<br>
-<code>ENTRYPOINT ["nginx"]</code> : コンテナ実行時に実行するコマンドです。演習3で[docker container comit]で指定したのと同じものです</p>
+<p><strong>FROM redhat/ubi8</strong> : Docker Hub から redhat/ubi8 を PULLします。<br>
+<strong>RUN yum install -y nginx</strong> :  redhat/ubi8 に nginx をインストールします。<br>
+<strong>COPY index.html /usr/share/nginx/html/index.html</strong> : ホストOS上の <code>index.html</code> をコンテナ内の[/usr/share/nginx/html/index.html]にコピーします。<br>
+<strong>COPY nginx.conf /etc/nginx/nginx.conf</strong> :ホストOS上の <code>nginx.conf</code> をコンテナ内の <code>/etc/nginx/nginx.conf</code> にコピーします。<br>
+<strong>CMD ["-g","daemon off;"]</strong> : コンテナ実行時に実行するコマンドのオプションです。演習3で <code>docker container comit</code> コマンドの引数で指定したのと同じものです。<br>
+<strong>ENTRYPOINT ["nginx"]</strong> : コンテナ実行時に実行するコマンドです。演習3で <code>docker container comit</code> コマンドの引数で指定したのと同じものです</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>次にコンテナ内にコピーする <code>nginx.conf</code> と <code>index.html</code> を作ります。コピペ用に以下に内容を書きますが、内容は演習3で作成したものと全く同じです。</p>
@@ -2209,7 +2220,7 @@ yuhkih/nginx-ubi8-2                 0
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-12-29 08:02:00 UTC
+Last updated 2021-12-29 08:10:11 UTC
 </div>
 </div>
 </body>
