@@ -1,0 +1,36 @@
+
+## 閑話休題：コンテナの整理に便利なオプション
+
+`docker` の `イメージ` から作られた `コンテナ` は、起動する度にドンドン溜まっていきます。
+
+既に使った名前があると、同じ名前の `コンテナ` が作れなかったり、いろいろ不便ですので、使わなくなった `コンテナ` は、こま目に消していく必要があります。
+
+ここでは良く使われる、 `コンテナ` の削除に便利なコマンドを紹介します。
+
+### docker run 時に `--rm` オプションを付ける 
+
+`--rm` オプションで、停止 (`docker stop`)した時に自動的に削除される `コンテナ` を作る事ができます。
+
+```
+docker run --rm -itd --name my-test  <イメージ名>
+```
+
+### コンテナを一気に消す 
+
+現在稼働中の `コンテナ` **以外** の `コンテナ` を一括削除します。
+
+```
+$ docker system prune
+WARNING! This will remove:
+  - all stopped containers
+  - all networks not used by at least one container
+  - all dangling images
+  - all dangling build cache
+
+Are you sure you want to continue? [y/N] y
+
+<snip>
+
+Total reclaimed space: 137.2MB
+$ 
+```
