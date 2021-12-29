@@ -832,7 +832,7 @@ nginx-ubi8                                                1.0       6c364457d832
 <div class="sect3">
 <h4 id="_docker_のイメージ名とは">2.3.2. Docker のイメージ名とは？</h4>
 <div class="paragraph">
-<p>Docker のマニュアルを <code>イメージ名(image name)</code> で検索すると、 <code>imagne name</code> という言葉の使われている場所は非常に少ないのですが、例えば、 <a href="https://docs.docker.com/engine/reference/commandline/inspect/#get-an-instances-image-name" target="_blank" rel="noopener">Get an instance’s image name</a> で紹介されている <code>docker inspect</code> コマンドで得られる <code>imagne name</code> とされるものは <code>tag</code> を含んだ <code>&lt;レポジトリ&gt;:&lt;タグ&gt;</code> の値が得られます。(タグがlatestの場合は省略される)。</p>
+<p>Docker のマニュアルを <code>イメージ名(image name)</code> で検索すると、 <code>imagne name</code> という言葉の使われている場所は非常に少ないのですが、例えば、 <a href="https://docs.docker.com/engine/reference/commandline/inspect/#get-an-instances-image-name" target="_blank" rel="noopener">Get an instance’s image name</a> (インスタンスの「イメージ名」を取得する) で紹介されている <code>docker inspect</code> コマンドで得られる <code>imagne name</code> とされるものは、 <code>tag</code> を含んだ <code>&lt;レポジトリ&gt;:&lt;タグ&gt;</code> の値です。(タグがlatestの場合は省略される)。</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -854,7 +854,7 @@ Usage:  docker tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG]</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>さらに、実際のコマンド実行時にどのように使われているかに目を向けると <code>docker run nginx</code> と書いた時の <code>nginx</code> は、 <code>&lt;レポジトリ名&gt;:&lt;タグ名&gt;</code> です。これは、表記上、省略されているだけで、実際には <code>nginx:latest</code> を指します。ですので、タグが無い=レポジトリ名という区別も単純にはできません。</p>
+<p>さらに、実際のコマンド実行時にどのように使われているかに目を向けると、 <code>docker run nginx</code> と書いた時の <code>nginx</code> は、 <code>&lt;レポジトリ名&gt;:&lt;タグ名&gt;</code> です。これは、表記上、省略されているだけで、実際には <code>nginx:latest</code> を指します。ですので、タグが無い=レポジトリ名という区別も単純にはできません。</p>
 </div>
 <div class="paragraph">
 <p><code>docker</code> では、省略した記述が許されているため <code>nginx</code> と書いた時にそれはコンテキストによって <code>レポジトリ</code> であったり、 <code>イメージ名</code> でもありえます。さらに前述した <code>docker tag</code> コマンドのヘルプのように、タグを抜いた部分を「イメージ」と呼んでいるケースもあります。</p>
@@ -2265,7 +2265,7 @@ yuhkih/nginx-ubi8-2                 0
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-12-29 16:08:07 UTC
+Last updated 2021-12-29 16:10:05 UTC
 </div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.3/highlight.min.js"></script>
