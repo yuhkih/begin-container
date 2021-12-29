@@ -22,7 +22,7 @@ jobs:
       id: documents
       uses: Analog-inc/asciidoctor-action@master
       with:
-        shellcommand: "asciidoctor index.adoc" 
+        shellcommand: "asciidoctor index.adoc  -o index.html" 
 
     # Deploy 
     - name: Deploy docs to ghpages
