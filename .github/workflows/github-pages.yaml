@@ -1,24 +1,31 @@
 name: build adocs
 
+# Controls when the action will run. Triggers the workflow on push 
+# events but only for the master branch
 on:
   push:
-    branches:
-    - main
+    branches: [ main ]
+    
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  adoc_build:
+  # This workflow contains a single job called "asciidoctor_job"
+  asciidoctor_job:
+    # The type of runner that the job will run on
     runs-on: ubuntu-latest
-    name: Asciidoctoring the docs to pretty HTML!
+    name: Build AsciiDoctor
     steps:
-    - name: Checkout code
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - name: Check out code
       uses: actions/checkout@v2
-    - name: Get build container
-      id: adocbuild
-      uses: avattathil/asciidoctor-action@master
+    # Output command using asciidoctor-action
+    - name: Build AsciiDoc step
+      id: documents
+      uses: Analog-inc/asciidoctor-action@master
       with:
-          program: "asciidoctor -D docs -a stylesheet=style.css --backend=html5 -o index.html README.adoc && echo 'docs.upsilonproject.io' > docs/CNAME"
-    - name: Deploy docs to ghpages
-      uses: peaceiris/actions-gh-pages@v3
-      with: 
-        deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-        publish_branch: gh-pages
-        publish_dir: ./docs/
+        shellcommand: "asciidoctor README.adoc" 
+    # Use the output from the documents step
+    - name: Save AsciiDoc step
+      uses: actions/upload-artifact@v1
+      with:
+        name: Output-document
+        path: ./index.html
