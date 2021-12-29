@@ -466,45 +466,57 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_このセクションで使用したコマンド">2.4. このセクションで使用したコマンド</a></li>
 </ul>
 </li>
-<li><a href="#_演習1_nginx_のコンテナを起動する">3. 演習1: Nginx のコンテナを起動する</a>
+<li><a href="#_コンテナを使う上での暗黙の了解とpull">3. コンテナを使う上での暗黙の了解とPULL</a>
 <ul class="sectlevel2">
-<li><a href="#_実行中のコンテナの確認">3.1. 実行中のコンテナの確認</a></li>
-<li><a href="#_コンテナを停止する">3.2. コンテナを停止する</a></li>
-<li><a href="#_稼働中のコンテナを確認する">3.3. 稼働中のコンテナを確認する</a></li>
-<li><a href="#_停止しているコンテナを起動する">3.4. 停止しているコンテナを起動する</a></li>
+<li><a href="#_docker_hub_上のイメージを使用する">3.1. Docker Hub 上のイメージを使用する</a></li>
+<li><a href="#_docker_hub_以外のイメージを使用する">3.2. Docker Hub 以外のイメージを使用する</a></li>
 </ul>
 </li>
-<li><a href="#_演習2_os_のコンテナの実行">4. 演習2:  OS のコンテナの実行</a>
+<li><a href="#_演習1_nginx_のコンテナを起動する">4. 演習1: Nginx のコンテナを起動する</a>
 <ul class="sectlevel2">
-<li><a href="#_オプション_itd">4.1. オプション -itd</a></li>
-<li><a href="#_なぜコンテナが起動したままなのか">4.2. なぜコンテナが起動したままなのか</a></li>
-<li><a href="#_docker_attach_でコンテナの中を覗く">4.3. docker attach でコンテナの中を覗く</a></li>
-<li><a href="#_docker_exec_でコンテナの中を覗く">4.4. docker exec でコンテナの中を覗く</a></li>
+<li><a href="#_実行中のコンテナの確認">4.1. 実行中のコンテナの確認</a></li>
+<li><a href="#_コンテナを停止する">4.2. コンテナを停止する</a></li>
+<li><a href="#_稼働中のコンテナを確認する">4.3. 稼働中のコンテナを確認する</a></li>
+<li><a href="#_停止しているコンテナを起動する">4.4. 停止しているコンテナを起動する</a></li>
 </ul>
 </li>
-<li><a href="#_演習3_オリジナルの_nginx_のイメージを作る">5. 演習3: オリジナルの nginx のイメージを作る</a>
+<li><a href="#_演習2_os_のコンテナの実行">5. 演習2:  OS のコンテナの実行</a>
 <ul class="sectlevel2">
-<li><a href="#_手動作業によるイメージのビルド">5.1. 手動作業によるイメージのビルド</a></li>
-<li><a href="#_ベースイメージをダウンロードする">5.2. ベース・イメージをダウンロードする</a></li>
-<li><a href="#_yum_で_nginx_をインストール">5.3. yum で nginx をインストール</a></li>
-<li><a href="#_nginx_conf_を編集して_標準出力にログを吐くように変更">5.4. nginx.conf を編集して 標準出力にログを吐くように変更</a></li>
-<li><a href="#_nginx_の起動">5.5. nginx の起動</a></li>
-<li><a href="#_コンテナからexit">5.6. コンテナからexit</a></li>
-<li><a href="#_nginx_にアクセスできる事を確認">5.7. nginx にアクセスできる事を確認</a></li>
-<li><a href="#_コンテナ内にコンテナの外の_index_html_をコピー">5.8. コンテナ内にコンテナの外の index.html をコピー</a></li>
-<li><a href="#_イメージを_commit">5.9. イメージを Commit</a></li>
-<li><a href="#_作成したイメージの確認">5.10. 作成したイメージの確認</a></li>
-<li><a href="#_自分が作成したイメージからコンテナを作る">5.11. 自分が作成したイメージからコンテナを作る</a></li>
-<li><a href="#_docker_hubに_push_する">5.12. Docker Hubに push する。</a></li>
+<li><a href="#_オプション_itd">5.1. オプション -itd</a></li>
+<li><a href="#_なぜコンテナが起動したままなのか">5.2. なぜコンテナが起動したままなのか</a></li>
+<li><a href="#_docker_attach_でコンテナの中を覗く">5.3. docker attach でコンテナの中を覗く</a></li>
+<li><a href="#_docker_exec_でコンテナの中を覗く">5.4. docker exec でコンテナの中を覗く</a></li>
 </ul>
 </li>
-<li><a href="#_演習4_dockerfile_を使ってオリジナルの_nginx_のイメージを作る">6. 演習4 : Dockerfile を使ってオリジナルの nginx のイメージを作る</a>
+<li><a href="#_演習3_オリジナルの_nginx_のイメージを作る">6. 演習3: オリジナルの nginx のイメージを作る</a>
 <ul class="sectlevel2">
-<li><a href="#_dockerfile_を書く">6.1. Dockerfile を書く</a></li>
-<li><a href="#_build_する">6.2. build する</a></li>
-<li><a href="#_build_したイメージの確認">6.3. build したイメージの確認</a></li>
-<li><a href="#_docker_hub_に_push_する">6.4. Docker Hub に push する。</a></li>
-<li><a href="#_docker_hub_に_上がった事を確認する">6.5. Docker Hub に 上がった事を確認する</a></li>
+<li><a href="#_手動作業によるイメージのビルド">6.1. 手動作業によるイメージのビルド</a></li>
+<li><a href="#_ベースイメージをダウンロードする">6.2. ベース・イメージをダウンロードする</a></li>
+<li><a href="#_yum_で_nginx_をインストール">6.3. yum で nginx をインストール</a></li>
+<li><a href="#_nginx_conf_を編集して_標準出力にログを吐くように変更">6.4. nginx.conf を編集して 標準出力にログを吐くように変更</a></li>
+<li><a href="#_nginx_の起動">6.5. nginx の起動</a></li>
+<li><a href="#_コンテナからexit">6.6. コンテナからexit</a></li>
+<li><a href="#_nginx_にアクセスできる事を確認">6.7. nginx にアクセスできる事を確認</a></li>
+<li><a href="#_コンテナ内にコンテナの外の_index_html_をコピー">6.8. コンテナ内にコンテナの外の index.html をコピー</a></li>
+<li><a href="#_イメージを_commit">6.9. イメージを Commit</a></li>
+<li><a href="#_作成したイメージの確認">6.10. 作成したイメージの確認</a></li>
+<li><a href="#_自分が作成したイメージからコンテナを作る">6.11. 自分が作成したイメージからコンテナを作る</a></li>
+<li><a href="#_docker_hubに_push_する">6.12. Docker Hubに push する。</a></li>
+</ul>
+</li>
+<li><a href="#_演習4_dockerfile_を使ってオリジナルの_nginx_のイメージを作る">7. 演習4 : Dockerfile を使ってオリジナルの nginx のイメージを作る</a>
+<ul class="sectlevel2">
+<li><a href="#_dockerfile_を書く">7.1. Dockerfile を書く</a></li>
+<li><a href="#_build_する">7.2. build する</a></li>
+<li><a href="#_build_したイメージの確認">7.3. build したイメージの確認</a></li>
+<li><a href="#_docker_hub_に_push_する">7.4. Docker Hub に push する。</a></li>
+<li><a href="#_docker_hub_に_上がった事を確認する">7.5. Docker Hub に 上がった事を確認する</a></li>
+</ul>
+</li>
+<li><a href="#_閑話休題コンテナの整理に便利なオプション">8. 閑話休題：コンテナの整理に便利なオプション</a>
+<ul class="sectlevel2">
+<li><a href="#_docker_run_時に_rm_オプションを付ける">8.1. docker run 時に <code>--rm</code> オプションを付ける</a></li>
+<li><a href="#_コンテナを一気に消す">8.2. コンテナを一気に消す</a></li>
 </ul>
 </li>
 </ul>
@@ -914,14 +926,108 @@ Usage:  docker tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG]</code></pre>
 <pre class="highlightjs highlight"><code class="language-none hljs">docker rmi nginx:lattest   # nginx:latest はイメージ名</code></pre>
 </div>
 </div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_コンテナを使う上での暗黙の了解とpull">3. コンテナを使う上での暗黙の了解とPULL</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>Unresolved directive in index.adoc - include::chapter3.adoc[]</p>
+<p>ここでは、演習に入る前に、少し寄り道して <code>docker pull</code> について学んでみます。</p>
+</div>
+<div class="sect2">
+<h3 id="_docker_hub_上のイメージを使用する">3.1. Docker Hub 上のイメージを使用する</h3>
+<div class="paragraph">
+<p>単純にコンテナをダウンロードするだけであれば、</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">docker pull nginx</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>でダウンロード(<code>PULL</code>)する事ができます。</p>
+</div>
+<div class="paragraph">
+<p><code>docker run</code> というコマンドを前の章で使いましたが、実は、 <code>docker run</code> コマンドは <code>docker pull</code> と <code>docker create</code> と <code>docker start</code> の3つのコマンドをまとめたコマンドです。</p>
+</div>
+<div class="paragraph">
+<p>以下に <code>docker</code> で良く使うコマンドの関係性を図示してみました。</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/2-1-dockerhub.png" alt="left">
+</div>
+</div>
+<div class="paragraph">
+<p><code>docker run</code> が、<code>pull</code> <code>create</code> <code>start</code> をまとめたものである事がわかると思います。</p>
+</div>
+<div class="paragraph">
+<p>既にローカルに <code>pull</code> されたイメージがある場合は、<code>docker run</code> を実行してもインターネットから再ダウンロード( <code>pull</code> )される事はありません。</p>
+</div>
+<div class="paragraph">
+<p><code>create</code> と <code>start</code> はとりあえず置いておいて、ここでは <code>pull</code> に注目します。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">docker pull nginx</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>では、単に <code>nginx</code> と指定していますが、幾つかの暗黙の省略が含まれています。</p>
+</div>
+<div class="paragraph">
+<p><code>docker</code> コマンドでは、 <code>nginx</code> と指定しただけで <a href="https://hub.docker.com" target="_blank" rel="noopener">Docker Hub</a> というコンテナレジストリにアクセスして、 <code>nginx</code> という名前のコンテナで <code>latest</code> というタグが付いたものを探してダウンロード( <code>pull</code> )してきます。</p>
+</div>
+<div class="paragraph">
+<p>なので省略されていますが、上のコマンドは以下のものと同じになります。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">docker pull nginx:latest</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>タグは、 <code>:(コロン)</code> を挟んで付加します。タグの <code>latest</code> 部分は、 <code>1.20</code> のようにバージョンを付ける事もあります。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">docker pull nginx:1.20</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>Registry</code> 上のイメージにどんなタグが付いているかの一覧の取得は、標準の <code>docker</code> コマンドではサポートされておらず、 <a href="https://registry.hub.docker.com/_/nginx?tab=tags" target="_blank" rel="noopener">Docker Hub</a> にアクセスして確認する必要があります。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_docker_hub_以外のイメージを使用する">3.2. Docker Hub 以外のイメージを使用する</h3>
+<div class="paragraph">
+<p>コンテナのイメージを  <a href="https://hub.docker.com" target="_blank" rel="noopener">Docker Hub</a> 以外のレジストリからダウンロード(<code>pull</code>)してきたい場合は、明示的に指定する必要があります。例えば、</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">docker run quay.io/centos/centos</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>は、 <code>quay.io</code> という <code>Red Hat</code> 社のコンテナレジストリの <code>centos/centos</code> というコンテナイメージの <code>latest</code> タグが付いたものを(ローカルに無ければ) ダウンロード( <code>pull</code> )して実行します。</p>
+</div>
+<div class="paragraph">
+<p>上記のコマンドは以下と同じになります。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">docker run quay.io/centos/centos:latest</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>ダウンロードしてきた <code>nginx</code> というイメージは、ローカルに保存され、次回、同じイメージが要求された時には、既にダウンロードされたものが使用されます。</p>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_演習1_nginx_のコンテナを起動する">3. 演習1: Nginx のコンテナを起動する</h2>
+<h2 id="_演習1_nginx_のコンテナを起動する">4. 演習1: Nginx のコンテナを起動する</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>こんどは、もう少しきちんと、コンテナを作成してみます。<code>docker run -d nginx</code> にもう少しオプションを足してみます。</p>
@@ -1003,7 +1109,7 @@ $</code></pre>
 </table>
 </div>
 <div class="sect2">
-<h3 id="_実行中のコンテナの確認">3.1. 実行中のコンテナの確認</h3>
+<h3 id="_実行中のコンテナの確認">4.1. 実行中のコンテナの確認</h3>
 <div class="paragraph">
 <p>実行中のコンテナは、以下のコマンドで確認できます。</p>
 </div>
@@ -1081,7 +1187,7 @@ $</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_コンテナを停止する">3.2. コンテナを停止する</h3>
+<h3 id="_コンテナを停止する">4.2. コンテナを停止する</h3>
 <div class="paragraph">
 <p>以下のコマンドで起動中のコンテナを停止する事ができます。</p>
 </div>
@@ -1102,7 +1208,7 @@ $</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_稼働中のコンテナを確認する">3.3. 稼働中のコンテナを確認する</h3>
+<h3 id="_稼働中のコンテナを確認する">4.3. 稼働中のコンテナを確認する</h3>
 <div class="paragraph">
 <p><strong>docker ps</strong></p>
 </div>
@@ -1142,7 +1248,7 @@ CONTAINER ID   IMAGE                    COMMAND                  CREATED        
 </div>
 </div>
 <div class="sect2">
-<h3 id="_停止しているコンテナを起動する">3.4. 停止しているコンテナを起動する</h3>
+<h3 id="_停止しているコンテナを起動する">4.4. 停止しているコンテナを起動する</h3>
 <div class="paragraph">
 <p>停止したコンテナは再度、起動させる事ができます。 <code>docer start &lt;コンテナ名&gt;</code> で起動できます。</p>
 </div>
@@ -1179,7 +1285,7 @@ $</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_演習2_os_のコンテナの実行">4. 演習2:  OS のコンテナの実行</h2>
+<h2 id="_演習2_os_のコンテナの実行">5. 演習2:  OS のコンテナの実行</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>演習1では <code>nginx</code> のコンテナを実行しました。</p>
@@ -1258,7 +1364,7 @@ $</code></pre>
 <p>ここで <code>-itd</code> というオプションは、使っていると意味をだんだんと忘れてしまい手が勝手に動くようになりますが、以下のような意味があります。</p>
 </div>
 <div class="sect2">
-<h3 id="_オプション_itd">4.1. オプション -itd</h3>
+<h3 id="_オプション_itd">5.1. オプション -itd</h3>
 <div class="paragraph">
 <p><code>-i</code> : interactive. Keep STDIN open even if not attached.<br>
 <code>-t</code> : Allocate a pseudo-TTY. コンテナに疑似tty(pseudo-TTY)を作る。<br>
@@ -1289,13 +1395,13 @@ $</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_なぜコンテナが起動したままなのか">4.2. なぜコンテナが起動したままなのか</h3>
+<h3 id="_なぜコンテナが起動したままなのか">5.2. なぜコンテナが起動したままなのか</h3>
 <div class="paragraph">
 <p><code>-t</code> オプションは、コンテナに、pts(疑似端末)を作るオプションです。疑似端末が作成され、起動した <code>bash</code> がインタラクティブモードで接続した状態になります。この <code>bash</code> が起動したままになるため、コンテナが終了せずに稼働し続ける事ができるようになっています。</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_docker_attach_でコンテナの中を覗く">4.3. docker attach でコンテナの中を覗く</h3>
+<h3 id="_docker_attach_でコンテナの中を覗く">5.3. docker attach でコンテナの中を覗く</h3>
 <div class="paragraph">
 <p>コンテナ <code>my-bunutu2</code> の中を覗いてみます。
 これは <code>docker attach  &lt;コンテナ名 | CONTAINER ID&gt;</code> で可能です。</p>
@@ -1346,7 +1452,7 @@ $</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_docker_exec_でコンテナの中を覗く">4.4. docker exec でコンテナの中を覗く</h3>
+<h3 id="_docker_exec_でコンテナの中を覗く">5.4. docker exec でコンテナの中を覗く</h3>
 <div class="paragraph">
 <p>先ほどのステップで停止してしまったコンテナを <code>docker start</code> コマンドで、再度起動します。</p>
 </div>
@@ -1417,10 +1523,10 @@ $</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_演習3_オリジナルの_nginx_のイメージを作る">5. 演習3: オリジナルの nginx のイメージを作る</h2>
+<h2 id="_演習3_オリジナルの_nginx_のイメージを作る">6. 演習3: オリジナルの nginx のイメージを作る</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_手動作業によるイメージのビルド">5.1. 手動作業によるイメージのビルド</h3>
+<h3 id="_手動作業によるイメージのビルド">6.1. 手動作業によるイメージのビルド</h3>
 <div class="paragraph">
 <p><code>Docker Hub</code> からダウンロードした <code>親イメージ</code> に、自分のアプリケーションとファイルを追加して新しいイメージを作ります。</p>
 </div>
@@ -1443,7 +1549,7 @@ $</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_ベースイメージをダウンロードする">5.2. ベース・イメージをダウンロードする</h3>
+<h3 id="_ベースイメージをダウンロードする">6.2. ベース・イメージをダウンロードする</h3>
 <div class="paragraph">
 <p>ここでは <code>Red Hat</code> が提供する <code>RHEL8</code> のベースイメージである <code>ubi8</code> を <code>Docker Hub</code> からダウンロード( <code>pull</code> )して使用します。</p>
 </div>
@@ -1519,7 +1625,7 @@ $</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_yum_で_nginx_をインストール">5.3. yum で nginx をインストール</h3>
+<h3 id="_yum_で_nginx_をインストール">6.3. yum で nginx をインストール</h3>
 <div class="paragraph">
 <p>コンテナ内で、 <code>yum</code> コマンド等で <code>nginx</code> をインストールします。</p>
 </div>
@@ -1530,7 +1636,7 @@ $</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_nginx_conf_を編集して_標準出力にログを吐くように変更">5.4. nginx.conf を編集して 標準出力にログを吐くように変更</h3>
+<h3 id="_nginx_conf_を編集して_標準出力にログを吐くように変更">6.4. nginx.conf を編集して 標準出力にログを吐くように変更</h3>
 <div class="paragraph">
 <p><code>nginx.conf</code> (nginxの構成ファイル）の編集は、コンテナを動かす事だけ考えるのであれば必須ではないですが、将来必ず通る道なので、コンテナ向きに少しカスタマイズします。</p>
 </div>
@@ -1649,7 +1755,7 @@ http {
 </div>
 </div>
 <div class="sect2">
-<h3 id="_nginx_の起動">5.5. nginx の起動</h3>
+<h3 id="_nginx_の起動">6.5. nginx の起動</h3>
 <div class="paragraph">
 <p>コンテナ内で <code>nginx</code> を起動します。</p>
 </div>
@@ -1664,7 +1770,7 @@ http {
 </div>
 </div>
 <div class="sect2">
-<h3 id="_コンテナからexit">5.6. コンテナからexit</h3>
+<h3 id="_コンテナからexit">6.6. コンテナからexit</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-none hljs">exit</code></pre>
@@ -1672,7 +1778,7 @@ http {
 </div>
 </div>
 <div class="sect2">
-<h3 id="_nginx_にアクセスできる事を確認">5.7. nginx にアクセスできる事を確認</h3>
+<h3 id="_nginx_にアクセスできる事を確認">6.7. nginx にアクセスできる事を確認</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-none hljs">$ curl localhost:8080</code></pre>
@@ -1680,7 +1786,7 @@ http {
 </div>
 </div>
 <div class="sect2">
-<h3 id="_コンテナ内にコンテナの外の_index_html_をコピー">5.8. コンテナ内にコンテナの外の index.html をコピー</h3>
+<h3 id="_コンテナ内にコンテナの外の_index_html_をコピー">6.8. コンテナ内にコンテナの外の index.html をコピー</h3>
 <div class="paragraph">
 <p>デフォルトの <code>index.html</code> は、実験用としては少し懲りすぎているので、以下のようなシンプルな <code>index.html</code> ファイルをテキストエディタで作成します。</p>
 </div>
@@ -1710,7 +1816,7 @@ http {
 </div>
 </div>
 <div class="sect2">
-<h3 id="_イメージを_commit">5.9. イメージを Commit</h3>
+<h3 id="_イメージを_commit">6.9. イメージを Commit</h3>
 <div class="paragraph">
 <p>今、稼働している <code>コンテナ</code> 、 <code>nginx-ubi8</code> をイメージ化します。
 イメージ名はタグ <code>1.0</code> を付加して <code>nginx-ubi8:1.0</code> とする事にします。</p>
@@ -1743,7 +1849,7 @@ http {
 </div>
 </div>
 <div class="sect2">
-<h3 id="_作成したイメージの確認">5.10. 作成したイメージの確認</h3>
+<h3 id="_作成したイメージの確認">6.10. 作成したイメージの確認</h3>
 <div class="paragraph">
 <p>イメージが作成されたか確認します。</p>
 </div>
@@ -1760,7 +1866,7 @@ redhat/ubi8                                               latest    cc0656847854
 </div>
 </div>
 <div class="sect2">
-<h3 id="_自分が作成したイメージからコンテナを作る">5.11. 自分が作成したイメージからコンテナを作る</h3>
+<h3 id="_自分が作成したイメージからコンテナを作る">6.11. 自分が作成したイメージからコンテナを作る</h3>
 <div class="paragraph">
 <p>自分が作成したイメージがきちんと使えるかコンテナを作って確認してみます。</p>
 </div>
@@ -1803,7 +1909,7 @@ $</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_docker_hubに_push_する">5.12. Docker Hubに push する。</h3>
+<h3 id="_docker_hubに_push_する">6.12. Docker Hubに push する。</h3>
 <div class="paragraph">
 <p>せっかくなので作成したイメージを <code>Docker Hub</code> にアカウントを作って保管します。</p>
 </div>
@@ -1883,7 +1989,7 @@ $</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_演習4_dockerfile_を使ってオリジナルの_nginx_のイメージを作る">6. 演習4 : Dockerfile を使ってオリジナルの nginx のイメージを作る</h2>
+<h2 id="_演習4_dockerfile_を使ってオリジナルの_nginx_のイメージを作る">7. 演習4 : Dockerfile を使ってオリジナルの nginx のイメージを作る</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>今度は演習3と同じ内容を <code>Dockerfile</code> を使用して行います。 <code>Dockerfile</code> でビルドの作業をスクリプト化できます。</p>
@@ -1894,7 +2000,7 @@ $</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_dockerfile_を書く">6.1. Dockerfile を書く</h3>
+<h3 id="_dockerfile_を書く">7.1. Dockerfile を書く</h3>
 <div class="paragraph">
 <p><code>Dockerfile</code> を使うと、演習3でやった元ネタになるイメージのダウンロード、イメージへの <code>nginx</code> のインストールまでの各種作業をスクリプト化できます。</p>
 </div>
@@ -2066,7 +2172,7 @@ $</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_build_する">6.2. build する</h3>
+<h3 id="_build_する">7.2. build する</h3>
 <div class="paragraph">
 <p><code>docker build</code> コマンドを実行すると <code>Dockerfile</code> という名前のファイルを探してきてその内容の作業を実行して、新しいイメージを作成してくれます。 <code>Dockerfile</code> という名前は変更もできますが、変更した場合は変更後のファイルを引数で指定する必要があります。</p>
 </div>
@@ -2105,7 +2211,7 @@ $</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_build_したイメージの確認">6.3. build したイメージの確認</h3>
+<h3 id="_build_したイメージの確認">7.3. build したイメージの確認</h3>
 <div class="paragraph">
 <p><code>docker images</code>　コマンドで、ビルドされたイメージを確認します。</p>
 </div>
@@ -2119,7 +2225,7 @@ yuhkih/nginx-ubi8-2                                       1.0       9539618c5467
 </div>
 </div>
 <div class="sect2">
-<h3 id="_docker_hub_に_push_する">6.4. Docker Hub に push する。</h3>
+<h3 id="_docker_hub_に_push_する">7.4. Docker Hub に push する。</h3>
 <div class="paragraph">
 <p>作成したイメージを <code>Docker Hub</code>　に <code>push</code>　します。</p>
 </div>
@@ -2141,7 +2247,7 @@ yuhkih/nginx-ubi8-2                                       1.0       9539618c5467
 </div>
 </div>
 <div class="sect2">
-<h3 id="_docker_hub_に_上がった事を確認する">6.5. Docker Hub に 上がった事を確認する</h3>
+<h3 id="_docker_hub_に_上がった事を確認する">7.5. Docker Hub に 上がった事を確認する</h3>
 <div class="paragraph">
 <p><code>Repository</code> 名を引数に <code>docker search</code> する事で <code>docker Hub</code> 上のイメージを確認できます。</p>
 </div>
@@ -2157,8 +2263,55 @@ yuhkih/nginx-ubi8-2                 0
 <p>無事に <code>docker Hub</code> に上がっている事が確認できました。</p>
 </div>
 <div class="paragraph">
-<p>以上で演習4は完了です。お疲れ様でした。
-Unresolved directive in index.adoc - include::intermission1.adoc[]</p>
+<p>以上で演習4は完了です。お疲れ様でした。</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_閑話休題コンテナの整理に便利なオプション">8. 閑話休題：コンテナの整理に便利なオプション</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><code>docker</code> の <code>イメージ</code> から作られた <code>コンテナ</code> は、起動する度にドンドン溜まっていきます。</p>
+</div>
+<div class="paragraph">
+<p>既に使った名前があると、同じ名前の <code>コンテナ</code> が作れなかったり、いろいろ不便ですので、使わなくなった <code>コンテナ</code> は、こま目に消していく必要があります。</p>
+</div>
+<div class="paragraph">
+<p>ここでは良く使われる、 <code>コンテナ</code> の削除に便利なコマンドを紹介します。</p>
+</div>
+<div class="sect2">
+<h3 id="_docker_run_時に_rm_オプションを付ける">8.1. docker run 時に <code>--rm</code> オプションを付ける</h3>
+<div class="paragraph">
+<p><code>--rm</code> オプションで、停止 (<code>docker stop</code>)した時に自動的に削除される <code>コンテナ</code> を作る事ができます。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">docker run --rm -itd --name my-test  &lt;イメージ名&gt;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_コンテナを一気に消す">8.2. コンテナを一気に消す</h3>
+<div class="paragraph">
+<p>現在稼働中の <code>コンテナ</code> <strong>以外</strong> の <code>コンテナ</code> を一括削除します。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">$ docker system prune
+WARNING! This will remove:
+  - all stopped containers
+  - all networks not used by at least one container
+  - all dangling images
+  - all dangling build cache
+
+Are you sure you want to continue? [y/N] y
+
+&lt;snip&gt;
+
+Total reclaimed space: 137.2MB
+$</code></pre>
+</div>
 </div>
 </div>
 </div>
@@ -2166,7 +2319,7 @@ Unresolved directive in index.adoc - include::intermission1.adoc[]</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-12-29 16:36:20 UTC
+Last updated 2021-12-29 16:39:14 UTC
 </div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.3/highlight.min.js"></script>
