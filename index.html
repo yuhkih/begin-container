@@ -808,8 +808,13 @@ ubuntu                                                    latest    ba6acccedd29
 <div class="sect3">
 <h4 id="_ユニークなイメージ">2.3.1. ユニークなイメージ</h4>
 <div class="paragraph">
-<p>また、忘れてはいけないのは <code>IMAGE ID</code> でもイメージを区別できます。
-<code>IMAGE ID</code> が同じでも違う <code>レポジトリ</code> 名 + <code>タグ</code> 名を持つイメージも存在します。以下の例は、あるイメージを別のイメージにコピーし作成した時の出力例です。同じ <code>IMAGE ID</code> を持っています。</p>
+<p>また、忘れてはいけないのは <code>IMAGE ID</code> でも <code>イメージ</code> を区別できます。</p>
+</div>
+<div class="paragraph">
+<p><code>IMAGE ID</code> は、その <code>イメージ</code> のデータとしての一意性を示します。そのため、 <code>IMAGE ID</code> が同じでも違う <code>レポジトリ</code> 名 + <code>タグ</code> 名を持つイメージも存在しえます。</p>
+</div>
+<div class="paragraph">
+<p>以下の例は、ある <code>イメージ</code> を別の <code>イメージ</code> にコピーし作成した時の出力例です。これはデータとしては、同じものなので、同じ <code>IMAGE ID</code> を持っています。</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -821,7 +826,7 @@ nginx-ubi8                                                1.0       6c364457d832
 </div>
 </div>
 <div class="paragraph">
-<p><code>docker</code> の世界では、一意に決まるユニークなイメージを想像した時に、 <code>レポジトリ</code> 名 + <code>タグ</code> 名 としての一意なのか、 <code>IMAGE ID</code> として一意なのか2通りがあります。</p>
+<p><code>docker</code> の世界では、一意に決まるユニークな <code>イメージ</code> を想像した時に、 <code>レポジトリ</code> 名 + <code>タグ</code> 名 としての一意なのか、 <code>IMAGE ID</code> として一意なのか2通りの捉え方がある事に注意しましょう。</p>
 </div>
 </div>
 <div class="sect3">
@@ -2260,7 +2265,7 @@ yuhkih/nginx-ubi8-2                 0
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-12-29 15:58:02 UTC
+Last updated 2021-12-29 16:03:08 UTC
 </div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.3/highlight.min.js"></script>
