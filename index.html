@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.16">
-<title>はじめに</title>
+<title>0.はじめに</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -437,13 +437,14 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
 </head>
-<body class="article toc2 toc-left">
+<body class="article">
 <div id="header">
-<h1>はじめに</h1>
-<div id="toc" class="toc2">
-<div id="toctitle">Table of Contents</div>
+</div>
+<div id="content">
+<div id="toc" class="toc">
+<div id="toctitle" class="title">Table of Contents</div>
 <ul class="sectlevel0">
-<li><a href="#_1_とりあえずコンテナを動かす">1.とりあえずコンテナを動かす</a>
+<li><a href="#_0_はじめに">0.はじめに</a>
 <ul class="sectlevel1">
 <li><a href="#_1_1_コンテナを実行する環境を作る">1.1.コンテナを実行する環境を作る</a></li>
 <li><a href="#_1_2_コンテナを動かしてみる">1.2.コンテナを動かしてみる</a></li>
@@ -454,14 +455,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_2_コンテナを使う上での暗黙の了解とpull">2.コンテナを使う上での暗黙の了解とPULL</a>
 <ul class="sectlevel1">
 <li><a href="#_2_1_docker_hub_上のイメージを使用する">2.1. Docker Hub 上のイメージを使用する</a></li>
-<li><a href="#_2_2_docker_hub_以外のイメージを使用する">2.2. Docker Hub 以外のイメージを使用する</a></li>
-</ul>
-</li>
-<li><a href="#_演習1_nginx_のコンテナを起動する">演習1: Nginx のコンテナを起動する</a>
+<li><a href="#_2_2_docker_hub_以外のイメージを使用する">2.2. Docker Hub 以外のイメージを使用する</a>
 <ul class="sectlevel2">
 <li><a href="#_コンテナを停止する">コンテナを停止する</a></li>
 <li><a href="#_稼働中のコンテナを確認する">稼働中のコンテナを確認する</a></li>
 <li><a href="#_停止しているコンテナを起動する">停止しているコンテナを起動する</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="#_演習2_osのコンテナの実行">演習2:  OSのコンテナの実行</a>
@@ -470,10 +470,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_なぜコンテナが起動したままなのか">なぜコンテナが起動したままなのか</a></li>
 <li><a href="#_docker_attach_でコンテナの中を覗く">docker attach でコンテナの中を覗く</a></li>
 <li><a href="#_docker_exec_でコンテナの中を覗く">docker exec でコンテナの中を覗く</a></li>
-</ul>
-</li>
-<li><a href="#_演習3_オリジナルの_nginx_のイメージを作る">演習3: オリジナルの nginx のイメージを作る</a>
-<ul class="sectlevel2">
 <li><a href="#_手動作業によるイメージのビルド">手動作業によるイメージのビルド</a></li>
 <li><a href="#_ベースイメージをダウンロードする">ベース・イメージをダウンロードする</a></li>
 <li><a href="#_yum_で_nginx_をインストール">yum で nginx をインストール</a></li>
@@ -486,10 +482,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_作成したイメージの確認">作成したイメージの確認</a></li>
 <li><a href="#_自分が作成したイメージからコンテナを作る">自分が作成したイメージからコンテナを作る</a></li>
 <li><a href="#_docker_hubに_push_する">Docker Hubに push する。</a></li>
-</ul>
-</li>
-<li><a href="#_演習4_dockerfile_を使ってオリジナルの_nginx_のイメージを作る">演習4 : Dockerfile を使ってオリジナルの nginx のイメージを作る</a>
-<ul class="sectlevel2">
 <li><a href="#_dockerfile_を書く">Dockerfile を書く</a></li>
 <li><a href="#_build_する">build する</a></li>
 <li><a href="#_ビルドしたイメージの確認">ビルドしたイメージの確認</a></li>
@@ -499,10 +491,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ul>
 </div>
-</div>
-<div id="content">
-<div id="preamble">
-<div class="sectionbody">
+<h1 id="_0_はじめに" class="sect0">0.はじめに</h1>
 <div class="paragraph">
 <p>公式を含め、世の中にたくさん Docker のチュートリアルがありますが、自分の昔の作業メモを中心に内容を整理して解説を加えたら、必要最低限をおさえた実践的なものができるのではないだろうか。という発想で作って見ました。</p>
 </div>
@@ -510,11 +499,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>決して網羅的ではなく、文中で使ってないコマンドについて一覧のリストを作ったりもしていません。それは「こういう事はできないのかな」と思った時に、 <a href="https://docs.docker.com/get-started/overview/" target="_blank" rel="noopener">公式の Docker docs</a> や、 <a href="https://docs.docker.jp/" target="_blank" rel="noopener">翻訳版の Docker docs</a> 、 <a href="https://www.google.com/" target="_blank" rel="noopener">グーグル検索</a> で見つけてもらって、その代わりに文章量を減らして読みやすくしよう。という発想です。(それでも書いてみると、結構、長くなりました…）</p>
 </div>
 <div class="paragraph">
-<p>人によって必要な知識の範囲は違うと思いますが、お役に立ててれば幸いです。</p>
+<p>人によって必要な知識の範囲は違うと思いますが、お役に立ててれば幸いです。
+# 1.とりあえずコンテナを動かす</p>
 </div>
-</div>
-</div>
-<h1 id="_1_とりあえずコンテナを動かす" class="sect0">1.とりあえずコンテナを動かす</h1>
 <div class="sect1">
 <h2 id="_1_1_コンテナを実行する環境を作る">1.1.コンテナを実行する環境を作る</h2>
 <div class="sectionbody">
@@ -996,11 +983,8 @@ Usage:  docker tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG]</code></pre>
 </div>
 <div class="paragraph">
 <p>ダウンロードしてきた <code>nginx</code> というイメージは、ローカルに保存され、次回、同じイメージが要求された時には、既にダウンロードされたものが使用されます。
-:toc: left</p>
+# 演習1: Nginx のコンテナを起動する</p>
 </div>
-</div>
-</div>
-<h1 id="_演習1_nginx_のコンテナを起動する" class="sect0">演習1: Nginx のコンテナを起動する</h1>
 <div class="paragraph">
 <p>こんどは、もう少しきちんと、コンテナを作成してみます。<code>docker run -d nginx</code> にもう少しオプションを足してみます。</p>
 </div>
@@ -1254,6 +1238,8 @@ $</code></pre>
 <p>以上で演習1は完了です。</p>
 </div>
 </div>
+</div>
+</div>
 <h1 id="_演習2_osのコンテナの実行" class="sect0">演習2:  OSのコンテナの実行</h1>
 <div class="paragraph">
 <p>演習1では <code>nginx</code> のコンテナを実行しました。</p>
@@ -1484,10 +1470,9 @@ $</code></pre>
 </div>
 <div class="paragraph">
 <p>以上で演習2は完了です。お疲れ様でした。
-:toc: left</p>
+# 演習3: オリジナルの nginx のイメージを作る</p>
 </div>
 </div>
-<h1 id="_演習3_オリジナルの_nginx_のイメージを作る" class="sect0">演習3: オリジナルの nginx のイメージを作る</h1>
 <div class="sect2">
 <h3 id="_手動作業によるイメージのビルド">手動作業によるイメージのビルド</h3>
 <div class="paragraph">
@@ -1945,16 +1930,15 @@ $</code></pre>
 </div>
 <div class="paragraph">
 <p>以上で演習3は完了です。お疲れ様でした。
-:toc: left</p>
+# 演習4 : Dockerfile を使ってオリジナルの nginx のイメージを作る</p>
 </div>
-</div>
-<h1 id="_演習4_dockerfile_を使ってオリジナルの_nginx_のイメージを作る" class="sect0">演習4 : Dockerfile を使ってオリジナルの nginx のイメージを作る</h1>
 <div class="paragraph">
 <p>今度は演習3と同じ内容を <code>Dockerfile</code> を使用して行います。 <code>Dockerfile</code> でビルドの作業をスクリプト化できます。</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/practice4-procedure.png" alt="left">
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -1983,11 +1967,11 @@ ENTRYPOINT ["nginx"]</code></pre>
 <p><code>Dockerfile</code> の中身の解説は以下の通りです。</p>
 </div>
 <div class="paragraph">
-<p><code>FROM redhat/ubi8</code> : Docker Hub から redhat/ubi8 を PULLします。
-<code>RUN yum install -y nginx</code> :  redhat/ubi8 に nginx をインストールします。
-<code>COPY index.html /usr/share/nginx/html/index.html</code> : ホストOS上の[index.html]をコンテナ内の[/usr/share/nginx/html/index.html]にコピーします。
-<code>COPY nginx.conf /etc/nginx/nginx.conf</code> :　ホストOS上の[nginx.conf]をコンテナ内の[/etc/nginx/nginx.conf]にコピーします。
-<code>CMD ["-g","daemon off;"]</code> : コンテナ実行時に実行するコマンドのオプションです。演習3で[docker container comit]で指定したのと同じものです。
+<p><code>FROM redhat/ubi8</code> : Docker Hub から redhat/ubi8 を PULLします。<br>
+<code>RUN yum install -y nginx</code> :  redhat/ubi8 に nginx をインストールします。<br>
+<code>COPY index.html /usr/share/nginx/html/index.html</code> : ホストOS上の[index.html]をコンテナ内の[/usr/share/nginx/html/index.html]にコピーします。<br>
+<code>COPY nginx.conf /etc/nginx/nginx.conf</code> :　ホストOS上の[nginx.conf]をコンテナ内の[/etc/nginx/nginx.conf]にコピーします。<br>
+<code>CMD ["-g","daemon off;"]</code> : コンテナ実行時に実行するコマンドのオプションです。演習3で[docker container comit]で指定したのと同じものです。<br>
 <code>ENTRYPOINT ["nginx"]</code> : コンテナ実行時に実行するコマンドです。演習3で[docker container comit]で指定したのと同じものです</p>
 </div>
 <div class="paragraph">
@@ -2216,7 +2200,7 @@ yuhkih/nginx-ubi8-2                 0
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-12-29 07:33:23 UTC
+Last updated 2021-12-29 07:54:08 UTC
 </div>
 </div>
 </body>
