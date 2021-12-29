@@ -1,6 +1,3 @@
-:toc: macro
-toc::[]
-
 :toc: left
 # 0.はじめに
 
