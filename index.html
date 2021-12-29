@@ -450,13 +450,14 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_2_コンテナを使う上での暗黙の了解とpull">2.コンテナを使う上での暗黙の了解とPULL</a>
 <ul class="sectlevel1">
 <li><a href="#_2_1_docker_hub_上のイメージを使用する">2.1. Docker Hub 上のイメージを使用する</a></li>
-<li><a href="#_2_2_docker_hub_以外のイメージを使用する">2.2. Docker Hub 以外のイメージを使用する</a>
+<li><a href="#_2_2_docker_hub_以外のイメージを使用する">2.2. Docker Hub 以外のイメージを使用する</a></li>
+</ul>
+</li>
+<li><a href="#_演習1_nginx_のコンテナを起動する">演習1: Nginx のコンテナを起動する</a>
 <ul class="sectlevel2">
 <li><a href="#_コンテナを停止する">コンテナを停止する</a></li>
 <li><a href="#_稼働中のコンテナを確認する">稼働中のコンテナを確認する</a></li>
 <li><a href="#_停止しているコンテナを起動する">停止しているコンテナを起動する</a></li>
-</ul>
-</li>
 </ul>
 </li>
 <li><a href="#_演習2_osのコンテナの実行">演習2:  OSのコンテナの実行</a>
@@ -465,6 +466,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_なぜコンテナが起動したままなのか">なぜコンテナが起動したままなのか</a></li>
 <li><a href="#_docker_attach_でコンテナの中を覗く">docker attach でコンテナの中を覗く</a></li>
 <li><a href="#_docker_exec_でコンテナの中を覗く">docker exec でコンテナの中を覗く</a></li>
+</ul>
+</li>
+<li><a href="#_演習3_オリジナルの_nginx_のイメージを作る">演習3: オリジナルの nginx のイメージを作る</a>
+<ul class="sectlevel2">
 <li><a href="#_手動作業によるイメージのビルド">手動作業によるイメージのビルド</a></li>
 <li><a href="#_ベースイメージをダウンロードする">ベース・イメージをダウンロードする</a></li>
 <li><a href="#_yum_で_nginx_をインストール">yum で nginx をインストール</a></li>
@@ -477,6 +482,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_作成したイメージの確認">作成したイメージの確認</a></li>
 <li><a href="#_自分が作成したイメージからコンテナを作る">自分が作成したイメージからコンテナを作る</a></li>
 <li><a href="#_docker_hubに_push_する">Docker Hubに push する。</a></li>
+</ul>
+</li>
+<li><a href="#_演習4_dockerfile_を使ってオリジナルの_nginx_のイメージを作る">演習4 : Dockerfile を使ってオリジナルの nginx のイメージを作る</a>
+<ul class="sectlevel2">
 <li><a href="#_dockerfile_を書く">Dockerfile を書く</a></li>
 <li><a href="#_build_する">build する</a></li>
 <li><a href="#_ビルドしたイメージの確認">ビルドしたイメージの確認</a></li>
@@ -982,9 +991,11 @@ Usage:  docker tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG]</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>ダウンロードしてきた <code>nginx</code> というイメージは、ローカルに保存され、次回、同じイメージが要求された時には、既にダウンロードされたものが使用されます。
-# 演習1: Nginx のコンテナを起動する</p>
+<p>ダウンロードしてきた <code>nginx</code> というイメージは、ローカルに保存され、次回、同じイメージが要求された時には、既にダウンロードされたものが使用されます。</p>
 </div>
+</div>
+</div>
+<h1 id="_演習1_nginx_のコンテナを起動する" class="sect0">演習1: Nginx のコンテナを起動する</h1>
 <div class="paragraph">
 <p>こんどは、もう少しきちんと、コンテナを作成してみます。<code>docker run -d nginx</code> にもう少しオプションを足してみます。</p>
 </div>
@@ -1238,8 +1249,6 @@ $</code></pre>
 <p>以上で演習1は完了です。</p>
 </div>
 </div>
-</div>
-</div>
 <h1 id="_演習2_osのコンテナの実行" class="sect0">演習2:  OSのコンテナの実行</h1>
 <div class="paragraph">
 <p>演習1では <code>nginx</code> のコンテナを実行しました。</p>
@@ -1469,10 +1478,10 @@ $</code></pre>
 <p>なんとかく <code>attach</code> と <code>exec</code> のそれぞれで、コンテナの中を見る時の動きの違いがわかったと思います。</p>
 </div>
 <div class="paragraph">
-<p>以上で演習2は完了です。お疲れ様でした。
-# 演習3: オリジナルの nginx のイメージを作る</p>
+<p>以上で演習2は完了です。お疲れ様でした。</p>
 </div>
 </div>
+<h1 id="_演習3_オリジナルの_nginx_のイメージを作る" class="sect0">演習3: オリジナルの nginx のイメージを作る</h1>
 <div class="sect2">
 <h3 id="_手動作業によるイメージのビルド">手動作業によるイメージのビルド</h3>
 <div class="paragraph">
@@ -1929,16 +1938,16 @@ $</code></pre>
 <p>これでどこに居ても、どの端末を使っても <code>Docker Hub</code> に繋がる環境であれば、自分が作成したイメージを <code>pull</code> して使えるようになりました。</p>
 </div>
 <div class="paragraph">
-<p>以上で演習3は完了です。お疲れ様でした。
-# 演習4 : Dockerfile を使ってオリジナルの nginx のイメージを作る</p>
+<p>以上で演習3は完了です。お疲れ様でした。</p>
 </div>
+</div>
+<h1 id="_演習4_dockerfile_を使ってオリジナルの_nginx_のイメージを作る" class="sect0">演習4 : Dockerfile を使ってオリジナルの nginx のイメージを作る</h1>
 <div class="paragraph">
 <p>今度は演習3と同じ内容を <code>Dockerfile</code> を使用して行います。 <code>Dockerfile</code> でビルドの作業をスクリプト化できます。</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/practice4-procedure.png" alt="left">
-</div>
 </div>
 </div>
 <div class="sect2">
@@ -2200,7 +2209,7 @@ yuhkih/nginx-ubi8-2                 0
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-12-29 07:57:58 UTC
+Last updated 2021-12-29 08:02:00 UTC
 </div>
 </div>
 </body>
