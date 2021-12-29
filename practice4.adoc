@@ -1,11 +1,11 @@
 
-# 演習4 : Dockerfile を使ってオリジナルの nginx のイメージを作る
+== 演習4 : Dockerfile を使ってオリジナルの nginx のイメージを作る
 
 今度は演習3と同じ内容を `Dockerfile` を使用して行います。 `Dockerfile` でビルドの作業をスクリプト化できます。
 
 image::images/practice4-procedure.png[left]
 
-### Dockerfile を書く
+=== Dockerfile を書く
 
 `Dockerfile` を使うと、演習3でやった元ネタになるイメージのダウンロード、イメージへの `nginx` のインストールまでの各種作業をスクリプト化できます。
 
@@ -157,7 +157,7 @@ total 16
 $
 ```
 
-### build する
+=== build する
 
 `docker build` コマンドを実行すると `Dockerfile` という名前のファイルを探してきてその内容の作業を実行して、新しいイメージを作成してくれます。 `Dockerfile` という名前は変更もできますが、変更した場合は変更後のファイルを引数で指定する必要があります。
 
@@ -186,7 +186,7 @@ $ docker build . -t yuhkih/nginx-ubi8-2:1.0
 
 名前の付け方にいろいろルールがあり面倒ですが、このネーミング・ルールになれる必要があります。
 
-### ビルドしたイメージの確認
+=== build したイメージの確認
 
 `docker images`　コマンドで、ビルドされたイメージを確認します。
 
@@ -197,7 +197,7 @@ yuhkih/nginx-ubi8-2                                       1.0       9539618c5467
 ...
 ```
 
-### Docker Hub に push する。
+=== Docker Hub に push する。
 
 作成したイメージを `Docker Hub`　に `push`　します。
 
@@ -213,7 +213,7 @@ $ docker login -u yuhkih -p <パスワード>
 $ docker push yuhkih/nginx-ubi8
 ```
 
-### Docker Hub に 上がった事を確認する
+=== Docker Hub に 上がった事を確認する
 
 `Repository` 名を引数に `docker search` する事で `docker Hub` 上のイメージを確認できます。
 
