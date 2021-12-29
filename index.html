@@ -1006,18 +1006,21 @@ Usage:  docker tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG]</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">docker run quay.io/centos/centos</code></pre>
+<pre class="highlightjs highlight"><code class="language-none hljs">docker pull quay.io/centos/centos</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>は、 <code>quay.io</code> という <code>Red Hat</code> 社のコンテナレジストリの <code>centos/centos</code> というコンテナイメージの <code>latest</code> タグが付いたものを(ローカルに無ければ) ダウンロード( <code>pull</code> )して実行します。</p>
+<p>は、 <code>quay.io</code> という <code>Red Hat</code> 社のコンテナレジストリの <code>centos/centos</code> という <code>レポジトリ</code> 名 の <code>latest</code> という <code>タグ</code> が付いたものを(ローカルに無ければ) ダウンロード( <code>pull</code> )してきます。</p>
+</div>
+<div class="paragraph">
+<p>この例であげている <code>レポジトリ</code> 名 <code>centos/centos</code> は、名前の中に <code>/</code> が入っています。 <code>レポジトリ</code> 名は、このように <code>/</code> が中に入っていたり、単純に <code>centos</code> のように <code>/</code> が無い名前までいろいろあり得ます。必ずしも <code>/</code> があるからと言って、 <code>レポジトリ</code> 名と <code>レジストリ</code> 名の区切りという訳ではないので、慣れる必要があります。</p>
 </div>
 <div class="paragraph">
 <p>上記のコマンドは以下と同じになります。</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">docker run quay.io/centos/centos:latest</code></pre>
+<pre class="highlightjs highlight"><code class="language-none hljs">docker pull quay.io/centos/centos:latest</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2319,7 +2322,7 @@ $</code></pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-12-29 16:39:14 UTC
+Last updated 2021-12-29 17:04:36 UTC
 </div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.3/highlight.min.js"></script>
