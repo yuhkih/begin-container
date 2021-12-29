@@ -4,9 +4,9 @@
 :toc-title: 目次
 :source-highlighter: highlight.js
 
-include::chapter0.adoc[]
 include::chapter1.adoc[]
 include::chapter2.adoc[]
+include::chapter3.adoc[]
 include::practice1.adoc[]
 include::practice2.adoc[]
 include::practice3.adoc[]
