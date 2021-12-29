@@ -22,7 +22,7 @@ jobs:
       id: documents
       uses: Analog-inc/asciidoctor-action@master
       with:
-        shellcommand: "asciidoctor README.adoc" 
+        shellcommand: "asciidoctor index.adoc" 
     # Use the output from the documents step
     - name: Save AsciiDoc step
       uses: actions/upload-artifact@v1
