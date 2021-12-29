@@ -33,7 +33,7 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           # .adoc ファイルは出力しない。.html と images だけが、gh-pages ブランチに出力される
-          exclude_assets: ".adoc"
+          exclude_assets: .adoc
           publish_branch: gh-pages
           # ブランチに Directory が事前に無いと何も出力されない
           publish_dir: ./
