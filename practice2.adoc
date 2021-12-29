@@ -1,5 +1,4 @@
-
-# 演習2:  OSのコンテナの実行
+== 演習2:  OSのコンテナの実行
 
 演習1では `nginx` のコンテナを実行しました。
 
@@ -47,7 +46,7 @@ $
 
 image::images/practice2-ubuntu-image.png[left]
 
-演習1では、 `nginx` がフォアグラウンドで稼働していたのでコンテナが稼働し続けてましたが、稼働し続けるプロセスが無いとこのようにコンテナ自体が終了してしまいます。
+演習1では `nginx` がフォアグラウンドで稼働していたのでコンテナが稼働し続けてましたが、稼働し続けるプロセスが無いとこのようにコンテナ自体が終了してしまいます。
 
 今度は、 `-itd` という起動オプションを付けて `my-ubuntu2` という名前のコンテナを作ります。
 
@@ -57,7 +56,7 @@ docker run -itd --name my-ubuntu2 ubuntu
 
 ここで `-itd` というオプションは、使っていると意味をだんだんと忘れてしまい手が勝手に動くようになりますが、以下のような意味があります。
 
-### オプション -itd 
+=== オプション -itd 
 `-i` : interactive. Keep STDIN open even if not attached. + 
 `-t` : Allocate a pseudo-TTY. コンテナに疑似tty(pseudo-TTY)を作る。 +
 `-d` : Run container in background and print container ID. デタッチ。コンテナをバックグラウンドで動かす。
@@ -80,11 +79,11 @@ $
 
 今度はコンテナが稼働したままです。
 
-### なぜコンテナが起動したままなのか
+=== なぜコンテナが起動したままなのか
 
 `-t` オプションは、コンテナに、pts(疑似端末)を作るオプションです。疑似端末が作成され、起動した `bash` がインタラクティブモードで接続した状態になります。この `bash` が起動したままになるため、コンテナが終了せずに稼働し続ける事ができるようになっています。
 
-### docker attach でコンテナの中を覗く
+=== docker attach でコンテナの中を覗く
 
 コンテナ `my-bunutu2` の中を覗いてみます。
 これは `docker attach  <コンテナ名 | CONTAINER ID>` で可能です。
@@ -125,7 +124,7 @@ CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
 $
 ```
 
-### docker exec でコンテナの中を覗く
+=== docker exec でコンテナの中を覗く
 
 先ほどのステップで停止してしまったコンテナを `docker start` コマンドで、再度起動します。
 

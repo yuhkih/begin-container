@@ -1,8 +1,9 @@
-# 2.コンテナを使う上での暗黙の了解とPULL
+
+== コンテナを使う上での暗黙の了解とPULL
 
 ここでは、演習に入る前に、少し寄り道して `docker pull` について学んでみます。
 
-## 2.1. Docker Hub 上のイメージを使用する
+=== Docker Hub 上のイメージを使用する
 
 単純にコンテナをダウンロードするだけであれば、
 
@@ -49,7 +50,7 @@ docker pull nginx:1.20
 `Registry` 上のイメージにどんなタグが付いているかの一覧の取得は、標準の `docker` コマンドではサポートされておらず、 https://registry.hub.docker.com/_/nginx?tab=tags[Docker Hub^] にアクセスして確認する必要があります。
 
 
-## 2.2. Docker Hub 以外のイメージを使用する
+=== Docker Hub 以外のイメージを使用する
 
 コンテナのイメージを  https://hub.docker.com[Docker Hub^] 以外のレジストリからダウンロード(`pull`)してきたい場合は、明示的に指定する必要があります。例えば、
 
