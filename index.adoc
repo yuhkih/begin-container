@@ -1002,10 +1002,10 @@ $ docker container commit -c 'ENTRYPOINT ["nginx"]'  -c 'CMD ["-g","daemon off;"
 
 ここで付けたオプションは以下の通りです。
 
-`-c 'ENTRYPOINT ["nginx"]'` : ENTRYPOINTはコンテナ実行時に、実行するコマンドと引数です。コンテナ開始時にnginxが実行されます。
-`-c 'CMD ["-g","daemon off;"]'` : CMDの指定値は、ENTRYPOINTの指定がある場合は、その引数となります。
-`nginx-ubi8` : 生成するイメージの元になるコンテナ名です。
-`nginx-ubi8:1.0` :コンテナから作成するイメージの名前です。
+`-c 'ENTRYPOINT ["nginx"]'` : ENTRYPOINTはコンテナ実行時に、実行するコマンドと引数です。コンテナ開始時にnginxが実行されます。 + 
+`-c 'CMD ["-g","daemon off;"]'` : CMDの指定値は、ENTRYPOINTの指定がある場合は、その引数となります。 + 
+`nginx-ubi8` : 生成するイメージの元になるコンテナ名です。 +
+`nginx-ubi8:1.0` :コンテナから作成するイメージの名前です。 +
 
 `-c` で指定している `ENTRYPOINT` や、`CMD` の少し難しく見えますが結果として、 `nginx -g "daemon off;"` というコマンドがコンテナ起動時に実行されて、 `nginx` が起動する事になります。
 

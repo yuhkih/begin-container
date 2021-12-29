@@ -1819,10 +1819,10 @@ http {
 <p>ここで付けたオプションは以下の通りです。</p>
 </div>
 <div class="paragraph">
-<p><code>-c 'ENTRYPOINT ["nginx"]'</code> : ENTRYPOINTはコンテナ実行時に、実行するコマンドと引数です。コンテナ開始時にnginxが実行されます。
-<code>-c 'CMD ["-g","daemon off;"]'</code> : CMDの指定値は、ENTRYPOINTの指定がある場合は、その引数となります。
-<code>nginx-ubi8</code> : 生成するイメージの元になるコンテナ名です。
-<code>nginx-ubi8:1.0</code> :コンテナから作成するイメージの名前です。</p>
+<p><code>-c 'ENTRYPOINT ["nginx"]'</code> : ENTRYPOINTはコンテナ実行時に、実行するコマンドと引数です。コンテナ開始時にnginxが実行されます。<br>
+<code>-c 'CMD ["-g","daemon off;"]'</code> : CMDの指定値は、ENTRYPOINTの指定がある場合は、その引数となります。<br>
+<code>nginx-ubi8</code> : 生成するイメージの元になるコンテナ名です。<br>
+<code>nginx-ubi8:1.0</code> :コンテナから作成するイメージの名前です。<br></p>
 </div>
 <div class="paragraph">
 <p><code>-c</code> で指定している <code>ENTRYPOINT</code> や、<code>CMD</code> の少し難しく見えますが結果として、 <code>nginx -g "daemon off;"</code> というコマンドがコンテナ起動時に実行されて、 <code>nginx</code> が起動する事になります。</p>
@@ -2257,7 +2257,7 @@ yuhkih/nginx-ubi8-2                 0
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-12-29 15:05:06 UTC
+Last updated 2021-12-29 15:13:54 UTC
 </div>
 </div>
 </body>
