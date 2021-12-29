@@ -1,7 +1,3 @@
-:toc: left
-:toclevels: 5
-:sectnums:
-:toc-title: 目次
 
 == はじめに
 

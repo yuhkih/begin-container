@@ -1,11 +1,12 @@
 
+
 == とりあえずコンテナを動かす
 
 === コンテナを実行する環境を作る
 
 コンテナの実行環境として、 `Docker Desktop` を使用します。 `Windows` 版、 `Mac` 版がありますが、以下からダウンロードします。
 
-個人用であれば無償です。
+個人用途であれば無償で使用できます。
 
 https://www.docker.com/products/docker-desktop
 
@@ -22,6 +23,7 @@ https://www.docker.com/products/docker-desktop
 
 `Docker Hub` から `nginx` のイメージをダウンロードして、コンテナを実行するには以下のコマンドを実行します。
 
+[source, docker]
 ```
 docker run nginx
 ```
