@@ -1,0 +1,2164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.16">
+<title>はじめに</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
+<style>
+/*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
+/* Uncomment the following line when using as a custom stylesheet */
+/* @import "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700"; */
+html{font-family:sans-serif;-webkit-text-size-adjust:100%}
+a{background:none}
+a:focus{outline:thin dotted}
+a:active,a:hover{outline:0}
+h1{font-size:2em;margin:.67em 0}
+b,strong{font-weight:bold}
+abbr{font-size:.9em}
+abbr[title]{cursor:help;border-bottom:1px dotted #dddddf;text-decoration:none}
+dfn{font-style:italic}
+hr{height:0}
+mark{background:#ff0;color:#000}
+code,kbd,pre,samp{font-family:monospace;font-size:1em}
+pre{white-space:pre-wrap}
+q{quotes:"\201C" "\201D" "\2018" "\2019"}
+small{font-size:80%}
+sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}
+sup{top:-.5em}
+sub{bottom:-.25em}
+img{border:0}
+svg:not(:root){overflow:hidden}
+figure{margin:0}
+audio,video{display:inline-block}
+audio:not([controls]){display:none;height:0}
+fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}
+legend{border:0;padding:0}
+button,input,select,textarea{font-family:inherit;font-size:100%;margin:0}
+button,input{line-height:normal}
+button,select{text-transform:none}
+button,html input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}
+button[disabled],html input[disabled]{cursor:default}
+input[type=checkbox],input[type=radio]{padding:0}
+button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}
+textarea{overflow:auto;vertical-align:top}
+table{border-collapse:collapse;border-spacing:0}
+*,::before,::after{box-sizing:border-box}
+html,body{font-size:100%}
+body{background:#fff;color:rgba(0,0,0,.8);padding:0;margin:0;font-family:"Noto Serif","DejaVu Serif",serif;line-height:1;position:relative;cursor:auto;-moz-tab-size:4;-o-tab-size:4;tab-size:4;word-wrap:anywhere;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased}
+a:hover{cursor:pointer}
+img,object,embed{max-width:100%;height:auto}
+object,embed{height:100%}
+img{-ms-interpolation-mode:bicubic}
+.left{float:left!important}
+.right{float:right!important}
+.text-left{text-align:left!important}
+.text-right{text-align:right!important}
+.text-center{text-align:center!important}
+.text-justify{text-align:justify!important}
+.hide{display:none}
+img,object,svg{display:inline-block;vertical-align:middle}
+textarea{height:auto;min-height:50px}
+select{width:100%}
+.subheader,.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{line-height:1.45;color:#7a2518;font-weight:400;margin-top:0;margin-bottom:.25em}
+div,dl,dt,dd,ul,ol,li,h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6,pre,form,p,blockquote,th,td{margin:0;padding:0}
+a{color:#2156a5;text-decoration:underline;line-height:inherit}
+a:hover,a:focus{color:#1d4b8f}
+a img{border:0}
+p{line-height:1.6;margin-bottom:1.25em;text-rendering:optimizeLegibility}
+p aside{font-size:.875em;line-height:1.35;font-style:italic}
+h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{font-family:"Open Sans","DejaVu Sans",sans-serif;font-weight:300;font-style:normal;color:#ba3925;text-rendering:optimizeLegibility;margin-top:1em;margin-bottom:.5em;line-height:1.0125em}
+h1 small,h2 small,h3 small,#toctitle small,.sidebarblock>.content>.title small,h4 small,h5 small,h6 small{font-size:60%;color:#e99b8f;line-height:0}
+h1{font-size:2.125em}
+h2{font-size:1.6875em}
+h3,#toctitle,.sidebarblock>.content>.title{font-size:1.375em}
+h4,h5{font-size:1.125em}
+h6{font-size:1em}
+hr{border:solid #dddddf;border-width:1px 0 0;clear:both;margin:1.25em 0 1.1875em}
+em,i{font-style:italic;line-height:inherit}
+strong,b{font-weight:bold;line-height:inherit}
+small{font-size:60%;line-height:inherit}
+code{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;font-weight:400;color:rgba(0,0,0,.9)}
+ul,ol,dl{line-height:1.6;margin-bottom:1.25em;list-style-position:outside;font-family:inherit}
+ul,ol{margin-left:1.5em}
+ul li ul,ul li ol{margin-left:1.25em;margin-bottom:0}
+ul.square li ul,ul.circle li ul,ul.disc li ul{list-style:inherit}
+ul.square{list-style-type:square}
+ul.circle{list-style-type:circle}
+ul.disc{list-style-type:disc}
+ol li ul,ol li ol{margin-left:1.25em;margin-bottom:0}
+dl dt{margin-bottom:.3125em;font-weight:bold}
+dl dd{margin-bottom:1.25em}
+blockquote{margin:0 0 1.25em;padding:.5625em 1.25em 0 1.1875em;border-left:1px solid #ddd}
+blockquote,blockquote p{line-height:1.6;color:rgba(0,0,0,.85)}
+@media screen and (min-width:768px){h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2}
+h1{font-size:2.75em}
+h2{font-size:2.3125em}
+h3,#toctitle,.sidebarblock>.content>.title{font-size:1.6875em}
+h4{font-size:1.4375em}}
+table{background:#fff;margin-bottom:1.25em;border:1px solid #dedede;word-wrap:normal}
+table thead,table tfoot{background:#f7f8f7}
+table thead tr th,table thead tr td,table tfoot tr th,table tfoot tr td{padding:.5em .625em .625em;font-size:inherit;color:rgba(0,0,0,.8);text-align:left}
+table tr th,table tr td{padding:.5625em .625em;font-size:inherit;color:rgba(0,0,0,.8)}
+table tr.even,table tr.alt{background:#f8f8f7}
+table thead tr th,table tfoot tr th,table tbody tr td,table tr td,table tfoot tr td{line-height:1.6}
+h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2;word-spacing:-.05em}
+h1 strong,h2 strong,h3 strong,#toctitle strong,.sidebarblock>.content>.title strong,h4 strong,h5 strong,h6 strong{font-weight:400}
+.center{margin-left:auto;margin-right:auto}
+.stretch{width:100%}
+.clearfix::before,.clearfix::after,.float-group::before,.float-group::after{content:" ";display:table}
+.clearfix::after,.float-group::after{clear:both}
+:not(pre).nobreak{word-wrap:normal}
+:not(pre).nowrap{white-space:nowrap}
+:not(pre).pre-wrap{white-space:pre-wrap}
+:not(pre):not([class^=L])>code{font-size:.9375em;font-style:normal!important;letter-spacing:0;padding:.1em .5ex;word-spacing:-.15em;background:#f7f7f8;border-radius:4px;line-height:1.45;text-rendering:optimizeSpeed}
+pre{color:rgba(0,0,0,.9);font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;line-height:1.45;text-rendering:optimizeSpeed}
+pre code,pre pre{color:inherit;font-size:inherit;line-height:inherit}
+pre>code{display:block}
+pre.nowrap,pre.nowrap pre{white-space:pre;word-wrap:normal}
+em em{font-style:normal}
+strong strong{font-weight:400}
+.keyseq{color:rgba(51,51,51,.8)}
+kbd{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;display:inline-block;color:rgba(0,0,0,.8);font-size:.65em;line-height:1.45;background:#f7f7f7;border:1px solid #ccc;border-radius:3px;box-shadow:0 1px 0 rgba(0,0,0,.2),inset 0 0 0 .1em #fff;margin:0 .15em;padding:.2em .5em;vertical-align:middle;position:relative;top:-.1em;white-space:nowrap}
+.keyseq kbd:first-child{margin-left:0}
+.keyseq kbd:last-child{margin-right:0}
+.menuseq,.menuref{color:#000}
+.menuseq b:not(.caret),.menuref{font-weight:inherit}
+.menuseq{word-spacing:-.02em}
+.menuseq b.caret{font-size:1.25em;line-height:.8}
+.menuseq i.caret{font-weight:bold;text-align:center;width:.45em}
+b.button::before,b.button::after{position:relative;top:-1px;font-weight:400}
+b.button::before{content:"[";padding:0 3px 0 2px}
+b.button::after{content:"]";padding:0 2px 0 3px}
+p a>code:hover{color:rgba(0,0,0,.9)}
+#header,#content,#footnotes,#footer{width:100%;margin:0 auto;max-width:62.5em;*zoom:1;position:relative;padding-left:.9375em;padding-right:.9375em}
+#header::before,#header::after,#content::before,#content::after,#footnotes::before,#footnotes::after,#footer::before,#footer::after{content:" ";display:table}
+#header::after,#content::after,#footnotes::after,#footer::after{clear:both}
+#content{margin-top:1.25em}
+#content::before{content:none}
+#header>h1:first-child{color:rgba(0,0,0,.85);margin-top:2.25rem;margin-bottom:0}
+#header>h1:first-child+#toc{margin-top:8px;border-top:1px solid #dddddf}
+#header>h1:only-child,body.toc2 #header>h1:nth-last-child(2){border-bottom:1px solid #dddddf;padding-bottom:8px}
+#header .details{border-bottom:1px solid #dddddf;line-height:1.45;padding-top:.25em;padding-bottom:.25em;padding-left:.25em;color:rgba(0,0,0,.6);display:flex;flex-flow:row wrap}
+#header .details span:first-child{margin-left:-.125em}
+#header .details span.email a{color:rgba(0,0,0,.85)}
+#header .details br{display:none}
+#header .details br+span::before{content:"\00a0\2013\00a0"}
+#header .details br+span.author::before{content:"\00a0\22c5\00a0";color:rgba(0,0,0,.85)}
+#header .details br+span#revremark::before{content:"\00a0|\00a0"}
+#header #revnumber{text-transform:capitalize}
+#header #revnumber::after{content:"\00a0"}
+#content>h1:first-child:not([class]){color:rgba(0,0,0,.85);border-bottom:1px solid #dddddf;padding-bottom:8px;margin-top:0;padding-top:1rem;margin-bottom:1.25rem}
+#toc{border-bottom:1px solid #e7e7e9;padding-bottom:.5em}
+#toc>ul{margin-left:.125em}
+#toc ul.sectlevel0>li>a{font-style:italic}
+#toc ul.sectlevel0 ul.sectlevel1{margin:.5em 0}
+#toc ul{font-family:"Open Sans","DejaVu Sans",sans-serif;list-style-type:none}
+#toc li{line-height:1.3334;margin-top:.3334em}
+#toc a{text-decoration:none}
+#toc a:active{text-decoration:underline}
+#toctitle{color:#7a2518;font-size:1.2em}
+@media screen and (min-width:768px){#toctitle{font-size:1.375em}
+body.toc2{padding-left:15em;padding-right:0}
+#toc.toc2{margin-top:0!important;background:#f8f8f7;position:fixed;width:15em;left:0;top:0;border-right:1px solid #e7e7e9;border-top-width:0!important;border-bottom-width:0!important;z-index:1000;padding:1.25em 1em;height:100%;overflow:auto}
+#toc.toc2 #toctitle{margin-top:0;margin-bottom:.8rem;font-size:1.2em}
+#toc.toc2>ul{font-size:.9em;margin-bottom:0}
+#toc.toc2 ul ul{margin-left:0;padding-left:1em}
+#toc.toc2 ul.sectlevel0 ul.sectlevel1{padding-left:0;margin-top:.5em;margin-bottom:.5em}
+body.toc2.toc-right{padding-left:0;padding-right:15em}
+body.toc2.toc-right #toc.toc2{border-right-width:0;border-left:1px solid #e7e7e9;left:auto;right:0}}
+@media screen and (min-width:1280px){body.toc2{padding-left:20em;padding-right:0}
+#toc.toc2{width:20em}
+#toc.toc2 #toctitle{font-size:1.375em}
+#toc.toc2>ul{font-size:.95em}
+#toc.toc2 ul ul{padding-left:1.25em}
+body.toc2.toc-right{padding-left:0;padding-right:20em}}
+#content #toc{border:1px solid #e0e0dc;margin-bottom:1.25em;padding:1.25em;background:#f8f8f7;border-radius:4px}
+#content #toc>:first-child{margin-top:0}
+#content #toc>:last-child{margin-bottom:0}
+#footer{max-width:none;background:rgba(0,0,0,.8);padding:1.25em}
+#footer-text{color:hsla(0,0%,100%,.8);line-height:1.44}
+#content{margin-bottom:.625em}
+.sect1{padding-bottom:.625em}
+@media screen and (min-width:768px){#content{margin-bottom:1.25em}
+.sect1{padding-bottom:1.25em}}
+.sect1:last-child{padding-bottom:0}
+.sect1+.sect1{border-top:1px solid #e7e7e9}
+#content h1>a.anchor,h2>a.anchor,h3>a.anchor,#toctitle>a.anchor,.sidebarblock>.content>.title>a.anchor,h4>a.anchor,h5>a.anchor,h6>a.anchor{position:absolute;z-index:1001;width:1.5ex;margin-left:-1.5ex;display:block;text-decoration:none!important;visibility:hidden;text-align:center;font-weight:400}
+#content h1>a.anchor::before,h2>a.anchor::before,h3>a.anchor::before,#toctitle>a.anchor::before,.sidebarblock>.content>.title>a.anchor::before,h4>a.anchor::before,h5>a.anchor::before,h6>a.anchor::before{content:"\00A7";font-size:.85em;display:block;padding-top:.1em}
+#content h1:hover>a.anchor,#content h1>a.anchor:hover,h2:hover>a.anchor,h2>a.anchor:hover,h3:hover>a.anchor,#toctitle:hover>a.anchor,.sidebarblock>.content>.title:hover>a.anchor,h3>a.anchor:hover,#toctitle>a.anchor:hover,.sidebarblock>.content>.title>a.anchor:hover,h4:hover>a.anchor,h4>a.anchor:hover,h5:hover>a.anchor,h5>a.anchor:hover,h6:hover>a.anchor,h6>a.anchor:hover{visibility:visible}
+#content h1>a.link,h2>a.link,h3>a.link,#toctitle>a.link,.sidebarblock>.content>.title>a.link,h4>a.link,h5>a.link,h6>a.link{color:#ba3925;text-decoration:none}
+#content h1>a.link:hover,h2>a.link:hover,h3>a.link:hover,#toctitle>a.link:hover,.sidebarblock>.content>.title>a.link:hover,h4>a.link:hover,h5>a.link:hover,h6>a.link:hover{color:#a53221}
+details,.audioblock,.imageblock,.literalblock,.listingblock,.stemblock,.videoblock{margin-bottom:1.25em}
+details{margin-left:1.25rem}
+details>summary{cursor:pointer;display:block;position:relative;line-height:1.6;margin-bottom:.625rem;-webkit-tap-highlight-color:transparent}
+details>summary::before{content:"";border:solid transparent;border-left:solid;border-width:.3em 0 .3em .5em;position:absolute;top:.5em;left:-1.25rem;transform:translateX(15%)}
+details[open]>summary::before{border:solid transparent;border-top:solid;border-width:.5em .3em 0;transform:translateY(15%)}
+details>summary::after{content:"";width:1.25rem;height:1em;position:absolute;top:.3em;left:-1.25rem}
+.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{text-rendering:optimizeLegibility;text-align:left;font-family:"Noto Serif","DejaVu Serif",serif;font-size:1rem;font-style:italic}
+table.tableblock.fit-content>caption.title{white-space:nowrap;width:0}
+.paragraph.lead>p,#preamble>.sectionbody>[class=paragraph]:first-of-type p{font-size:1.21875em;line-height:1.6;color:rgba(0,0,0,.85)}
+.admonitionblock>table{border-collapse:separate;border:0;background:none;width:100%}
+.admonitionblock>table td.icon{text-align:center;width:80px}
+.admonitionblock>table td.icon img{max-width:none}
+.admonitionblock>table td.icon .title{font-weight:bold;font-family:"Open Sans","DejaVu Sans",sans-serif;text-transform:uppercase}
+.admonitionblock>table td.content{padding-left:1.125em;padding-right:1.25em;border-left:1px solid #dddddf;color:rgba(0,0,0,.6);word-wrap:anywhere}
+.admonitionblock>table td.content>:last-child>:last-child{margin-bottom:0}
+.exampleblock>.content{border:1px solid #e6e6e6;margin-bottom:1.25em;padding:1.25em;background:#fff;border-radius:4px}
+.exampleblock>.content>:first-child{margin-top:0}
+.exampleblock>.content>:last-child{margin-bottom:0}
+.sidebarblock{border:1px solid #dbdbd6;margin-bottom:1.25em;padding:1.25em;background:#f3f3f2;border-radius:4px}
+.sidebarblock>:first-child{margin-top:0}
+.sidebarblock>:last-child{margin-bottom:0}
+.sidebarblock>.content>.title{color:#7a2518;margin-top:0;text-align:center}
+.exampleblock>.content>:last-child>:last-child,.exampleblock>.content .olist>ol>li:last-child>:last-child,.exampleblock>.content .ulist>ul>li:last-child>:last-child,.exampleblock>.content .qlist>ol>li:last-child>:last-child,.sidebarblock>.content>:last-child>:last-child,.sidebarblock>.content .olist>ol>li:last-child>:last-child,.sidebarblock>.content .ulist>ul>li:last-child>:last-child,.sidebarblock>.content .qlist>ol>li:last-child>:last-child{margin-bottom:0}
+.literalblock pre,.listingblock>.content>pre{border-radius:4px;overflow-x:auto;padding:1em;font-size:.8125em}
+@media screen and (min-width:768px){.literalblock pre,.listingblock>.content>pre{font-size:.90625em}}
+@media screen and (min-width:1280px){.literalblock pre,.listingblock>.content>pre{font-size:1em}}
+.literalblock pre,.listingblock>.content>pre:not(.highlight),.listingblock>.content>pre[class=highlight],.listingblock>.content>pre[class^="highlight "]{background:#f7f7f8}
+.literalblock.output pre{color:#f7f7f8;background:rgba(0,0,0,.9)}
+.listingblock>.content{position:relative}
+.listingblock code[data-lang]::before{display:none;content:attr(data-lang);position:absolute;font-size:.75em;top:.425rem;right:.5rem;line-height:1;text-transform:uppercase;color:inherit;opacity:.5}
+.listingblock:hover code[data-lang]::before{display:block}
+.listingblock.terminal pre .command::before{content:attr(data-prompt);padding-right:.5em;color:inherit;opacity:.5}
+.listingblock.terminal pre .command:not([data-prompt])::before{content:"$"}
+.listingblock pre.highlightjs{padding:0}
+.listingblock pre.highlightjs>code{padding:1em;border-radius:4px}
+.listingblock pre.prettyprint{border-width:0}
+.prettyprint{background:#f7f7f8}
+pre.prettyprint .linenums{line-height:1.45;margin-left:2em}
+pre.prettyprint li{background:none;list-style-type:inherit;padding-left:0}
+pre.prettyprint li code[data-lang]::before{opacity:1}
+pre.prettyprint li:not(:first-child) code[data-lang]::before{display:none}
+table.linenotable{border-collapse:separate;border:0;margin-bottom:0;background:none}
+table.linenotable td[class]{color:inherit;vertical-align:top;padding:0;line-height:inherit;white-space:normal}
+table.linenotable td.code{padding-left:.75em}
+table.linenotable td.linenos{border-right:1px solid;opacity:.35;padding-right:.5em}
+pre.pygments .lineno{border-right:1px solid;opacity:.35;display:inline-block;margin-right:.75em}
+pre.pygments .lineno::before{content:"";margin-right:-.125em}
+.quoteblock{margin:0 1em 1.25em 1.5em;display:table}
+.quoteblock:not(.excerpt)>.title{margin-left:-1.5em;margin-bottom:.75em}
+.quoteblock blockquote,.quoteblock p{color:rgba(0,0,0,.85);font-size:1.15rem;line-height:1.75;word-spacing:.1em;letter-spacing:0;font-style:italic;text-align:justify}
+.quoteblock blockquote{margin:0;padding:0;border:0}
+.quoteblock blockquote::before{content:"\201c";float:left;font-size:2.75em;font-weight:bold;line-height:.6em;margin-left:-.6em;color:#7a2518;text-shadow:0 1px 2px rgba(0,0,0,.1)}
+.quoteblock blockquote>.paragraph:last-child p{margin-bottom:0}
+.quoteblock .attribution{margin-top:.75em;margin-right:.5ex;text-align:right}
+.verseblock{margin:0 1em 1.25em}
+.verseblock pre{font-family:"Open Sans","DejaVu Sans",sans-serif;font-size:1.15rem;color:rgba(0,0,0,.85);font-weight:300;text-rendering:optimizeLegibility}
+.verseblock pre strong{font-weight:400}
+.verseblock .attribution{margin-top:1.25rem;margin-left:.5ex}
+.quoteblock .attribution,.verseblock .attribution{font-size:.9375em;line-height:1.45;font-style:italic}
+.quoteblock .attribution br,.verseblock .attribution br{display:none}
+.quoteblock .attribution cite,.verseblock .attribution cite{display:block;letter-spacing:-.025em;color:rgba(0,0,0,.6)}
+.quoteblock.abstract blockquote::before,.quoteblock.excerpt blockquote::before,.quoteblock .quoteblock blockquote::before{display:none}
+.quoteblock.abstract blockquote,.quoteblock.abstract p,.quoteblock.excerpt blockquote,.quoteblock.excerpt p,.quoteblock .quoteblock blockquote,.quoteblock .quoteblock p{line-height:1.6;word-spacing:0}
+.quoteblock.abstract{margin:0 1em 1.25em;display:block}
+.quoteblock.abstract>.title{margin:0 0 .375em;font-size:1.15em;text-align:center}
+.quoteblock.excerpt>blockquote,.quoteblock .quoteblock{padding:0 0 .25em 1em;border-left:.25em solid #dddddf}
+.quoteblock.excerpt,.quoteblock .quoteblock{margin-left:0}
+.quoteblock.excerpt blockquote,.quoteblock.excerpt p,.quoteblock .quoteblock blockquote,.quoteblock .quoteblock p{color:inherit;font-size:1.0625rem}
+.quoteblock.excerpt .attribution,.quoteblock .quoteblock .attribution{color:inherit;font-size:.85rem;text-align:left;margin-right:0}
+p.tableblock:last-child{margin-bottom:0}
+td.tableblock>.content{margin-bottom:1.25em;word-wrap:anywhere}
+td.tableblock>.content>:last-child{margin-bottom:-1.25em}
+table.tableblock,th.tableblock,td.tableblock{border:0 solid #dedede}
+table.grid-all>*>tr>*{border-width:1px}
+table.grid-cols>*>tr>*{border-width:0 1px}
+table.grid-rows>*>tr>*{border-width:1px 0}
+table.frame-all{border-width:1px}
+table.frame-ends{border-width:1px 0}
+table.frame-sides{border-width:0 1px}
+table.frame-none>colgroup+*>:first-child>*,table.frame-sides>colgroup+*>:first-child>*{border-top-width:0}
+table.frame-none>:last-child>:last-child>*,table.frame-sides>:last-child>:last-child>*{border-bottom-width:0}
+table.frame-none>*>tr>:first-child,table.frame-ends>*>tr>:first-child{border-left-width:0}
+table.frame-none>*>tr>:last-child,table.frame-ends>*>tr>:last-child{border-right-width:0}
+table.stripes-all tr,table.stripes-odd tr:nth-of-type(odd),table.stripes-even tr:nth-of-type(even),table.stripes-hover tr:hover{background:#f8f8f7}
+th.halign-left,td.halign-left{text-align:left}
+th.halign-right,td.halign-right{text-align:right}
+th.halign-center,td.halign-center{text-align:center}
+th.valign-top,td.valign-top{vertical-align:top}
+th.valign-bottom,td.valign-bottom{vertical-align:bottom}
+th.valign-middle,td.valign-middle{vertical-align:middle}
+table thead th,table tfoot th{font-weight:bold}
+tbody tr th{background:#f7f8f7}
+tbody tr th,tbody tr th p,tfoot tr th,tfoot tr th p{color:rgba(0,0,0,.8);font-weight:bold}
+p.tableblock>code:only-child{background:none;padding:0}
+p.tableblock{font-size:1em}
+ol{margin-left:1.75em}
+ul li ol{margin-left:1.5em}
+dl dd{margin-left:1.125em}
+dl dd:last-child,dl dd:last-child>:last-child{margin-bottom:0}
+ol>li p,ul>li p,ul dd,ol dd,.olist .olist,.ulist .ulist,.ulist .olist,.olist .ulist{margin-bottom:.625em}
+ul.checklist,ul.none,ol.none,ul.no-bullet,ol.no-bullet,ol.unnumbered,ul.unstyled,ol.unstyled{list-style-type:none}
+ul.no-bullet,ol.no-bullet,ol.unnumbered{margin-left:.625em}
+ul.unstyled,ol.unstyled{margin-left:0}
+ul.checklist>li>p:first-child{margin-left:-1em}
+ul.checklist>li>p:first-child>.fa-square-o:first-child,ul.checklist>li>p:first-child>.fa-check-square-o:first-child{width:1.25em;font-size:.8em;position:relative;bottom:.125em}
+ul.checklist>li>p:first-child>input[type=checkbox]:first-child{margin-right:.25em}
+ul.inline{display:flex;flex-flow:row wrap;list-style:none;margin:0 0 .625em -1.25em}
+ul.inline>li{margin-left:1.25em}
+.unstyled dl dt{font-weight:400;font-style:normal}
+ol.arabic{list-style-type:decimal}
+ol.decimal{list-style-type:decimal-leading-zero}
+ol.loweralpha{list-style-type:lower-alpha}
+ol.upperalpha{list-style-type:upper-alpha}
+ol.lowerroman{list-style-type:lower-roman}
+ol.upperroman{list-style-type:upper-roman}
+ol.lowergreek{list-style-type:lower-greek}
+.hdlist>table,.colist>table{border:0;background:none}
+.hdlist>table>tbody>tr,.colist>table>tbody>tr{background:none}
+td.hdlist1,td.hdlist2{vertical-align:top;padding:0 .625em}
+td.hdlist1{font-weight:bold;padding-bottom:1.25em}
+td.hdlist2{word-wrap:anywhere}
+.literalblock+.colist,.listingblock+.colist{margin-top:-.5em}
+.colist td:not([class]):first-child{padding:.4em .75em 0;line-height:1;vertical-align:top}
+.colist td:not([class]):first-child img{max-width:none}
+.colist td:not([class]):last-child{padding:.25em 0}
+.thumb,.th{line-height:0;display:inline-block;border:4px solid #fff;box-shadow:0 0 0 1px #ddd}
+.imageblock.left{margin:.25em .625em 1.25em 0}
+.imageblock.right{margin:.25em 0 1.25em .625em}
+.imageblock>.title{margin-bottom:0}
+.imageblock.thumb,.imageblock.th{border-width:6px}
+.imageblock.thumb>.title,.imageblock.th>.title{padding:0 .125em}
+.image.left,.image.right{margin-top:.25em;margin-bottom:.25em;display:inline-block;line-height:0}
+.image.left{margin-right:.625em}
+.image.right{margin-left:.625em}
+a.image{text-decoration:none;display:inline-block}
+a.image object{pointer-events:none}
+sup.footnote,sup.footnoteref{font-size:.875em;position:static;vertical-align:super}
+sup.footnote a,sup.footnoteref a{text-decoration:none}
+sup.footnote a:active,sup.footnoteref a:active{text-decoration:underline}
+#footnotes{padding-top:.75em;padding-bottom:.75em;margin-bottom:.625em}
+#footnotes hr{width:20%;min-width:6.25em;margin:-.25em 0 .75em;border-width:1px 0 0}
+#footnotes .footnote{padding:0 .375em 0 .225em;line-height:1.3334;font-size:.875em;margin-left:1.2em;margin-bottom:.2em}
+#footnotes .footnote a:first-of-type{font-weight:bold;text-decoration:none;margin-left:-1.05em}
+#footnotes .footnote:last-of-type{margin-bottom:0}
+#content #footnotes{margin-top:-.625em;margin-bottom:0;padding:.75em 0}
+.gist .file-data>table{border:0;background:#fff;width:100%;margin-bottom:0}
+.gist .file-data>table td.line-data{width:99%}
+div.unbreakable{page-break-inside:avoid}
+.big{font-size:larger}
+.small{font-size:smaller}
+.underline{text-decoration:underline}
+.overline{text-decoration:overline}
+.line-through{text-decoration:line-through}
+.aqua{color:#00bfbf}
+.aqua-background{background:#00fafa}
+.black{color:#000}
+.black-background{background:#000}
+.blue{color:#0000bf}
+.blue-background{background:#0000fa}
+.fuchsia{color:#bf00bf}
+.fuchsia-background{background:#fa00fa}
+.gray{color:#606060}
+.gray-background{background:#7d7d7d}
+.green{color:#006000}
+.green-background{background:#007d00}
+.lime{color:#00bf00}
+.lime-background{background:#00fa00}
+.maroon{color:#600000}
+.maroon-background{background:#7d0000}
+.navy{color:#000060}
+.navy-background{background:#00007d}
+.olive{color:#606000}
+.olive-background{background:#7d7d00}
+.purple{color:#600060}
+.purple-background{background:#7d007d}
+.red{color:#bf0000}
+.red-background{background:#fa0000}
+.silver{color:#909090}
+.silver-background{background:#bcbcbc}
+.teal{color:#006060}
+.teal-background{background:#007d7d}
+.white{color:#bfbfbf}
+.white-background{background:#fafafa}
+.yellow{color:#bfbf00}
+.yellow-background{background:#fafa00}
+span.icon>.fa{cursor:default}
+a span.icon>.fa{cursor:inherit}
+.admonitionblock td.icon [class^="fa icon-"]{font-size:2.5em;text-shadow:1px 1px 2px rgba(0,0,0,.5);cursor:default}
+.admonitionblock td.icon .icon-note::before{content:"\f05a";color:#19407c}
+.admonitionblock td.icon .icon-tip::before{content:"\f0eb";text-shadow:1px 1px 2px rgba(155,155,0,.8);color:#111}
+.admonitionblock td.icon .icon-warning::before{content:"\f071";color:#bf6900}
+.admonitionblock td.icon .icon-caution::before{content:"\f06d";color:#bf3400}
+.admonitionblock td.icon .icon-important::before{content:"\f06a";color:#bf0000}
+.conum[data-value]{display:inline-block;color:#fff!important;background:rgba(0,0,0,.8);border-radius:50%;text-align:center;font-size:.75em;width:1.67em;height:1.67em;line-height:1.67em;font-family:"Open Sans","DejaVu Sans",sans-serif;font-style:normal;font-weight:bold}
+.conum[data-value] *{color:#fff!important}
+.conum[data-value]+b{display:none}
+.conum[data-value]::after{content:attr(data-value)}
+pre .conum[data-value]{position:relative;top:-.125em}
+b.conum *{color:inherit!important}
+.conum:not([data-value]):empty{display:none}
+dt,th.tableblock,td.content,div.footnote{text-rendering:optimizeLegibility}
+h1,h2,p,td.content,span.alt,summary{letter-spacing:-.01em}
+p strong,td.content strong,div.footnote strong{letter-spacing:-.005em}
+p,blockquote,dt,td.content,span.alt,summary{font-size:1.0625rem}
+p{margin-bottom:1.25rem}
+.sidebarblock p,.sidebarblock dt,.sidebarblock td.content,p.tableblock{font-size:1em}
+.exampleblock>.content{background:#fffef7;border-color:#e0e0dc;box-shadow:0 1px 4px #e0e0dc}
+.print-only{display:none!important}
+@page{margin:1.25cm .75cm}
+@media print{*{box-shadow:none!important;text-shadow:none!important}
+html{font-size:80%}
+a{color:inherit!important;text-decoration:underline!important}
+a.bare,a[href^="#"],a[href^="mailto:"]{text-decoration:none!important}
+a[href^="http:"]:not(.bare)::after,a[href^="https:"]:not(.bare)::after{content:"(" attr(href) ")";display:inline-block;font-size:.875em;padding-left:.25em}
+abbr[title]{border-bottom:1px dotted}
+abbr[title]::after{content:" (" attr(title) ")"}
+pre,blockquote,tr,img,object,svg{page-break-inside:avoid}
+thead{display:table-header-group}
+svg{max-width:100%}
+p,blockquote,dt,td.content{font-size:1em;orphans:3;widows:3}
+h2,h3,#toctitle,.sidebarblock>.content>.title{page-break-after:avoid}
+#header,#content,#footnotes,#footer{max-width:none}
+#toc,.sidebarblock,.exampleblock>.content{background:none!important}
+#toc{border-bottom:1px solid #dddddf!important;padding-bottom:0!important}
+body.book #header{text-align:center}
+body.book #header>h1:first-child{border:0!important;margin:2.5em 0 1em}
+body.book #header .details{border:0!important;display:block;padding:0!important}
+body.book #header .details span:first-child{margin-left:0!important}
+body.book #header .details br{display:block}
+body.book #header .details br+span::before{content:none!important}
+body.book #toc{border:0!important;text-align:left!important;padding:0!important;margin:0!important}
+body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-break-before:always}
+.listingblock code[data-lang]::before{display:block}
+#footer{padding:0 .9375em}
+.hide-on-print{display:none!important}
+.print-only{display:block!important}
+.hide-for-print{display:none!important}
+.show-for-print{display:inherit!important}}
+@media amzn-kf8,print{#header>h1:first-child{margin-top:1.25rem}
+.sect1{padding:0!important}
+.sect1+.sect1{border:0}
+#footer{background:none}
+#footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
+@media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
+</style>
+</head>
+<body class="article">
+<div id="header">
+<h1>はじめに</h1>
+</div>
+<div id="content">
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>公式を含め、世の中にたくさん Docker のチュートリアルがありますが、自分の昔の作業メモを中心に内容を整理して解説を加えたら、必要最低限をおさえた実践的なものができるのではないだろうか。という発想で作って見ました。</p>
+</div>
+<div class="paragraph">
+<p>決して網羅的ではなく、文中で使ってないコマンドについて一覧のリストを作ったりもしていません。それは「こういう事はできないのかな」と思った時に、 <a href="https://docs.docker.com/get-started/overview/" target="_blank" rel="noopener">公式の Docker docs</a> や、 <a href="https://docs.docker.jp/" target="_blank" rel="noopener">翻訳版の Docker docs</a> 、 <a href="https://www.google.com/" target="_blank" rel="noopener">グーグル検索</a> で見つけてもらって、その代わりに文章量を減らして読みやすくしよう。という発想です。(それでも書いてみると、結構、長くなりました…）</p>
+</div>
+<div class="paragraph">
+<p>人によって必要な知識の範囲は違うと思いますが、お役に立ててれば幸いです。</p>
+</div>
+</div>
+</div>
+<h1 id="_1_とりあえずコンテナを動かす" class="sect0">1.とりあえずコンテナを動かす</h1>
+<div class="sect1">
+<h2 id="_1_1_コンテナを実行する環境を作る">1.1.コンテナを実行する環境を作る</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>コンテナの実行環境として、 <code>Docker Desktop</code> を使用します。 <code>Windows</code> 版、 <code>Mac</code> 版がありますが、以下からダウンロードします。</p>
+</div>
+<div class="paragraph">
+<p>個人用であれば無償です。</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.docker.com/products/docker-desktop" class="bare">https://www.docker.com/products/docker-desktop</a></p>
+</div>
+<div class="paragraph">
+<p>何が一番楽でお金がかからないだろうか。と考えた結果、 <code>Mac</code> でも <code>Windows</code> でも共通に使えて、作業も楽なので、 <code>Docker Desktop</code> を選択してみました。
+<code>Linux</code> の仮想マシンを立てて、そこで <code>docker</code> を動かすなど選択肢はたくさんあると思いますのでお好きなもので構いません。</p>
+</div>
+<div class="paragraph">
+<p>このドキュメントを書いた、筆者の環境は 「Windows 10」 + 「Docker Desktop for Windows」 + 「WSL2」 です。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_1_2_コンテナを動かしてみる">1.2.コンテナを動かしてみる</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>例として、 <code>nginx</code> のコンテナを動かしてみます。このコンテナは <a href="https://hub.docker.com/" target="_blank" rel="noopener">Docker Hub</a> 上に既にあるものを使用します。</p>
+</div>
+<div class="paragraph">
+<p>コンテナは覚えなければいけない概念などがいろいろありますが、細かい話は後に譲るとして、このセクションでは、まずは単純に動かしてみて、「雰囲気」を掴んでみる事にしてみます。</p>
+</div>
+<div class="paragraph">
+<p><code>Docker Hub</code> から <code>nginx</code> のイメージをダウンロードして、コンテナを実行するには以下のコマンドを実行します。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>docker run nginx</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>これだけです。ただこれだと</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ docker run nginx
+&lt;省略&gt;
+2021/11/18 07:46:52 [notice] 1#1: nginx/1.21.3
+2021/11/18 07:46:52 [notice] 1#1: built by gcc 8.3.0 (Debian 8.3.0-6)
+2021/11/18 07:46:52 [notice] 1#1: OS: Linux 4.19.84-microsoft-standard
+2021/11/18 07:46:52 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2021/11/18 07:46:52 [notice] 1#1: start worker processes
+2021/11/18 07:46:52 [notice] 1#1: start worker process 31
+2021/11/18 07:46:52 [notice] 1#1: start worker process 32
+2021/11/18 07:46:52 [notice] 1#1: start worker process 33
+2021/11/18 07:46:52 [notice] 1#1: start worker process 34
+2021/11/18 07:46:52 [notice] 1#1: start worker process 35
+2021/11/18 07:46:52 [notice] 1#1: start worker process 36
+2021/11/18 07:46:52 [notice] 1#1: start worker process 37
+2021/11/18 07:46:52 [notice] 1#1: start worker process 38
+2021/11/18 07:46:52 [notice] 1#1: start worker process 39
+2021/11/18 07:46:52 [notice] 1#1: start worker process 40
+2021/11/18 07:46:52 [notice] 1#1: start worker process 41
+2021/11/18 07:46:52 [notice] 1#1: start worker process 42</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>のようにプロンプトが戻ってこないので <strong>「Ctrl + C」で処理を停止してください。</strong></p>
+</div>
+<div class="paragraph">
+<p>次に以下を実行してみます。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ docker run -d nginx
+b0d570e09018fac53c58db702ca09c7689b200bd58bf3fad79748d240a8e3129
+$</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>今度はプロンプトが戻ってきたと思います。ここで使われている <code>-d</code> 「デタッチ」を意味します。先ほど、 <code>-d</code> を付けなかった時にプロンプトが返ってこなかった事と較べると、なんとなく「デタッチ」の感覚がつかめると思います。</p>
+</div>
+<div class="paragraph">
+<p><strong>稼働中のコンテナの確認</strong></p>
+</div>
+<div class="paragraph">
+<p>起動中のコンテナを確認するには、 <code>docker ps</code> を実行します。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ docker ps    # 起動中のコンテナの確認
+CONTAINER ID   IMAGE     COMMAND                  CREATED         STATUS         PORTS     NAMES
+b0d570e09018   nginx     "/docker-entrypoint.…"   5 seconds ago   Up 3 seconds   80/tcp    eager_benz
+$</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>ps</code> からイメージできるように、稼働中のコンテナをリストしてくれます。
+一つのコンテナが起動しているのがわかると思います。コンテナが仮想マシンとは違い「隔離されたプロセス」である事をなんとなく示唆してくれるコマンド名になっています。</p>
+</div>
+<div class="paragraph">
+<p>一番後ろの <code>NAMES</code> のコラムを見ると <code>eager_benz</code> と名前が付いてます。
+この名前は自分が指定した名前も付ける事ができますが、<strong>ユーザーが指定しなければ勝手につけられます。</strong>
+ランダムな名前は、「形容詞」+「著名人の名前」の形で生成されています。namesgenerator というパッケージで生成されておりソースは <a href="https://github.com/moby/moby/blob/master/pkg/namesgenerator/names-generator.go" target="_blank" rel="noopener">こちら</a> です。</p>
+</div>
+<div class="paragraph">
+<p><code>CONTAINER ID (b0d570e09018)</code> と <code>NAME (eager_benz)</code> は、自動で付けられるユニークな値で、コンテナの停止や開始時に識別子として使用する事ができます。</p>
+</div>
+<div class="paragraph">
+<p><strong>コンテナ名でコンテナを停止</strong></p>
+</div>
+<div class="paragraph">
+<p>コンテナを停止するには、 <code>docker stop &lt;コンテナ名 | CONTAINER ID&gt;</code> を使用します。
+まずはコンテナ名を指定して停止させてみます。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ docker stop eager_benz   # 起動したコンテナの停止
+eager_benz
+$</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>docker ps</code> で、起動しているコンテナが居ない事の確認</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+$</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>コンテナIDでコンテナを停止</strong></p>
+</div>
+<div class="paragraph">
+<p>さっきは <code>eager_benz</code> というコンテナ名を指定してを停止させましたが、 <code>CONTAINER ID</code> を使って以下のように停止させる事もできます。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ docker stop b0d570e09018     # 最後の IDは docker ps で表示されていた CONTAINER ID</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>停止したコンテナは完全に消えたわけではなく、停止した状態で残っています。以下のコマンドで停止中のコンテナを表示させる事ができます。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ docker ps -a
+CONTAINER ID   IMAGE                                                     COMMAND                  CREATED          STATUS                      PORTS                  NAMES
+b0d570e09018   nginx                                                     "/docker-entrypoint.…"   20 minutes ago   Exited (0) 5 minutes ago                           eager_benz
+$</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>CONTAINER ID</code> や、 <code>NAMES</code> の欄の値が起動していた時と同じ値である事を確認して下さい。</p>
+</div>
+<div class="paragraph">
+<p><strong>停止したコンテナの削除</strong></p>
+</div>
+<div class="paragraph">
+<p>完全にコンテナを消去するには、<code>docker rm  &lt;コンテナ名 | CONTAINER ID&gt;</code> を使用します。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ docker rm eager_benz
+eager_benz</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>コンテナが消えたか確認します。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ docker ps -a
+CONTAINER ID   IMAGE                                                     COMMAND                  CREATED          STATUS                      PORTS                  NAMES
+$</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>イメージのリスト</strong></p>
+</div>
+<div class="paragraph">
+<p>コンテナは消えましたが、コンテナの元になったイメージ <code>nginx</code> は、そのまま残っています。
+イメージを確認するには <code>docker images</code> で確認します。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ docker images
+REPOSITORY                                                TAG       IMAGE ID       CREATED         SIZE
+nginx                                                     latest    ea335eea17ab   1 weeks ago     141MB
+$</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>コンテナの <code>イメージ</code> と、それから作成される <code>コンテナ</code> の関係がなんとなく理解できたかなと思います。</p>
+</div>
+<div class="paragraph">
+<p><code>イメージ</code> と <code>コンテナ</code> は、大半のコンテキストで同じ意味の言葉として使用でき、合体させて <code>コンテナ・イメージ</code> 等と曖昧に使うケースもありますが、 <code>docker</code> コマンドの世界では、 <code>dockerイメージ</code> と <code>dockerコンテナ</code> は、明確に違うものを示します。</p>
+</div>
+<div class="paragraph">
+<p>関係を図示すると以下のようになります。</p>
+</div>
+<div class="imageblock text-left">
+<div class="content">
+<img src="images/1-2-image-and-container.png" alt="1 2 image and container">
+</div>
+</div>
+<div class="paragraph">
+<p>docker <code>イメージ</code> から作成されるのが docker <code>コンテナ</code> になります。</p>
+</div>
+<div class="paragraph">
+<p><strong>イメージの削除</strong></p>
+</div>
+<div class="paragraph">
+<p>イメージを削除するには、<code>docker rmi &lt;REPOSITORY名:TAG&gt;</code> で削除します。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ docker rmi nginx:latest
+Untagged: nginx:latest
+Untagged: nginx@sha256:097c3a0913d7e3a5b01b6c685a60c03632fc7a2b50bc8e35bcaa3691d788226e
+Deleted: sha256:ea335eea17ab984571cd4a3bcf90a0413773b559c75ef4cda07d0ce952b00291
+Deleted: sha256:cc284e9b1cbed75793782165a07a0c2139d8ec0116d1d562c0e2e504ed586238
+Deleted: sha256:6207e091bef7f1c94a109cb455ba163d53d7c2c641de65e71d3a0f33c0ebd8ae
+Deleted: sha256:97a18ff8c6973f64d763f004cad932319a1428e0502c0ec3e671e78b2f14256b
+Deleted: sha256:319130834f01416a2e8f9a4f2b2fa082c702ac21f16e0e2a206e23d53a0a3bae
+Deleted: sha256:1bc375f72973dc110c9629a694bc7476bf878d244287c0214e6436afd6a9d1b0
+$</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>dockerの世界では、 <code>TAG</code> も名前の一部で、イメージを削除する時は <code>TAG</code> も指定する必要がある事に注意して下さい。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_1_3_レポジトリとタグとイメージ名">1.3.レポジトリとタグとイメージ名</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>ここでは「レポジトリ」名、「タグ」名、「イメージ」名について、少し考えて見ます。</p>
+</div>
+<div class="paragraph">
+<p><code>docker images</code> の出力をよく見てみます。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ docker images
+REPOSITORY                                                TAG       IMAGE ID       CREATED         SIZE
+nginx                                                     latest    f652ca386ed1   3 weeks ago     141MB
+nginx                                                     1.20      aedf7f31bdab   5 weeks ago     141MB
+redhat/ubi8                                               latest    cc0656847854   7 weeks ago     216MB
+ubuntu                                                    latest    ba6acccedd29   2 months ago    72.8MB</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>ヘッダー部分の所に <code>REPOSITORY</code> と書いています。</p>
+</div>
+<div class="paragraph">
+<p>少し前のステップで、イメージの削除は <code>docker rmi &lt;REPOSITORY名:TAG&gt;</code> で行う。とさらっと書きましたが、直感的には <code>イメージ名</code> で良いような気もします。この <code>REPOSITORY</code> とは何でしょうか。</p>
+</div>
+<div class="paragraph">
+<p>イメージは <code>latest</code> や、 <code>1.0</code> 等のバージョンを表す <code>タグ</code> を付ける事で、同じグループのイメージである事を示す事ができます。 <code>docker</code> では、このグループの概念を <code>レポジトリ</code> と読んでいます。</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/1-3-repository.png" alt="left">
+</div>
+</div>
+<div class="paragraph">
+<p>ですので、 <code>docker images</code> の出力では、 <code>イメージ名</code> ではなく <code>レポジトリ</code> という表現になっています。</p>
+</div>
+<div class="paragraph">
+<p><code>レポジトリ名</code> だけでは、イメージを任意に区別できないので、 <code>レポジトリ</code> 名 + <code>タグ</code> 名の形で <code>docker</code> コマンドの引数に指定するのが殆どです。</p>
+</div>
+<div class="paragraph">
+<p><strong>ユニークなイメージ</strong></p>
+</div>
+<div class="paragraph">
+<p>また、忘れてはいけないのは <code>IMAGE ID</code> でもイメージを区別できます。
+<code>IMAGE ID</code> が同じでも違う <code>レポジトリ</code> 名 + <code>タグ</code> 名を持つイメージも存在します。以下の例は、あるイメージを別のイメージにコピーし作成した時の出力例です。同じ <code>IMAGE ID</code> を持っています。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ docker images
+REPOSITORY                                                TAG       IMAGE ID       CREATED         SIZE
+copy                                                      1.0       6c364457d832   3 days ago      303MB
+nginx-ubi8                                                1.0       6c364457d832   3 days ago      303MB
+...</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>docker</code> の世界では、一意に決まるユニークなイメージを想像した時に、 <code>レポジトリ</code> 名 + <code>タグ</code> 名 としての一意なのか、 <code>IMAGE ID</code> として一意なのか2通りがあります。</p>
+</div>
+<div class="paragraph">
+<p><strong>Docker のイメージ名とは？</strong></p>
+</div>
+<div class="paragraph">
+<p>Docker のマニュアルを <code>イメージ名(image name)</code> で検索すると、 <code>imagne name</code> という言葉の使われている場所は非常に少ないのですが、例えば、 <a href="https://docs.docker.com/engine/reference/commandline/inspect/#get-an-instances-image-name" target="_blank" rel="noopener">Get an instance’s image name</a> で紹介されている <code>docker inspect</code> コマンドで得られる <code>imagne name</code> とされるものは <code>tag</code> を含んだ値が得られます。(タグがlatestの場合は省略)。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-docker" data-lang="docker">$ docker inspect --format='{{.Config.Image}}' c3775755f851
+nginx:1.20
+$</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>ただ、一般的には <code>タグ</code> を抜いた <code>レポジトリ名</code> の事を <code>イメージ</code> 名と呼ばれるケースもあり、 <code>イメージ(名)</code> の定義はきちんと定まっておらず曖昧に使われているのが現状です。ここは初学者にはツライ所です。</p>
+</div>
+<div class="paragraph">
+<p>以下は <code>docker tag</code> コマンドのヘルプですが、 <code>レポジトリ名</code> と解釈される所は <code>SOURCE_IMAGE/TARGET_IMAGE</code> と記載されていて <code>[:TAG]</code> を付ける事ができるとされています。つまり、ここでは <code>SOURCE_IMAGE/TARGET_IMAGE</code> 名が <code>REPOSITORY</code> 名と同じ意味で使われています。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ docker tag --help
+Usage:  docker tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>また、実際のコマンドラインで <code>docker run nginx</code> と書いた時の <code>nginx</code> は、(レポジトリ名+タグ名)です。これは省略されているだけで <code>nginx:latest</code> を指します。ですので、タグが無い=レポジトリ名という区別も単純にはできません。</p>
+</div>
+<div class="paragraph">
+<p><code>docker</code> では、省略した記述が許されているため <code>nginx</code> と書いた時にそれはコンテキストによって <code>レポジトリ</code> であったり、 <code>イメージ名</code> でもありえます。さらに前述した <code>docker tag</code> コマンドのヘルプのように、タグを抜いた部分を「イメージ」と呼んでいるケースもあります。</p>
+</div>
+<div class="paragraph">
+<p>はじめのうちは混乱する部分なので、頭を柔軟に保つ必要があります。</p>
+</div>
+<div class="paragraph">
+<p>このガイドでは基本的に <code>&lt;レポジトリ名&gt;:&lt;タグ&gt;</code> の組み合わせを <code>イメージ</code> 名と呼ぶ事にします。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_1_4_このセクションで使用したコマンド">1.4.このセクションで使用したコマンド</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>初めのうちはコマンドを覚えられないと思うので、このセクションで使用した基本的なコマンドをまとめておきます。</p>
+</div>
+<div class="paragraph">
+<p>イメージ名 <code>nginx</code> (タグを省略しているので <code>nginx:latest</code> と解釈される)を <code>Docker Hub</code> からダウンロードして、 <code>-d (デタッチ）</code> で起動。コンテナ名は自動でランダム付ける</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>docker run -d nginx</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>起動しているコンテナの一覧</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>docker ps</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>起動しているコンテナを停止</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$docker stop eager_benz   # eager_benz は自動でランダムに付けられたコンテナ名</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>停止したものも含めたコンテナの一覧</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>docker ps　-a</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>コンテナの削除</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>docker rm eager_benz　　 # eager_genz はコンテナ名</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>イメージの削除</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>docker rmi nginx:lattest   # nginx:latest はイメージ名</code></pre>
+</div>
+</div>
+</div>
+</div>
+<h1 id="_2_コンテナを使う上での暗黙の了解とpull" class="sect0">2.コンテナを使う上での暗黙の了解とPULL</h1>
+<div class="paragraph">
+<p>ここでは、演習に入る前に、少し寄り道して <code>docker pull</code> について学んでみます。</p>
+</div>
+<div class="sect1">
+<h2 id="_2_1_docker_hub_上のイメージを使用する">2.1. Docker Hub 上のイメージを使用する</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>単純にコンテナをダウンロードするだけであれば、</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>docker pull nginx</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>でダウンロード(<code>PULL</code>)する事ができます。</p>
+</div>
+<div class="paragraph">
+<p><code>docker run</code> というコマンドを前の章で使いましたが、実は、 <code>docker run</code> コマンドは <code>docker pull</code> と <code>docker create</code> と <code>docker start</code> の3つのコマンドをまとめたコマンドです。</p>
+</div>
+<div class="paragraph">
+<p>以下に <code>docker</code> で良く使うコマンドの関係性を図示してみました。</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/2-1-dockerhub.png" alt="left">
+</div>
+</div>
+<div class="paragraph">
+<p><code>docker run</code> が、<code>pull</code> <code>create</code> <code>start</code> をまとめたものである事がわかると思います。</p>
+</div>
+<div class="paragraph">
+<p>既にローカルに <code>pull</code> されたイメージがある場合は、<code>docker run</code> を実行してもインターネットから再ダウンロード( <code>pull</code> )される事はありません。</p>
+</div>
+<div class="paragraph">
+<p><code>create</code> と <code>start</code> はとりあえず置いておいて、ここでは <code>pull</code> に注目します。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>docker pull nginx</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>では、単に <code>nginx</code> と指定していますが、幾つかの暗黙の省略が含まれています。</p>
+</div>
+<div class="paragraph">
+<p><code>docker</code> コマンドでは、 <code>nginx</code> と指定しただけで <a href="https://hub.docker.com" target="_blank" rel="noopener">Docker Hub</a> というコンテナレジストリにアクセスして、 <code>nginx</code> という名前のコンテナで <code>latest</code> というタグが付いたものを探してダウンロード( <code>pull</code> )してきます。</p>
+</div>
+<div class="paragraph">
+<p>なので省略されていますが、上のコマンドは以下のものと同じになります。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>docker pull nginx:latest</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>タグは、 <code>:(コロン)</code> を挟んで付加します。タグの <code>latest</code> 部分は、 <code>1.20</code> のようにバージョンを付ける事もあります。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>docker pull nginx:1.20</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>Registry</code> 上のイメージにどんなタグが付いているかの一覧の取得は、標準の <code>docker</code> コマンドではサポートされておらず、 <a href="https://registry.hub.docker.com/_/nginx?tab=tags" target="_blank" rel="noopener">Docker Hub</a> にアクセスして確認する必要があります。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_2_2_docker_hub_以外のイメージを使用する">2.2. Docker Hub 以外のイメージを使用する</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>コンテナのイメージを  <a href="https://hub.docker.com" target="_blank" rel="noopener">Docker Hub</a> 以外のレジストリからダウンロード(<code>pull</code>)してきたい場合は、明示的に指定する必要があります。例えば、</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>docker run quay.io/centos/centos</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>は、 <code>quay.io</code> という <code>Red Hat</code> 社のコンテナレジストリの <code>centos/centos</code> というコンテナイメージの <code>latest</code> タグが付いたものを(ローカルに無ければ) ダウンロード( <code>pull</code> )して実行します。</p>
+</div>
+<div class="paragraph">
+<p>上記のコマンドは以下と同じになります。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>docker run quay.io/centos/centos:latest</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>ダウンロードしてきた <code>nginx</code> というイメージは、ローカルに保存され、次回、同じイメージが要求された時には、既にダウンロードされたものが使用されます。
+:toc: left</p>
+</div>
+</div>
+</div>
+<h1 id="_演習1_nginx_のコンテナを起動する" class="sect0">演習1: Nginx のコンテナを起動する</h1>
+<div class="paragraph">
+<p>こんどは、もう少しきちんと、コンテナを作成してみます。<code>docker run -d nginx</code> にもう少しオプションを足してみます。</p>
+</div>
+<div class="paragraph">
+<p>以下のコマンドで、イメージ「<code>nginx</code>」から、コンテナ「<code>my-nginx</code>」が作成され起動します。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code> docker run -d -p 8080:80  --name  my-nginx   nginx</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>オプションについて解説します。これらは基本的なオプションなので暗記する必要があると思って下さい。</p>
+</div>
+<div class="paragraph">
+<p><strong>-d</strong>
+これは「デタッチ」モードを意味します。前のステップで <code>docker run nginx</code> を実行した時に、作業中のコンソールにカーソルが戻ってこなかったのを覚えていると思います。このオプションを付ける事で、コンテナを今使っているコンソールから切り離す(デタッチ)する事ができます。</p>
+</div>
+<div class="paragraph">
+<p><strong>-p 8080:80</strong>
+コンテナは、言うなれば、ただのプロセスです。同じ <code>OS</code> 上で同じポート番号を使用する複数のプロセスがあると、ポートの取り合いが起きて上手く動く動きません。</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/practice1-port.png" alt="left">
+</div>
+</div>
+<div class="paragraph">
+<p>上記のコマンドでは、OSから見たコンテナのポート「 <code>8080</code> 」をコンテナ内の「 <code>80</code> 」番ポートにフォワードする設定をしています。これにより既に OS上に <code>80</code> 番ポートを使うアプリケーションが稼働している場合の(多くの場合ありがちです) 競合を避けています。反対に「 <code>8080</code> 」はそのOS上で使われてなければ、他の任意のポート(例えば <code>8090</code> ) でも大丈夫です。</p>
+</div>
+<div class="paragraph">
+<p>同じホストOS上でたくさんのコンテナを使うには、同じIPアドレスを使う事になるので、ポートの衝突を避ける必要があります。
+個別にIPアドレスを持つ VM(仮想マシン)では、ポートが同じでもIPが違うのでアプリケーションのポートが衝突する事はありません。アプリケーション(コンテナ）のポートを変更するという考え方は、コンテナならではの作法になります。</p>
+</div>
+<div class="paragraph">
+<p>コンテナ内で <code>80</code> 番ポートを使うのは、この <code>nginx</code> のイメージが <code>80</code> を <code>LISTEN</code> するように作られているという暗黙の了解によるものです。もし全く知らないアプリケーションで、どこにもどのポートを <code>LISTEN</code> しているか記述されてない場合は全く検討がつかないものになります。</p>
+</div>
+<div class="paragraph">
+<p><strong>--name  my-nginx</strong>
+イメージ <code>nginx</code> を元に作成するコンテナ名を指定します。特に指定しない場合はランダムな名前が付けられます。以前の実験では、何も指定しなかったために <code>docker</code> によって <code>eager_benz</code> と言う名前が付けられていました。</p>
+</div>
+<div class="paragraph">
+<p><strong>nginx</strong>
+コンテナ <code>my-nginx</code> の元になるイメージ名です。これは暗黙の了解で、 <code>Docker Hub</code> 上の <code>nginx:latest</code> が検索されて使用されます。 <code>Docker Hub</code> 以外のレジストリ上のイメージを指定するには、明示的にそのレジストリ名を指定する必要があります。</p>
+</div>
+<div class="paragraph">
+<p>実際の実行結果は以下になります。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ docker run -d -p 8080:80  --name  my-nginx   nginx
+e0cc77bc866fe504b8053a7b201b7a469ec61d98a4fd3a6618be382e87fda34c
+
+$</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>コマンドプロンプトにカーソルが戻ってきました。 <code>-d</code> オプションのおかげです。</p>
+</div>
+<div class="paragraph">
+<p>もう一度、上記のコマンドの引数を軽くおさらいしておきます。これはコンテナをやって行く以上覚えなければいけないものなので、頭にたたきこんでおきましょう。</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p><strong>-d</strong> : デタッチ。コンテナの起動後に、コンテナと今使っているコンソールを切り離します。<br>
+<strong>-p</strong> : 8080:80  8080番ポートへのアクセスを、コンテナの80番ポートにフォワードする。<br>
+<strong>--name</strong> :  my-nginx   イメージ「nginx」を元に作る自分のコンテナの名前。<br>
+<strong>nginx</strong> : コンテナの元になるイメージ(この場合、インターネット上の Docker Hub 上に置かれているイメージ)</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>実行中のコンテナの確認</strong></p>
+</div>
+<div class="paragraph">
+<p>実行中のコンテナは、以下のコマンドで確認できます。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>docker ps</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>実際の実行結果は以下の通りです。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ docker ps
+CONTAINER ID   IMAGE                       COMMAND                  CREATED          STATUS                      PORTS                  NAMES
+7e7ffed26222   nginx                      "/docker-entrypoint.…"   33 minutes ago   Up 9 minutes                0.0.0.0:8080-&gt;80/tcp   my-nginx
+$</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>次にこのコンテナに、ブラウザを使ってアクセスしてみます。アクセスポートは、コンテナ作成時に指定した <code>8080</code> になります。コンテナ外部の <code>8080</code> ポートからコンテナ内部の <code>80</code> ポートにフォワードされます。</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/practice1-browser.png" alt="left">
+</div>
+</div>
+<div class="paragraph">
+<p>無事アクセスできました。</p>
+</div>
+<div class="paragraph">
+<p>毎回ブラウザを立ちあげるのも大変なので、CLIツールの <code>curl</code> を使ってアクセスにも慣れておきます。以下でアクセスできます。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>curl localhost:8080</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>実際に実行してみます。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ curl localhost:8080
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Welcome to nginx!&lt;/title&gt;
+&lt;style&gt;
+html { color-scheme: light dark; }
+body { width: 35em; margin: 0 auto;
+font-family: Tahoma, Verdana, Arial, sans-serif; }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;Welcome to nginx!&lt;/h1&gt;
+&lt;p&gt;If you see this page, the nginx web server is successfully installed and
+working. Further configuration is required.&lt;/p&gt;
+
+&lt;p&gt;For online documentation and support please refer to
+&lt;a href="http://nginx.org/"&gt;nginx.org&lt;/a&gt;.&lt;br/&gt;
+Commercial support is available at
+&lt;a href="http://nginx.com/"&gt;nginx.com&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Thank you for using nginx.&lt;/em&gt;&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+$</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>出力結果が大量にでますが、これは HTML のテキストがそのままコマンドプロンプトに表示されているためです。
+コンソールは、ブラウザのように HTMLを解釈する機能ないためこのような出力になります。</p>
+</div>
+<div class="sect2">
+<h3 id="_コンテナを停止する">コンテナを停止する</h3>
+<div class="paragraph">
+<p>以下のコマンドで起動中のコンテナを停止する事ができます。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>docker stop &lt;コンテナ名&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>実際に停止してみます。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ docker stop my-nginx
+my-nginx
+$</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_稼働中のコンテナを確認する">稼働中のコンテナを確認する</h3>
+<div class="paragraph">
+<p><strong>docker ps</strong></p>
+</div>
+<div class="paragraph">
+<p><code>dcoker ps</code> コマンドで稼働中のコンテナを確認してみます。 <code>my-nginx</code> は表示されないはずです。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+
+$</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>docker ps -a</strong></p>
+</div>
+<div class="paragraph">
+<p><code>docker ps</code> に <code>-a</code> オプションを付けた <code>docker ps -a</code> を使うと、既に停止したコンテナも確認できます。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>docker ps -a</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>実際に <code>docker ps -a</code> を実行してみます。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ docker ps -a
+CONTAINER ID   IMAGE                    COMMAND                  CREATED         STATUS                          PORTS     NAMES　                                  "/docker-entrypoint.…"   8 minutes ago   Exited (0) About a minute ago             my-nginx</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>STATUS</code> が <code>Exited (0)</code> になったコンテナ <code>my-nginx</code> が確認できます。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_停止しているコンテナを起動する">停止しているコンテナを起動する</h3>
+<div class="paragraph">
+<p>停止したコンテナは再度、起動させる事ができます。 <code>docer start &lt;コンテナ名&gt;</code> で起動できます。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>docker start &lt;コンテナ名&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>実際にコンテナを起動してみます。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ docker start my-nginx
+my-nginx
+$</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>コンテナの起動を <code>dokcer ps</code> コマンドで確認してみます。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ docker ps
+CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS          PORTS                  NAMES
+e0cc77bc866f   nginx     "/docker-entrypoint.…"   15 minutes ago   Up 35 seconds   0.0.0.0:8080-&gt;80/tcp   my-nginx
+$</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>以上で演習1は完了です。</p>
+</div>
+</div>
+<h1 id="_演習2_osのコンテナの実行" class="sect0">演習2:  OSのコンテナの実行</h1>
+<div class="paragraph">
+<p>演習1では <code>nginx</code> のコンテナを実行しました。</p>
+</div>
+<div class="paragraph">
+<p>こんどは、先ほどの <code>nginx</code> のようなアプリケーションが何もインストールされてない素の <code>OS</code> のイメージからコンテナを作成してみます。
+<code>Docker Hub</code> にあるる <code>ubuntu</code> のイメージを元にコンテナを作成・実行してみます。名前は <code>my-ubuntu</code> にします。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ docker run --name my-ubuntu  ubuntu
+
+Unable to find image 'ubuntu:latest' locally
+latest: Pulling from library/ubuntu
+7b1a6ab2e44d: Pull complete
+Digest: sha256:626ffe58f6e7566e00254b638eb7e0f3b11d4da9675088f4781a50ae288f3322
+Status: Downloaded newer image for ubuntu:latest
+
+$</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>ここでは、単にイメージ名として <code>ubuntu</code> とだけ指定しているので、 <code>Docker Hub</code> で公開されている <a href="https://hub.docker.com/_/ubuntu" target="_blank" rel="noopener">ubuntu</a> の <code>latest</code> のタグが付いたイメージがダウンロード( <code>pull</code> )されます。</p>
+</div>
+<div class="paragraph">
+<p>稼働しているかどうか <code>docker ps</code> で確認してみます。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+
+$</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>稼働してからすぐに Exit している事がわかります。</p>
+</div>
+<div class="paragraph">
+<p>今度は <code>docker ps -a</code> を使用して、停止したコンテナも確認してみます。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ docker ps -a
+CONTAINER ID   IMAGE                                                     COMMAND                  CREATED          STATUS                      PORTS                  NAMES
+10b401288650   ubuntu                                                    "bash"                   1 minutes ago   Exited (0) 1 minutes ago                          my-ubuntu
+
+$</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>これを見ると <code>bash</code> が一瞬実行されたものの、すぐに終了した事がわかります。このようにコンテナでは、フォアグラウンドで稼働するプロセスが無いとすぐに終了してしまいます。</p>
+</div>
+<div class="paragraph">
+<p>イメージの作りがどのようになっているかは、 <a href="https://hub.docker.com/layers/ubuntu/library/ubuntu/latest/images/sha256-f3113ef2fa3d3c9ee5510737083d6c39f74520a2da6eab72081d896d8592c078?context=explore" target="_blank" rel="noopener">Docker Hub</a> のページで確認ができますが、 <code>CMD["bash"]</code> と書かれており、これはコンテナ起動時に <code>bash</code> が実行されるように作られている事を意味します。が、この <code>bash</code> は、特にする事もないので、プロセスとしてはすぐに終了します。</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/practice2-ubuntu-image.png" alt="left">
+</div>
+</div>
+<div class="paragraph">
+<p>演習1では、 <code>nginx</code> がフォアグラウンドで稼働していたのでコンテナが稼働し続けてましたが、稼働し続けるプロセスが無いとこのようにコンテナ自体が終了してしまいます。</p>
+</div>
+<div class="paragraph">
+<p>今度は、 <code>-itd</code> という起動オプションを付けて <code>my-ubuntu2</code> という名前のコンテナを作ります。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>docker run -itd --name my-ubuntu2 ubuntu</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>ここで <code>-itd</code> というオプションは、使っていると意味をだんだんと忘れてしまい手が勝手に動くようになりますが、以下のような意味があります。</p>
+</div>
+<div class="sect2">
+<h3 id="_オプション_itd">オプション -itd</h3>
+<div class="paragraph">
+<p><code>-i</code> : interactive. Keep STDIN open even if not attached.<br>
+<code>-t</code> : Allocate a pseudo-TTY. コンテナに疑似tty(pseudo-TTY)を作る。<br>
+<code>-d</code> : Run container in background and print container ID. デタッチ。コンテナをバックグラウンドで動かす。</p>
+</div>
+<div class="paragraph">
+<p>これらはバラバラのオプションなので <code>-it -d</code> や、 <code>-i -t -d</code> のようにバラバラに指定もできます。
+殆どの用途で <code>-it</code> はセットで使われ、 <code>-it</code> や <code>-itd</code> のように使われます。</p>
+</div>
+<div class="paragraph">
+<p><code>-i</code> と <code>-t</code> は、コンテナと、自分が使っているホスト上のコンソールが、コンテナと通信できるようにセットアップするためのオプションです。
+<code>-it</code> は、今は、ひとかたまりに自分のコンソールからコンテナ内部を覗いて見るのに必要なオプション。と覚えておきましょう。</p>
+</div>
+<div class="paragraph">
+<p>次に、 <code>docker ps</code> コマンドでコンテナの稼働を確認してみます。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ docker ps
+CONTAINER ID   IMAGE     COMMAND       CREATED         STATUS         PORTS     NAMES
+34d28c35a11b   ubuntu    "bash"   5 minutes ago   Up 5 minutes             my-ubuntu2
+
+$</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>今度はコンテナが稼働したままです。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_なぜコンテナが起動したままなのか">なぜコンテナが起動したままなのか</h3>
+<div class="paragraph">
+<p><code>-t</code> オプションは、コンテナに、pts(疑似端末)を作るオプションです。疑似端末が作成され、起動した <code>bash</code> がインタラクティブモードで接続した状態になります。この <code>bash</code> が起動したままになるため、コンテナが終了せずに稼働し続ける事ができるようになっています。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_docker_attach_でコンテナの中を覗く">docker attach でコンテナの中を覗く</h3>
+<div class="paragraph">
+<p>コンテナ <code>my-bunutu2</code> の中を覗いてみます。
+これは <code>docker attach  &lt;コンテナ名 | CONTAINER ID&gt;</code> で可能です。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>docker attach my-ubuntu2
+root@34d28c35a11b:/# ps -ef
+UID        PID  PPID  C STIME TTY          TIME CMD
+root         1     0  0 04:57 pts/0    00:00:00 bash
+root        17     1  0 05:06 pts/0    00:00:00 ps -ef
+root@34d28c35a11b:</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>コマンドプロンプトが変わり、コンテナ内に入った事がわかります。
+同時に <code>ps -ef</code> コマンドを実行すると、 <code>bash</code> と自分自身である <code>ps -ef</code> しか動いてない事がわかります。
+<code>ps -ef</code> の親のプロセスは <code>PID=1</code> の <code>bash</code> である事がわかります。</p>
+</div>
+<div class="paragraph">
+<p><strong>コンテナにはログインの概念が無い</strong>ので、この <code>attach</code> というのはコンテナ独特の考え方になります。
+ログイン時に新規に <code>bash</code> 等のシェルが起動する Linux の通常のログインの仕組みと違い、既に動いていた <code>bash</code> を使用しています。</p>
+</div>
+<div class="paragraph">
+<p>次にこの <code>bash</code> 上で <code>exit</code> をしてみます。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>root@34d28c35a11b:/# exit
+exit
+
+$</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>exit</code> すると、はじめに動いていた <code>bash</code> からも <code>exit</code> してしまってコンテナが停止します。</p>
+</div>
+<div class="paragraph">
+<p><code>docker ps</code> でコンテナが終了している事を確認します。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+
+$</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_docker_exec_でコンテナの中を覗く">docker exec でコンテナの中を覗く</h3>
+<div class="paragraph">
+<p>先ほどのステップで停止してしまったコンテナを <code>docker start</code> コマンドで、再度起動します。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ docker start my-ubuntu2</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>今度は、<code>docker exec</code> というコマンドでコンテナの中を覗きます。</p>
+</div>
+<div class="paragraph">
+<p>正確には <code>docker exec</code> は、起動中のコンテナ内で新しいプロセスを起動するプロセスです。コンテナ内で起動する新しいプロセスを引数で指定する必要がありここでは <code>/bin/bash</code> を指定します。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ docker exec -it my-ubuntu2 /bin/bash
+root@34d28c35a11b:/# ps -ef
+UID        PID  PPID  C STIME TTY          TIME CMD
+root         1     0  0 05:15 pts/0    00:00:00 bash
+root        21     0  0 05:18 pts/1    00:00:00 /bin/bash
+root        29    21  0 05:18 pts/1    00:00:00 ps -ef
+root@34d28c35a11b:/#</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>中で <code>ps -ef</code> コマンドを実行すると、今度は3つのプロセスが動いており <code>ps -ef</code> の親プロセス IDは <code>PID=21</code> です。つまり <code>PID=21</code> が <code>docker exec</code> によって新規に起動された <code>bash(/bin/bash)</code> です。</p>
+</div>
+<div class="paragraph">
+<p>この <code>bash(/bin/bash)</code> が接続している <code>TTY</code> は <code>pts/1</code> になっていて、コンテナ内にもともと存在している <code>pts/0</code> とは別である事がわかります。</p>
+</div>
+<div class="paragraph">
+<p>コンテナから <code>exit</code> してみます。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>root@34d28c35a11b:/# exit
+exit
+
+$</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>docker ps</code> で確認すると、 <code>attach</code> でコンテナに接続した時とは違い、コンテナがまだ稼働したままである事がわかります。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ docker ps
+CONTAINER ID   IMAGE     COMMAND       CREATED          STATUS         PORTS     NAMES
+34d28c35a11b   ubuntu    "/bin/bash"   23 minutes ago   Up 5 minutes             my-ubuntu2
+
+$</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>docker exec</code> では新規に <code>/bin/bash</code> をコンテナ内で起動したので、<code>exit</code> で終了したのは新規に起動した <code>/bin/bash</code> だけになります。</p>
+</div>
+<div class="paragraph">
+<p>一方で <code>docker attach</code> では、元々、 <code>-t</code> オプションを付けた事でコンテナ内で起動していたシェルに接続( <code>attach</code> )し、そのシェルを <code>exit</code> してしまったため、他にプロセスがなくなりコンテナが終了してしまいました。</p>
+</div>
+<div class="paragraph">
+<p>なんとかく <code>attach</code> と <code>exec</code> のそれぞれで、コンテナの中を見る時の動きの違いがわかったと思います。</p>
+</div>
+<div class="paragraph">
+<p>以上で演習2は完了です。お疲れ様でした。
+:toc: left</p>
+</div>
+</div>
+<h1 id="_演習3_オリジナルの_nginx_のイメージを作る" class="sect0">演習3: オリジナルの nginx のイメージを作る</h1>
+<div class="sect2">
+<h3 id="_手動作業によるイメージのビルド">手動作業によるイメージのビルド</h3>
+<div class="paragraph">
+<p><code>Docker Hub</code> からダウンロードした <code>親イメージ</code> に、自分のアプリケーションとファイルを追加して新しいイメージを作ります。</p>
+</div>
+<div class="paragraph">
+<p>ここで行う作業の流れを図示すると以下の通りです。</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/practice3-procedure.png" alt="left">
+</div>
+</div>
+<div class="paragraph">
+<p><code>親イメージ</code> に、ファイルを追加したり、コンテナ実行時のコマンドを設定して、新しい <code>イメージ</code> を作る事を <code>ビルド</code> と言います。</p>
+</div>
+<div class="paragraph">
+<p>この <code>親イメージ</code> として、Linuxベンダーが提供している <code>ベース・イメージ</code> を <code>Docker Hub</code> から取得する所からはじめます。</p>
+</div>
+<div class="paragraph">
+<p>通常、コンテナの <code>イメージ</code> は、一つの <code>親イメージ</code> に修正を積みかさねる事で新しい <code>イメージ</code> を作っていきますが、 <code>ベース・イメージ</code> とは、それ以上の親がいない大元の <code>イメージ</code> を指します。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ベースイメージをダウンロードする">ベース・イメージをダウンロードする</h3>
+<div class="paragraph">
+<p>ここでは <code>Red Hat</code> が提供する <code>RHEL8</code> のベースイメージである <code>ubi8</code> を <code>Docker Hub</code> からダウンロード( <code>pull</code> )して使用します。</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/practice3-redhat-ubi8.png" alt="left">
+</div>
+</div>
+<div class="paragraph">
+<p><code>Docker Hub</code> 上の <code>redhat/ubi8</code> のレポジトリへの <a href="https://hub.docker.com/r/redhat/ubi8/tags" target="_blank" rel="noopener">リンクはこちら</a> です。</p>
+</div>
+<div class="paragraph">
+<p>イメージを作成する場合は、適当なイメージを使用するとマルウェアなどが含まれている可能性があるので、提供元のわかっているイメージを使用するようにしましょう。</p>
+</div>
+<div class="paragraph">
+<p>以下のコマンドを実行して、 <code>Red Hat</code> 社の <code>UBI</code> イメージをダウンロード( <code>pull</code> )します。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ docker pull redhat/ubi8</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>特にドメイン名を指定していませんが、お約束として <code>Docker Hub</code> に <code>redhat/ubi8</code> を探しに行って <code>pull</code> しています。</p>
+</div>
+<div class="paragraph">
+<p><code>pull</code> した <code>イメージ</code> を <code>docker images</code> コマンドで確認します。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ docker images
+REPOSITORY                                                TAG       IMAGE ID       CREATED        SIZE
+redhat/ubi8                                               latest    cc0656847854   7 days ago     216MB
+$</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>pull</code> したイメージを元に <code>nginx-ubi8</code> という名前のコンテナを作成します。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ docker run -dit -p 8080:80 --name nginx-ubi8 redhat/ubi8:latest</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>docker ps</code> で起動を確認します。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ docker ps
+CONTAINER ID   IMAGE                COMMAND       CREATED         STATUS         PORTS                  NAMES
+76304e983f34   redhat/ubi8:latest   "/bin/bash"   4 seconds ago   Up 3 seconds   0.0.0.0:8080-&gt;80/tcp   nginx-ubi8
+$</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>docker exec</code> コマンドを使い、コンテ内に新規にシェルを起動しコンテナの中に入ります。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ docker exec -it nginx-ubi8  /bin/bash
+[root@76304e983f34 /]#</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>コンテナの中に入ると、プロンプトが <code>$</code> から <code>[root@76304e983f34 /]</code> 等に変わっているはずです。</p>
+</div>
+<div class="paragraph">
+<p>この <code>コンテナ</code> には特に何もアプリケーションがインストールされていないので、インストールしていきます。</p>
+</div>
+<div class="paragraph">
+<p>ここからの作業は普通の <code>Linux</code> と殆ど同じです。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_yum_で_nginx_をインストール">yum で nginx をインストール</h3>
+<div class="paragraph">
+<p>コンテナ内で、 <code>yum</code> コマンド等で <code>nginx</code> をインストールします。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>yum install -y nginx</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_nginx_conf_を編集して_標準出力にログを吐くように変更">nginx.conf を編集して 標準出力にログを吐くように変更</h3>
+<div class="paragraph">
+<p><code>nginx.conf</code> (nginxの構成ファイル）の編集は、コンテナを動かす事だけ考えるのであれば必須ではないですが、将来必ず通る道なので、コンテナ向きに少しカスタマイズします。</p>
+</div>
+<div class="paragraph">
+<p><code>コンテナ</code> では、 <code>コンテナ</code> 内のファイルシステムに書き込まれたデータは、 <code>コンテナ</code> の削除時に消えてしまいます。</p>
+</div>
+<div class="paragraph">
+<p>基本的に <code>コンテナ</code> は作って、廃棄して、また作って。を繰り返すものなので、保存したいデータは <code>コンテナ</code> の外に書き出す作法になっています。ログも残したい場合は、その作法に従います。</p>
+</div>
+<div class="paragraph">
+<p><code>Docker</code> では標準出力と標準エラー出力を <code>コンテナ</code> を動かしているホスト上に残す事ができ、吐き出したログは <code>docker logs</code> コマンドでホスト上で確認できます。</p>
+</div>
+<div class="paragraph">
+<p><code>nginx</code> の構成ファイルである <code>nginx.conf</code> を編集して、 <code>nginx</code> のログを標準出力、標準エラー出力に書き出すように編集します。</p>
+</div>
+<div class="paragraph">
+<p>編集は <code>vi</code> で行います。 <code>vi</code> の使い方はここでは省略します。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-/etc/nginx/nginx.conf" data-lang="/etc/nginx/nginx.conf"># For more information on configuration, see:
+#   * Official English Documentation: http://nginx.org/en/docs/
+#   * Official Russian Documentation: http://nginx.org/ru/docs/
+
+user nginx;
+worker_processes auto;
+# error_log /var/log/nginx/error.log;
+error_log /dev/stderr; #(1) stderrに出力先を変更
+pid /run/nginx.pid;
+
+# Load dynamic modules. See /usr/share/doc/nginx/README.dynamic.
+include /usr/share/nginx/modules/*.conf;
+
+events {
+    worker_connections 1024;
+}
+
+http {
+    log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
+                      '$status $body_bytes_sent "$http_referer" '
+                      '"$http_user_agent" "$http_x_forwarded_for"';
+
+    access_log  /dev/stdout  main; #(2) stdoutに出力先を変更する
+
+    sendfile            on;
+    tcp_nopush          on;
+    tcp_nodelay         on;
+    keepalive_timeout   65;
+    types_hash_max_size 2048;
+
+    include             /etc/nginx/mime.types;
+    default_type        application/octet-stream;
+
+    # Load modular configuration files from the /etc/nginx/conf.d directory.
+    # See http://nginx.org/en/docs/ngx_core_module.html#include
+    # for more information.
+    include /etc/nginx/conf.d/*.conf;
+
+    server {
+        listen       80 default_server;
+        listen       [::]:80 default_server;
+        server_name  _;
+        root         /usr/share/nginx/html;
+
+        # Load configuration files for the default server block.
+        include /etc/nginx/default.d/*.conf;
+
+        location / {
+        }
+
+        error_page 404 /404.html;
+            location = /40x.html {
+        }
+
+        error_page 500 502 503 504 /50x.html;
+            location = /50x.html {
+        }
+    }
+
+# Settings for a TLS enabled server.
+#
+#    server {
+#        listen       443 ssl http2 default_server;
+#        listen       [::]:443 ssl http2 default_server;
+#        server_name  _;
+#        root         /usr/share/nginx/html;
+#
+#        ssl_certificate "/etc/pki/nginx/server.crt";
+#        ssl_certificate_key "/etc/pki/nginx/private/server.key";
+#        ssl_session_cache shared:SSL:1m;
+#        ssl_session_timeout  10m;
+#        ssl_ciphers PROFILE=SYSTEM;
+#        ssl_prefer_server_ciphers on;
+#
+#        # Load configuration files for the default server block.
+#        include /etc/nginx/default.d/*.conf;
+#
+#        location / {
+#        }
+#
+#        error_page 404 /404.html;
+#            location = /40x.html {
+#        }
+#
+#        error_page 500 502 503 504 /50x.html;
+#            location = /50x.html {
+#        }
+#    }
+
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>ログの出力先の変更は2箇所で行ってます。
+何かあった時もコンテナに入って確認してくも、コンテナの外からログを確認できるので便利です。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_nginx_を起動します">nginx を起動します。</h3>
+<div class="paragraph">
+<p>コンテナ内で <code>nginx</code> を起動します。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>nginx</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>このベースイメージには <code>ps</code> コマンドが入ってないのでここでは起動を確認せず、後でホストOSから <code>curl</code> でアクセス確認します。
+<code>yum -y install procps</code> で <code>ps</code> コマンドをインストールするしてもOKですが、コンテナは基本的に小さく作る事が作法になっているので、できるだけ不要なものは入れないようにします。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_コンテナからexit_します">コンテナからexit します。</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>exit</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_nginx_にアクセスできる事を確認します">nginx にアクセスできる事を確認します。</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ curl localhost:8080</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_コンテナ内にコンテナの外の_index_html_をコピーする">コンテナ内にコンテナの外の index.html をコピーする</h3>
+<div class="paragraph">
+<p>デフォルトの <code>index.html</code> は、実験用としては少し懲りすぎているので、以下のようなシンプルな <code>index.html</code> ファイルをテキストエディタで作成します。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-index.html" data-lang="index.html">&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;Test Page for the Nginx HTTP Server on Red Hat Enterprise Linux&lt;/title&gt;
+        &lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+       &lt;p&gt; Hello World &lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>docker cp</code> コマンドを使うとホストOS上のファイルを、コンテナ内にコピーでいます。
+以下のコマンドで、作成した <code>index.html</code> をコンテナ内の <code>/usr/share/nginx/html/index.html</code> に上書きします。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ docker cp index.html nginx-ubi8:/usr/share/nginx/html/index.html</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_イメージを_commit_する">イメージを Commit する</h3>
+<div class="paragraph">
+<p>今、稼働している <code>コンテナ</code> 、 <code>nginx-ubi8</code> をイメージ化します。
+イメージ名はタグ <code>1.0</code> を付加して <code>nginx-ubi8:1.0</code> とする事にします。</p>
+</div>
+<div class="paragraph">
+<p>これは <code>docker container commit</code> というコマンドで実行できます。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ docker container commit -c 'ENTRYPOINT ["nginx"]'  -c 'CMD ["-g","daemon off;"]'  nginx-ubi8  nginx-ubi8:1.0</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>ここで付けたオプションは以下の通りです。</p>
+</div>
+<div class="paragraph">
+<p><code>-c 'ENTRYPOINT ["nginx"]'</code> : ENTRYPOINTはコンテナ実行時に、実行するコマンドと引数です。コンテナ開始時にnginxが実行されます。
+<code>-c 'CMD ["-g","daemon off;"]'</code> : CMDの指定値は、ENTRYPOINTの指定がある場合は、その引数となります。
+<code>nginx-ubi8</code> : 生成するイメージの元になるコンテナ名です。
+<code>nginx-ubi8:1.0</code> :コンテナから作成するイメージの名前です。</p>
+</div>
+<div class="paragraph">
+<p><code>-c</code> で指定している <code>ENTRYPOINT</code> や、<code>CMD</code> の少し難しく見えますが結果として、 <code>nginx -g "daemon off;"</code> というコマンドがコンテナ起動時に実行されて、 <code>nginx</code> が起動する事になります。</p>
+</div>
+<div class="paragraph">
+<p><code>daemon off</code> は、 <code>nginx</code> のオプションで、通常だとバックグラウンドプロセスとして稼働する <code>nginx</code> をフォアグラウンドプロセスとして実行するためのオプションです。</p>
+</div>
+<div class="paragraph">
+<p>これはコンテナがフォアグラウンドプロセスが無いと終了してしまうために、通常バックグラウンドでデーモンとして稼働する <code>nginx</code> をフォアグラウンドプロセスにするためのオプションです。コンテナが稼働し続けるにはフォアグラウンドで稼働し続けるプロセスが必要です。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_作成したイメージの確認">作成したイメージの確認</h3>
+<div class="paragraph">
+<p>イメージが作成されたか確認します。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ docker images
+REPOSITORY                                                TAG       IMAGE ID       CREATED         SIZE
+nginx-ubi8                                                1.0       3b9b3870655f   5 seconds ago   303MB
+redhat/ubi8                                               latest    cc0656847854   7 days ago           216MB</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>nginx-ubi8</code> で、 <code>TAG</code> が <code>1.0</code> のつまり <code>nginx-ubi8:1.0</code> が作成されているのがわかります。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_自分が作成したイメージからコンテナを作る">自分が作成したイメージからコンテナを作る</h3>
+<div class="paragraph">
+<p>自分が作成したイメージがきちんと使えるかコンテナを作って確認してみます。</p>
+</div>
+<div class="paragraph">
+<p>イメージ名 <code>nginx-ubi8:1.0</code> を指定して以下のように実行します。
+<code>8080</code> ポートが使ったコンテナが動いてなけれれば <code>8080</code> を使っても良いですが、今度は <code>8090</code> を使ってみます。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ docker run -d -p 8090:80 --name my-ubi-nginx nginx-ubi8:1.0</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>curl</code> で確認してみると以下のような出力が返ってくるはずです。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ curl localhost:8090
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;Test Page for the Nginx HTTP Server on Red Hat Enterprise Linux&lt;/title&gt;
+        &lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+       &lt;p&gt; Hello World &lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+$</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>またアクセスログをコンテナ内のファイルに吐く設定から、標準出力に出すように変更したので、 <code>docker logs</code> コマンドで <code>nginx</code> のアクセスログが確認できるはずです。先ほど <code>curl</code> でアクセスしたので以下のようにログが出ているはずです。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ docker logs my-ubi-nginx
+172.17.0.1 - - [16/Dec/2021:08:06:39 +0000] "GET / HTTP/1.1" 200 305 "-" "curl/7.58.0" "-"
+$</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_docker_hubに_push_する">Docker Hubに push する。</h3>
+<div class="paragraph">
+<p>せっかくなので作成したイメージを <code>Docker Hub</code> にアカウントを作って保管します。</p>
+</div>
+<div class="paragraph">
+<p>1) <a href="https://hub.docker.com/" target="_blank" rel="noopener">Docker Hub</a> にアカウントを作ります。(詳細は省略します）
+2) コマンドラインから Docker Hub にログインします。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ docker login
+Login with your Docker ID to push and pull images from Docker Hub. If you don't have a Docker ID, head over to https://hub.docker.com to create one.
+Username: &lt;username&gt;
+Password:
+Login Succeeded
+$</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>3) Docker Hub 用の名前を付ける</p>
+</div>
+<div class="paragraph">
+<p>ローカルで作成したイメージ <code>nginx-ibu8:1.0</code> に対して、レポジトリに保管するための別の名前を付けます。
+<code>Docker Hub</code> に保管するための名前は、 <code>&lt;username&gt;</code> / <code>nginx-ibu8:1.0</code> のフォーマットである必要があります。</p>
+</div>
+<div class="paragraph">
+<p>間に <code>/</code> が入る名前ははじめは少々気持ち悪いですが、 <code>Docker</code> の世界はこういうものだと割り切りましょう。</p>
+</div>
+<div class="paragraph">
+<p><code>docker tag</code> コマンドで以下のようにする事で、別の名前のイメージができます。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$  docker tag nginx-ubi8:1.0 &lt;username&gt;/nginx-ubi8:1.0</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>これで新しい名前のイメージができているはずです。
+<code>docker images</code> を確認します。全く同じものですが、頭に <code>&lt;username&gt;</code> が付加された名前のイメージができているはずです。</p>
+</div>
+<div class="paragraph">
+<p>ここでの <code>&lt;username&gt;</code> は、 <code>yuhkih</code> という私のテスト・アカウント名を使っています。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ docker images
+REPOSITORY                                                TAG       IMAGE ID       CREATED         SIZE
+nginx-ubi8                                                1.0       bee26a68d934   3 days ago      303MB
+yuhkih/nginx-ubi8                                         1.0       bee26a68d934   3 days ago      303MB
+$</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>別名のイメージができたら、後は <code>Docker Hub</code> に <code>push</code> するだけです。
+<code>docker push</code>　コマンドで <code>push</code> します。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ docker push yuhkih/nginx-ubi8:1.0
+The push refers to repository [docker.io/yuhkih/nginx-ubi8]
+6f0e4904cc79: Pushed
+0488bd866f64: Mounted from redhat/ubi8
+0d3f22d60daf: Mounted from redhat/ubi8
+1.0: digest: sha256:d77410be816bfede89bf99abf4b3b43b82c8bbe31c4d817b09a99ea7b03a16bb size: 949
+$</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>以上で、 <code>Docker Hub</code> への <code>push</code> は完了です。</p>
+</div>
+<div class="paragraph">
+<p>これでどこに居ても、どの端末を使っても <code>Docker Hub</code> に繋がる環境であれば、自分が作成したイメージを <code>pull</code> して使えるようになりました。</p>
+</div>
+<div class="paragraph">
+<p>以上で演習3は完了です。お疲れ様でした。
+:toc: left</p>
+</div>
+</div>
+<h1 id="_演習4_dockerfile_を使ってオリジナルの_nginx_のイメージを作る" class="sect0">演習4 : Dockerfile を使ってオリジナルの nginx のイメージを作る</h1>
+<div class="paragraph">
+<p>今度は演習3と同じ内容を <code>Dockerfile</code> を使用して行います。 <code>Dockerfile</code> でビルドの作業をスクリプト化できます。</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/practice4-procedure.png" alt="left">
+</div>
+</div>
+<div class="sect2">
+<h3 id="_dockerfile_を書く">Dockerfile を書く</h3>
+<div class="paragraph">
+<p><code>Dockerfile</code> を使うと、演習3でやった元ネタになるイメージのダウンロード、イメージへの <code>nginx</code> のインストールまでの各種作業をスクリプト化できます。</p>
+</div>
+<div class="paragraph">
+<p>演習3でやった作業を <code>Dockerfile</code> にすると以下になります。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-Dockerfile" data-lang="Dockerfile">FROM redhat/ubi8
+RUN yum install -y nginx
+COPY index.html /usr/bin/share/nginx/html/index.html
+COPY nginx.conf /etc/nginx/nginx.conf
+CMD ["-g","daemon off;"]
+ENTRYPOINT ["nginx"]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>このファイル名は <code>Dockerfile</code> という名前にします。この名前は <code>Docker</code> で決められている名前です。
+変更もできますが、変更した場合は、変更後の名前を引数で指定する必要があり、コマンドが長くなるので、ここではデフォルトの名前を使用します。</p>
+</div>
+<div class="paragraph">
+<p><code>Dockerfile</code> の中身の解説は以下の通りです。</p>
+</div>
+<div class="paragraph">
+<p><code>FROM redhat/ubi8</code> : Docker Hub から redhat/ubi8 を PULLします。
+<code>RUN yum install -y nginx</code> :  redhat/ubi8 に nginx をインストールします。
+<code>COPY index.html /usr/share/nginx/html/index.html</code> : ホストOS上の[index.html]をコンテナ内の[/usr/share/nginx/html/index.html]にコピーします。
+<code>COPY nginx.conf /etc/nginx/nginx.conf</code> :　ホストOS上の[nginx.conf]をコンテナ内の[/etc/nginx/nginx.conf]にコピーします。
+<code>CMD ["-g","daemon off;"]</code> : コンテナ実行時に実行するコマンドのオプションです。演習3で[docker container comit]で指定したのと同じものです。
+<code>ENTRYPOINT ["nginx"]</code> : コンテナ実行時に実行するコマンドです。演習3で[docker container comit]で指定したのと同じものです</p>
+</div>
+<div class="paragraph">
+<p>次にコンテナ内にコピーする <code>nginx.conf</code> と <code>index.html</code> を作ります。コピペ用に以下に内容を書きますが、内容は演習3で作成したものと全く同じです。</p>
+</div>
+<div class="paragraph">
+<p>演習3では、 <code>nginx.conf</code> はコンテナ内で直接編集しましたが(外で作成したものをコンテナ内にコピーしても良かったのですが、たまたまです）、ここではホストOS上に <code>nginx.conf</code> を作ります。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-/etc/nginx/nginx.conf" data-lang="/etc/nginx/nginx.conf"># For more information on configuration, see:
+#   * Official English Documentation: http://nginx.org/en/docs/
+#   * Official Russian Documentation: http://nginx.org/ru/docs/
+
+user nginx;
+worker_processes auto;
+# error_log /var/log/nginx/error.log;
+error_log /dev/stderr; #(1) stderrに出力先を変更
+pid /run/nginx.pid;
+
+# Load dynamic modules. See /usr/share/doc/nginx/README.dynamic.
+include /usr/share/nginx/modules/*.conf;
+
+events {
+    worker_connections 1024;
+}
+
+http {
+    log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
+                      '$status $body_bytes_sent "$http_referer" '
+                      '"$http_user_agent" "$http_x_forwarded_for"';
+
+    access_log  /dev/stdout  main; #(2) stdoutに出力先を変更する
+
+    sendfile            on;
+    tcp_nopush          on;
+    tcp_nodelay         on;
+    keepalive_timeout   65;
+    types_hash_max_size 2048;
+
+    include             /etc/nginx/mime.types;
+    default_type        application/octet-stream;
+
+    # Load modular configuration files from the /etc/nginx/conf.d directory.
+    # See http://nginx.org/en/docs/ngx_core_module.html#include
+    # for more information.
+    include /etc/nginx/conf.d/*.conf;
+
+    server {
+        listen       80 default_server;
+        listen       [::]:80 default_server;
+        server_name  _;
+        root         /usr/share/nginx/html;
+
+        # Load configuration files for the default server block.
+        include /etc/nginx/default.d/*.conf;
+
+        location / {
+        }
+
+        error_page 404 /404.html;
+            location = /40x.html {
+        }
+
+        error_page 500 502 503 504 /50x.html;
+            location = /50x.html {
+        }
+    }
+
+# Settings for a TLS enabled server.
+#
+#    server {
+#        listen       443 ssl http2 default_server;
+#        listen       [::]:443 ssl http2 default_server;
+#        server_name  _;
+#        root         /usr/share/nginx/html;
+#
+#        ssl_certificate "/etc/pki/nginx/server.crt";
+#        ssl_certificate_key "/etc/pki/nginx/private/server.key";
+#        ssl_session_cache shared:SSL:1m;
+#        ssl_session_timeout  10m;
+#        ssl_ciphers PROFILE=SYSTEM;
+#        ssl_prefer_server_ciphers on;
+#
+#        # Load configuration files for the default server block.
+#        include /etc/nginx/default.d/*.conf;
+#
+#        location / {
+#        }
+#
+#        error_page 404 /404.html;
+#            location = /40x.html {
+#        }
+#
+#        error_page 500 502 503 504 /50x.html;
+#            location = /50x.html {
+#        }
+#    }
+
+}</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-index.html" data-lang="index.html">&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;Test Page for the Nginx HTTP Server on Red Hat Enterprise Linux&lt;/title&gt;
+        &lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+       &lt;p&gt; Hello World &lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>これらのファイルは <code>Dockerfile</code> と一緒に同じディレクトリに置きます。
+必要なファイルが揃っていれば以下のようになっているはずです。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ ls -ltr
+total 16
+-rw-r--r-- 1 yuhki yuhki  305 Dec 23 11:33 index.html
+-rw-r--r-- 1 yuhki yuhki  178 Dec 23 14:19 Dockerfile
+-rw-r--r-- 1 yuhki yuhki 2551 Dec 23 15:15 nginx.conf
+$</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_build_する">build する</h3>
+<div class="paragraph">
+<p><code>docker build</code> コマンドを実行すると <code>Dockerfile</code> という名前のファイルを探してきてその内容の作業を実行して、新しいイメージを作成してくれます。 <code>Dockerfile</code> という名前は変更もできますが、変更した場合は変更後のファイルを引数で指定する必要があります。</p>
+</div>
+<div class="paragraph">
+<p>新しく生成されるイメージ名を　<code>yuhkih/nginx-ubi8-2:1.0</code>　にします。</p>
+</div>
+<div class="paragraph">
+<p>以下のコマンドでビルドを実行します。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ docker build . -t yuhkih/nginx-ubi8-2:1.0</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>.</code> で、カレントディレクトリの <code>Dockerfile</code> を探しに行きます。</p>
+</div>
+<div class="paragraph">
+<p>この名前は</p>
+</div>
+<div class="paragraph">
+<p><code>yuhkih</code> : 筆者の Docker Hub のユーザー名<br>
+<code>nginx-unbi8-2</code> : このイメージの名前のコア部分<br>
+<code>1.0</code> : このイメージのタグ</p>
+</div>
+<div class="paragraph">
+<p>をくっつけたものです。
+<code>Docker Hub</code> のユーザー名を先頭につけたのは、後で <code>Docker Hub</code> にこのイメージを　<code>push</code>　する事を考えているためです。
+<code>Docker Hub</code>　に保管するイメージは、イメージ名の先頭に　<code>&lt;ユーザー名&gt;/</code>　を付ける事が決まりになっているため、イメージ作成時にあらかじめ付けておきます。逆に言うと、　<code>Docker Hub</code>　にイメージを <code>push</code> せずにローカルで使うだけであれば、こう言った名前の付け方は必要ありません。</p>
+</div>
+<div class="paragraph">
+<p>最後に　<code>1.0</code>　という名前のタグを付けていますが、これを付けなかった場合は、　<code>latest</code>　というタグが自動で付きます。</p>
+</div>
+<div class="paragraph">
+<p>名前の付け方にいろいろルールがあり面倒ですが、このネーミング・ルールになれる必要があります。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ビルドしたイメージの確認">ビルドしたイメージの確認</h3>
+<div class="paragraph">
+<p><code>docker images</code>　コマンドで、ビルドされたイメージを確認します。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ docker images
+REPOSITORY                                                TAG       IMAGE ID       CREATED         SIZE
+yuhkih/nginx-ubi8-2                                       1.0       9539618c5467   5 hours ago     307MB
+...</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_docker_hub_に_push_する">Docker Hub に push する。</h3>
+<div class="paragraph">
+<p>作成したイメージを <code>Docker Hub</code>　に <code>push</code>　します。</p>
+</div>
+<div class="paragraph">
+<p><code>Docker Hub</code> にログインします。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ docker login -u yuhkih -p &lt;パスワード&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>Docker Hub</code> に <code>push</code> します。イメージ名の先頭が <code>&lt;user名&gt;/</code> のフォーマットになっている必要があります。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ docker push yuhkih/nginx-ubi8</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_docker_hub_に_上がった事を確認する">Docker Hub に 上がった事を確認する</h3>
+<div class="paragraph">
+<p><code>Repository</code> 名を引数に <code>docker search</code> する事で <code>docker Hub</code> 上のイメージを確認できます。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ docker search yuhkih
+NAME                  DESCRIPTION   STARS     OFFICIAL   AUTOMATED
+yuhkih/nginx-ubi8-2                 0
+...</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>無事に <code>docker Hub</code> に上がっている事が確認できました。</p>
+</div>
+<div class="paragraph">
+<p>以上で演習4は完了です。お疲れ様でした。</p>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2021-12-29 07:29:11 UTC
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,197 @@
+:toc: left
+
+# 演習1: Nginx のコンテナを起動する
+
+こんどは、もう少しきちんと、コンテナを作成してみます。`docker run -d nginx` にもう少しオプションを足してみます。
+
+以下のコマンドで、イメージ「`nginx`」から、コンテナ「`my-nginx`」が作成され起動します。
+
+```
+ docker run -d -p 8080:80  --name  my-nginx   nginx
+```
+
+オプションについて解説します。これらは基本的なオプションなので暗記する必要があると思って下さい。
+
+**-d**
+これは「デタッチ」モードを意味します。前のステップで `docker run nginx` を実行した時に、作業中のコンソールにカーソルが戻ってこなかったのを覚えていると思います。このオプションを付ける事で、コンテナを今使っているコンソールから切り離す(デタッチ)する事ができます。
+
+**-p 8080:80**
+コンテナは、言うなれば、ただのプロセスです。同じ `OS` 上で同じポート番号を使用する複数のプロセスがあると、ポートの取り合いが起きて上手く動く動きません。
+
+image::images/practice1-port.png[left]
+
+
+上記のコマンドでは、OSから見たコンテナのポート「 `8080` 」をコンテナ内の「 `80` 」番ポートにフォワードする設定をしています。これにより既に OS上に `80` 番ポートを使うアプリケーションが稼働している場合の(多くの場合ありがちです) 競合を避けています。反対に「 `8080` 」はそのOS上で使われてなければ、他の任意のポート(例えば `8090` ) でも大丈夫です。
+
+同じホストOS上でたくさんのコンテナを使うには、同じIPアドレスを使う事になるので、ポートの衝突を避ける必要があります。
+個別にIPアドレスを持つ VM(仮想マシン)では、ポートが同じでもIPが違うのでアプリケーションのポートが衝突する事はありません。アプリケーション(コンテナ）のポートを変更するという考え方は、コンテナならではの作法になります。
+
+コンテナ内で `80` 番ポートを使うのは、この `nginx` のイメージが `80` を `LISTEN` するように作られているという暗黙の了解によるものです。もし全く知らないアプリケーションで、どこにもどのポートを `LISTEN` しているか記述されてない場合は全く検討がつかないものになります。
+
+**--name  my-nginx**
+イメージ `nginx` を元に作成するコンテナ名を指定します。特に指定しない場合はランダムな名前が付けられます。以前の実験では、何も指定しなかったために `docker` によって `eager_benz` と言う名前が付けられていました。
+
+**nginx**
+コンテナ `my-nginx` の元になるイメージ名です。これは暗黙の了解で、 `Docker Hub` 上の `nginx:latest` が検索されて使用されます。 `Docker Hub` 以外のレジストリ上のイメージを指定するには、明示的にそのレジストリ名を指定する必要があります。
+
+
+実際の実行結果は以下になります。
+
+```
+$ docker run -d -p 8080:80  --name  my-nginx   nginx
+e0cc77bc866fe504b8053a7b201b7a469ec61d98a4fd3a6618be382e87fda34c
+
+$
+```
+
+コマンドプロンプトにカーソルが戻ってきました。 `-d` オプションのおかげです。
+
+もう一度、上記のコマンドの引数を軽くおさらいしておきます。これはコンテナをやって行く以上覚えなければいけないものなので、頭にたたきこんでおきましょう。
+
+[NOTE]
+====
+**-d** : デタッチ。コンテナの起動後に、コンテナと今使っているコンソールを切り離します。 +
+**-p** : 8080:80  8080番ポートへのアクセスを、コンテナの80番ポートにフォワードする。 +
+**--name** :  my-nginx   イメージ「nginx」を元に作る自分のコンテナの名前。 +
+**nginx** : コンテナの元になるイメージ(この場合、インターネット上の Docker Hub 上に置かれているイメージ)
+====
+
+**実行中のコンテナの確認**
+
+実行中のコンテナは、以下のコマンドで確認できます。
+
+```
+docker ps
+``` 
+
+実際の実行結果は以下の通りです。
+
+
+```
+$ docker ps
+CONTAINER ID   IMAGE                       COMMAND                  CREATED          STATUS                      PORTS                  NAMES
+7e7ffed26222   nginx                      "/docker-entrypoint.…"   33 minutes ago   Up 9 minutes                0.0.0.0:8080->80/tcp   my-nginx
+$
+```
+
+次にこのコンテナに、ブラウザを使ってアクセスしてみます。アクセスポートは、コンテナ作成時に指定した `8080` になります。コンテナ外部の `8080` ポートからコンテナ内部の `80` ポートにフォワードされます。
+
+image::images/practice1-browser.png[left]
+
+無事アクセスできました。
+
+毎回ブラウザを立ちあげるのも大変なので、CLIツールの `curl` を使ってアクセスにも慣れておきます。以下でアクセスできます。
+
+```
+curl localhost:8080
+```
+
+実際に実行してみます。
+
+```
+$ curl localhost:8080
+<!DOCTYPE html>
+<html>
+<head>
+<title>Welcome to nginx!</title>
+<style>
+html { color-scheme: light dark; }
+body { width: 35em; margin: 0 auto;
+font-family: Tahoma, Verdana, Arial, sans-serif; }
+</style>
+</head>
+<body>
+<h1>Welcome to nginx!</h1>
+<p>If you see this page, the nginx web server is successfully installed and
+working. Further configuration is required.</p>
+
+<p>For online documentation and support please refer to
+<a href="http://nginx.org/">nginx.org</a>.<br/>
+Commercial support is available at
+<a href="http://nginx.com/">nginx.com</a>.</p>
+
+<p><em>Thank you for using nginx.</em></p>
+</body>
+</html>
+
+$
+```
+
+出力結果が大量にでますが、これは HTML のテキストがそのままコマンドプロンプトに表示されているためです。
+コンソールは、ブラウザのように HTMLを解釈する機能ないためこのような出力になります。
+
+### コンテナを停止する
+
+以下のコマンドで起動中のコンテナを停止する事ができます。
+
+```
+docker stop <コンテナ名>
+```
+
+実際に停止してみます。
+
+```
+$ docker stop my-nginx
+my-nginx
+$ 
+```
+
+### 稼働中のコンテナを確認する
+
+**docker ps**
+
+`dcoker ps` コマンドで稼働中のコンテナを確認してみます。 `my-nginx` は表示されないはずです。
+
+```
+$ docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+
+$
+```
+
+**docker ps -a**
+
+`docker ps` に `-a` オプションを付けた `docker ps -a` を使うと、既に停止したコンテナも確認できます。
+
+```
+docker ps -a
+```
+
+実際に `docker ps -a` を実行してみます。
+
+```
+$ docker ps -a
+CONTAINER ID   IMAGE                    COMMAND                  CREATED         STATUS                          PORTS     NAMES　                                  "/docker-entrypoint.…"   8 minutes ago   Exited (0) About a minute ago             my-nginx
+```
+
+`STATUS` が `Exited (0)` になったコンテナ `my-nginx` が確認できます。
+
+### 停止しているコンテナを起動する
+
+停止したコンテナは再度、起動させる事ができます。 `docer start <コンテナ名>` で起動できます。
+
+```
+docker start <コンテナ名>
+```
+
+実際にコンテナを起動してみます。
+
+```
+$ docker start my-nginx
+my-nginx
+$
+```
+
+コンテナの起動を `dokcer ps` コマンドで確認してみます。
+
+```
+$ docker ps
+CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS          PORTS                  NAMES
+e0cc77bc866f   nginx     "/docker-entrypoint.…"   15 minutes ago   Up 35 seconds   0.0.0.0:8080->80/tcp   my-nginx
+$
+
+```
+
+以上で演習1は完了です。
+
+
