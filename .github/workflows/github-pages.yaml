@@ -23,9 +23,11 @@ jobs:
       uses: Analog-inc/asciidoctor-action@master
       with:
         shellcommand: "asciidoctor index.adoc" 
-    # Use the output from the documents step
-    - name: Save AsciiDoc step
-      uses: actions/upload-artifact@v1
-      with:
-        name: Output-document
-        path: ./index.html
+
+    # Deploy 
+    - name: Deploy docs to ghpages
+      uses: peaceiris/actions-gh-pages@v3
+      with: 
+        deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+        publish_branch: gh-pages
+        publish_dir: ./docs/
