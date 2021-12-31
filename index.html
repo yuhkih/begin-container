@@ -1021,7 +1021,7 @@ Usage:  docker tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG]</code></pre>
 <h2 id="_コンテナを使う上での暗黙の了解とpull">3. コンテナを使う上での暗黙の了解とPULL</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>ここでは、演習に入る前に、少し寄り道して <code>docker pull</code> について学んでみます。</p>
+<p>ここでは、演習に入る前に、少し寄り道して <code>docker pull</code> についてよく見てみます。</p>
 </div>
 <div class="sect2">
 <h3 id="_docker_hub_上のイメージを使用する">3.1. Docker Hub 上のイメージを使用する</h3>
@@ -1048,10 +1048,16 @@ Usage:  docker tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG]</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p><code>docker run</code> が、<code>pull</code> <code>create</code> <code>start</code> をまとめたものである事がわかると思います。</p>
+<p><code>docker</code> の <code>イメージ</code> は、<code>レポジトリ</code> と呼ばれる場所に保管されています。 <code>レポジトリ</code> は、インターネット上にもありますし、 <code>コンテナ</code> が実行されるローカルにもあります。</p>
 </div>
 <div class="paragraph">
-<p>既にローカルに <code>pull</code> されたイメージがある場合は、<code>docker run</code> を実行してもインターネットから再ダウンロード( <code>pull</code> )される事はありません。</p>
+<p>通常、一つの <code>レポジトリ</code> には、 一つの <code>イメージ</code> のいろいろなバージョンが保管されます。さらに、この <code>レポジトリ</code> がたくさん集まった場所を <code>レジストリ</code> と呼びます。インターネット上にある <code>レジストリ</code> で一番、有名なのは <code>Docker Hub</code> です。 <code>docker</code> コマンドを実行すると特に何も指定しなくても、 <code>Docker Hub</code> を参照に行くようになっています。</p>
+</div>
+<div class="paragraph">
+<p><code>docker run</code> を実行すると、インターネット上の <code>Docker Hub レポジトリ</code> から、ローカルの <code>レポジトリ</code> に <code>イメージ</code> がダウンロード( <code>pull</code> )され、そこから <code>コンテナ</code> が <code>create</code> され <code>start</code> で起動されます。</p>
+</div>
+<div class="paragraph">
+<p>また、既にローカルに <code>pull</code> されたイメージがある場合は、<code>docker run</code> を実行してもインターネットから再ダウンロード( <code>pull</code> )される事はありません。</p>
 </div>
 <div class="paragraph">
 <p><code>create</code> と <code>start</code> はとりあえず置いておいて、ここでは <code>pull</code> に注目します。</p>
@@ -2412,7 +2418,7 @@ $</code></pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-12-31 16:03:32 UTC
+Last updated 2021-12-31 16:29:58 UTC
 </div>
 </div>
 </body>
