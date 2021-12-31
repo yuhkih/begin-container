@@ -436,7 +436,95 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 #footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.3/styles/github.min.css">
+<style>
+/* Stylesheet for CodeRay to match GitHub theme | MIT License | http://foundation.zurb.com */
+pre.CodeRay{background:#f7f7f8}
+.CodeRay .line-numbers{border-right:1px solid currentColor;opacity:.35;padding:0 .5em 0 0}
+.CodeRay span.line-numbers{display:inline-block;margin-right:.75em}
+.CodeRay .line-numbers strong{color:#000}
+table.CodeRay{border-collapse:separate;border:0;margin-bottom:0;background:none}
+table.CodeRay td{vertical-align:top;line-height:inherit}
+table.CodeRay td.line-numbers{text-align:right}
+table.CodeRay td.code{padding:0 0 0 .75em}
+.CodeRay .debug{color:#fff !important;background:#000080 !important}
+.CodeRay .annotation{color:#007}
+.CodeRay .attribute-name{color:#000080}
+.CodeRay .attribute-value{color:#700}
+.CodeRay .binary{color:#509}
+.CodeRay .comment{color:#998;font-style:italic}
+.CodeRay .char{color:#04d}
+.CodeRay .char .content{color:#04d}
+.CodeRay .char .delimiter{color:#039}
+.CodeRay .class{color:#458;font-weight:bold}
+.CodeRay .complex{color:#a08}
+.CodeRay .constant,.CodeRay .predefined-constant{color:#008080}
+.CodeRay .color{color:#099}
+.CodeRay .class-variable{color:#369}
+.CodeRay .decorator{color:#b0b}
+.CodeRay .definition{color:#099}
+.CodeRay .delimiter{color:#000}
+.CodeRay .doc{color:#970}
+.CodeRay .doctype{color:#34b}
+.CodeRay .doc-string{color:#d42}
+.CodeRay .escape{color:#666}
+.CodeRay .entity{color:#800}
+.CodeRay .error{color:#808}
+.CodeRay .exception{color:inherit}
+.CodeRay .filename{color:#099}
+.CodeRay .function{color:#900;font-weight:bold}
+.CodeRay .global-variable{color:#008080}
+.CodeRay .hex{color:#058}
+.CodeRay .integer,.CodeRay .float{color:#099}
+.CodeRay .include{color:#555}
+.CodeRay .inline{color:#000}
+.CodeRay .inline .inline{background:#ccc}
+.CodeRay .inline .inline .inline{background:#bbb}
+.CodeRay .inline .inline-delimiter{color:#d14}
+.CodeRay .inline-delimiter{color:#d14}
+.CodeRay .important{color:#555;font-weight:bold}
+.CodeRay .interpreted{color:#b2b}
+.CodeRay .instance-variable{color:#008080}
+.CodeRay .label{color:#970}
+.CodeRay .local-variable{color:#963}
+.CodeRay .octal{color:#40e}
+.CodeRay .predefined{color:#369}
+.CodeRay .preprocessor{color:#579}
+.CodeRay .pseudo-class{color:#555}
+.CodeRay .directive{font-weight:bold}
+.CodeRay .type{font-weight:bold}
+.CodeRay .predefined-type{color:inherit}
+.CodeRay .reserved,.CodeRay .keyword {color:#000;font-weight:bold}
+.CodeRay .key{color:#808}
+.CodeRay .key .delimiter{color:#606}
+.CodeRay .key .char{color:#80f}
+.CodeRay .value{color:#088}
+.CodeRay .regexp .delimiter{color:#808}
+.CodeRay .regexp .content{color:#808}
+.CodeRay .regexp .modifier{color:#808}
+.CodeRay .regexp .char{color:#d14}
+.CodeRay .regexp .function{color:#404;font-weight:bold}
+.CodeRay .string{color:#d20}
+.CodeRay .string .string .string{background:#ffd0d0}
+.CodeRay .string .content{color:#d14}
+.CodeRay .string .char{color:#d14}
+.CodeRay .string .delimiter{color:#d14}
+.CodeRay .shell{color:#d14}
+.CodeRay .shell .delimiter{color:#d14}
+.CodeRay .symbol{color:#990073}
+.CodeRay .symbol .content{color:#a60}
+.CodeRay .symbol .delimiter{color:#630}
+.CodeRay .tag{color:#008080}
+.CodeRay .tag-special{color:#d70}
+.CodeRay .variable{color:#036}
+.CodeRay .insert{background:#afa}
+.CodeRay .delete{background:#faa}
+.CodeRay .change{color:#aaf;background:#007}
+.CodeRay .head{color:#f8f;background:#505}
+.CodeRay .insert .insert{color:#080}
+.CodeRay .delete .delete{color:#800}
+.CodeRay .change .change{color:#66f}
+.CodeRay .head .head{color:#f4f}
+</style>
 </head>
 <body class="article toc2 toc-left">
 <div id="header">
@@ -575,7 +663,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">docker run nginx</code></pre>
+<pre class="CodeRay highlight"><code data-lang="bash">$ docker run nginx</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -583,7 +671,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">$ docker run nginx
+<pre class="CodeRay highlight"><code>$ docker run nginx
 &lt;省略&gt;
 2021/11/18 07:46:52 [notice] 1#1: nginx/1.21.3
 2021/11/18 07:46:52 [notice] 1#1: built by gcc 8.3.0 (Debian 8.3.0-6)
@@ -612,7 +700,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">$ docker run -d nginx
+<pre class="CodeRay highlight"><code>$ docker run -d nginx
 b0d570e09018fac53c58db702ca09c7689b200bd58bf3fad79748d240a8e3129
 $</code></pre>
 </div>
@@ -627,9 +715,9 @@ $</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">$ docker ps    # 起動中のコンテナの確認
+<pre class="CodeRay highlight"><code>$ docker ps    # 起動中のコンテナの確認
 CONTAINER ID   IMAGE     COMMAND                  CREATED         STATUS         PORTS     NAMES
-b0d570e09018   nginx     "/docker-entrypoint.…"   5 seconds ago   Up 3 seconds   80/tcp    eager_benz
+b0d570e09018   nginx     &quot;/docker-entrypoint.…&quot;   5 seconds ago   Up 3 seconds   80/tcp    eager_benz
 $</code></pre>
 </div>
 </div>
@@ -654,7 +742,7 @@ $</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">$ docker stop eager_benz   # 起動したコンテナの停止
+<pre class="CodeRay highlight"><code>$ docker stop eager_benz   # 起動したコンテナの停止
 eager_benz
 $</code></pre>
 </div>
@@ -664,7 +752,7 @@ $</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">$ docker ps
+<pre class="CodeRay highlight"><code>$ docker ps
 CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
 $</code></pre>
 </div>
@@ -677,7 +765,7 @@ $</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">$ docker stop b0d570e09018     # 最後の IDは docker ps で表示されていた CONTAINER ID</code></pre>
+<pre class="CodeRay highlight"><code>$ docker stop b0d570e09018     # 最後の IDは docker ps で表示されていた CONTAINER ID</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -685,9 +773,9 @@ $</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">$ docker ps -a
+<pre class="CodeRay highlight"><code>$ docker ps -a
 CONTAINER ID   IMAGE                                                     COMMAND                  CREATED          STATUS                      PORTS                  NAMES
-b0d570e09018   nginx                                                     "/docker-entrypoint.…"   20 minutes ago   Exited (0) 5 minutes ago                           eager_benz
+b0d570e09018   nginx                                                     &quot;/docker-entrypoint.…&quot;   20 minutes ago   Exited (0) 5 minutes ago                           eager_benz
 $</code></pre>
 </div>
 </div>
@@ -702,7 +790,7 @@ $</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">$ docker rm eager_benz
+<pre class="CodeRay highlight"><code>$ docker rm eager_benz
 eager_benz</code></pre>
 </div>
 </div>
@@ -711,7 +799,7 @@ eager_benz</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">$ docker ps -a
+<pre class="CodeRay highlight"><code>$ docker ps -a
 CONTAINER ID   IMAGE                                                     COMMAND                  CREATED          STATUS                      PORTS                  NAMES
 $</code></pre>
 </div>
@@ -725,7 +813,7 @@ $</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">$ docker images
+<pre class="CodeRay highlight"><code>$ docker images
 REPOSITORY                                                TAG       IMAGE ID       CREATED         SIZE
 nginx                                                     latest    ea335eea17ab   1 weeks ago     141MB
 $</code></pre>
@@ -756,7 +844,7 @@ $</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">$ docker rmi nginx:latest
+<pre class="CodeRay highlight"><code>$ docker rmi nginx:latest
 Untagged: nginx:latest
 Untagged: nginx@sha256:097c3a0913d7e3a5b01b6c685a60c03632fc7a2b50bc8e35bcaa3691d788226e
 Deleted: sha256:ea335eea17ab984571cd4a3bcf90a0413773b559c75ef4cda07d0ce952b00291
@@ -783,7 +871,7 @@ $</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">$ docker images
+<pre class="CodeRay highlight"><code>$ docker images
 REPOSITORY                                                TAG       IMAGE ID       CREATED         SIZE
 nginx                                                     latest    f652ca386ed1   3 weeks ago     141MB
 nginx                                                     1.20      aedf7f31bdab   5 weeks ago     141MB
@@ -824,7 +912,7 @@ ubuntu                                                    latest    ba6acccedd29
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">$ docker images
+<pre class="CodeRay highlight"><code>$ docker images
 REPOSITORY                                                TAG       IMAGE ID       CREATED         SIZE
 copy                                                      1.0       6c364457d832   3 days ago      303MB
 nginx-ubi8                                                1.0       6c364457d832   3 days ago      303MB
@@ -842,7 +930,7 @@ nginx-ubi8                                                1.0       6c364457d832
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-docker hljs" data-lang="docker">$ docker inspect --format='{{.Config.Image}}' c3775755f851
+<pre class="CodeRay highlight"><code data-lang="docker">$ docker inspect --format='{{.Config.Image}}' c3775755f851
 nginx:1.20
 $</code></pre>
 </div>
@@ -855,7 +943,7 @@ $</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">$ docker tag --help
+<pre class="CodeRay highlight"><code>$ docker tag --help
 Usage:  docker tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG]</code></pre>
 </div>
 </div>
@@ -883,7 +971,7 @@ Usage:  docker tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG]</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">docker run -d nginx</code></pre>
+<pre class="CodeRay highlight"><code>docker run -d nginx</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -891,7 +979,7 @@ Usage:  docker tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG]</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">docker ps</code></pre>
+<pre class="CodeRay highlight"><code>docker ps</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -899,7 +987,7 @@ Usage:  docker tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG]</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">$docker stop eager_benz   # eager_benz は自動でランダムに付けられたコンテナ名</code></pre>
+<pre class="CodeRay highlight"><code>$docker stop eager_benz   # eager_benz は自動でランダムに付けられたコンテナ名</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -907,7 +995,7 @@ Usage:  docker tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG]</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">docker ps　-a</code></pre>
+<pre class="CodeRay highlight"><code>docker ps　-a</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -915,7 +1003,7 @@ Usage:  docker tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG]</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">docker rm eager_benz　　 # eager_genz はコンテナ名</code></pre>
+<pre class="CodeRay highlight"><code>docker rm eager_benz　　 # eager_genz はコンテナ名</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -923,7 +1011,7 @@ Usage:  docker tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG]</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">docker rmi nginx:lattest   # nginx:latest はイメージ名</code></pre>
+<pre class="CodeRay highlight"><code>docker rmi nginx:lattest   # nginx:latest はイメージ名</code></pre>
 </div>
 </div>
 </div>
@@ -942,7 +1030,7 @@ Usage:  docker tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG]</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">docker pull nginx</code></pre>
+<pre class="CodeRay highlight"><code>docker pull nginx</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -970,7 +1058,7 @@ Usage:  docker tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG]</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">docker pull nginx</code></pre>
+<pre class="CodeRay highlight"><code>docker pull nginx</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -984,7 +1072,7 @@ Usage:  docker tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG]</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">docker pull nginx:latest</code></pre>
+<pre class="CodeRay highlight"><code>docker pull nginx:latest</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -992,7 +1080,7 @@ Usage:  docker tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG]</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">docker pull nginx:1.20</code></pre>
+<pre class="CodeRay highlight"><code>docker pull nginx:1.20</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1006,7 +1094,7 @@ Usage:  docker tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG]</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">docker pull quay.io/centos/centos</code></pre>
+<pre class="CodeRay highlight"><code>docker pull quay.io/centos/centos</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1020,7 +1108,7 @@ Usage:  docker tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG]</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">docker pull quay.io/centos/centos:latest</code></pre>
+<pre class="CodeRay highlight"><code>docker pull quay.io/centos/centos:latest</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1040,7 +1128,7 @@ Usage:  docker tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG]</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs"> docker run -d -p 8080:80  --name  my-nginx   nginx</code></pre>
+<pre class="CodeRay highlight"><code> docker run -d -p 8080:80  --name  my-nginx   nginx</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1082,7 +1170,7 @@ Usage:  docker tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG]</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">$ docker run -d -p 8080:80  --name  my-nginx   nginx
+<pre class="CodeRay highlight"><code>$ docker run -d -p 8080:80  --name  my-nginx   nginx
 e0cc77bc866fe504b8053a7b201b7a469ec61d98a4fd3a6618be382e87fda34c
 
 $</code></pre>
@@ -1118,7 +1206,7 @@ $</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">docker ps</code></pre>
+<pre class="CodeRay highlight"><code>docker ps</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1126,9 +1214,9 @@ $</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">$ docker ps
+<pre class="CodeRay highlight"><code>$ docker ps
 CONTAINER ID   IMAGE                       COMMAND                  CREATED          STATUS                      PORTS                  NAMES
-7e7ffed26222   nginx                      "/docker-entrypoint.…"   33 minutes ago   Up 9 minutes                0.0.0.0:8080-&gt;80/tcp   my-nginx
+7e7ffed26222   nginx                      &quot;/docker-entrypoint.…&quot;   33 minutes ago   Up 9 minutes                0.0.0.0:8080-&gt;80/tcp   my-nginx
 $</code></pre>
 </div>
 </div>
@@ -1148,7 +1236,7 @@ $</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">curl localhost:8080</code></pre>
+<pre class="CodeRay highlight"><code>curl localhost:8080</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1156,7 +1244,7 @@ $</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">$ curl localhost:8080
+<pre class="CodeRay highlight"><code>$ curl localhost:8080
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
@@ -1173,9 +1261,9 @@ font-family: Tahoma, Verdana, Arial, sans-serif; }
 working. Further configuration is required.&lt;/p&gt;
 
 &lt;p&gt;For online documentation and support please refer to
-&lt;a href="http://nginx.org/"&gt;nginx.org&lt;/a&gt;.&lt;br/&gt;
+&lt;a href=&quot;http://nginx.org/&quot;&gt;nginx.org&lt;/a&gt;.&lt;br/&gt;
 Commercial support is available at
-&lt;a href="http://nginx.com/"&gt;nginx.com&lt;/a&gt;.&lt;/p&gt;
+&lt;a href=&quot;http://nginx.com/&quot;&gt;nginx.com&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;Thank you for using nginx.&lt;/em&gt;&lt;/p&gt;
 &lt;/body&gt;
@@ -1196,7 +1284,7 @@ $</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">docker stop &lt;コンテナ名&gt;</code></pre>
+<pre class="CodeRay highlight"><code>docker stop &lt;コンテナ名&gt;</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1204,7 +1292,7 @@ $</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">$ docker stop my-nginx
+<pre class="CodeRay highlight"><code>$ docker stop my-nginx
 my-nginx
 $</code></pre>
 </div>
@@ -1220,7 +1308,7 @@ $</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">$ docker ps
+<pre class="CodeRay highlight"><code>$ docker ps
 CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
 
 $</code></pre>
@@ -1234,7 +1322,7 @@ $</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">docker ps -a</code></pre>
+<pre class="CodeRay highlight"><code>docker ps -a</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1242,8 +1330,8 @@ $</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">$ docker ps -a
-CONTAINER ID   IMAGE                    COMMAND                  CREATED         STATUS                          PORTS     NAMES　                                  "/docker-entrypoint.…"   8 minutes ago   Exited (0) About a minute ago             my-nginx</code></pre>
+<pre class="CodeRay highlight"><code>$ docker ps -a
+CONTAINER ID   IMAGE                    COMMAND                  CREATED         STATUS                          PORTS     NAMES　                                  &quot;/docker-entrypoint.…&quot;   8 minutes ago   Exited (0) About a minute ago             my-nginx</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1257,7 +1345,7 @@ CONTAINER ID   IMAGE                    COMMAND                  CREATED        
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">docker start &lt;コンテナ名&gt;</code></pre>
+<pre class="CodeRay highlight"><code>docker start &lt;コンテナ名&gt;</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1265,7 +1353,7 @@ CONTAINER ID   IMAGE                    COMMAND                  CREATED        
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">$ docker start my-nginx
+<pre class="CodeRay highlight"><code>$ docker start my-nginx
 my-nginx
 $</code></pre>
 </div>
@@ -1275,9 +1363,9 @@ $</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">$ docker ps
+<pre class="CodeRay highlight"><code>$ docker ps
 CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS          PORTS                  NAMES
-e0cc77bc866f   nginx     "/docker-entrypoint.…"   15 minutes ago   Up 35 seconds   0.0.0.0:8080-&gt;80/tcp   my-nginx
+e0cc77bc866f   nginx     &quot;/docker-entrypoint.…&quot;   15 minutes ago   Up 35 seconds   0.0.0.0:8080-&gt;80/tcp   my-nginx
 $</code></pre>
 </div>
 </div>
@@ -1301,7 +1389,7 @@ $</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">$ docker run --name my-ubuntu  ubuntu
+<pre class="CodeRay highlight"><code>$ docker run --name my-ubuntu  ubuntu
 
 Unable to find image 'ubuntu:latest' locally
 latest: Pulling from library/ubuntu
@@ -1320,7 +1408,7 @@ $</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">$ docker ps
+<pre class="CodeRay highlight"><code>$ docker ps
 CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
 
 $</code></pre>
@@ -1334,9 +1422,9 @@ $</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">$ docker ps -a
+<pre class="CodeRay highlight"><code>$ docker ps -a
 CONTAINER ID   IMAGE                                                     COMMAND                  CREATED          STATUS                      PORTS                  NAMES
-10b401288650   ubuntu                                                    "bash"                   1 minutes ago   Exited (0) 1 minutes ago                          my-ubuntu
+10b401288650   ubuntu                                                    &quot;bash&quot;                   1 minutes ago   Exited (0) 1 minutes ago                          my-ubuntu
 
 $</code></pre>
 </div>
@@ -1360,7 +1448,7 @@ $</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">docker run -itd --name my-ubuntu2 ubuntu</code></pre>
+<pre class="CodeRay highlight"><code>docker run -itd --name my-ubuntu2 ubuntu</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1386,9 +1474,9 @@ $</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">$ docker ps
+<pre class="CodeRay highlight"><code>$ docker ps
 CONTAINER ID   IMAGE     COMMAND       CREATED         STATUS         PORTS     NAMES
-34d28c35a11b   ubuntu    "bash"   5 minutes ago   Up 5 minutes             my-ubuntu2
+34d28c35a11b   ubuntu    &quot;bash&quot;   5 minutes ago   Up 5 minutes             my-ubuntu2
 
 $</code></pre>
 </div>
@@ -1411,7 +1499,7 @@ $</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">docker attach my-ubuntu2
+<pre class="CodeRay highlight"><code>docker attach my-ubuntu2
 root@34d28c35a11b:/# ps -ef
 UID        PID  PPID  C STIME TTY          TIME CMD
 root         1     0  0 04:57 pts/0    00:00:00 bash
@@ -1433,7 +1521,7 @@ root@34d28c35a11b:</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">root@34d28c35a11b:/# exit
+<pre class="CodeRay highlight"><code>root@34d28c35a11b:/# exit
 exit
 
 $</code></pre>
@@ -1447,7 +1535,7 @@ $</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">$ docker ps
+<pre class="CodeRay highlight"><code>$ docker ps
 CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
 
 $</code></pre>
@@ -1461,7 +1549,7 @@ $</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">$ docker start my-ubuntu2</code></pre>
+<pre class="CodeRay highlight"><code>$ docker start my-ubuntu2</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1472,7 +1560,7 @@ $</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">$ docker exec -it my-ubuntu2 /bin/bash
+<pre class="CodeRay highlight"><code>$ docker exec -it my-ubuntu2 /bin/bash
 root@34d28c35a11b:/# ps -ef
 UID        PID  PPID  C STIME TTY          TIME CMD
 root         1     0  0 05:15 pts/0    00:00:00 bash
@@ -1492,7 +1580,7 @@ root@34d28c35a11b:/#</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">root@34d28c35a11b:/# exit
+<pre class="CodeRay highlight"><code>root@34d28c35a11b:/# exit
 exit
 
 $</code></pre>
@@ -1503,9 +1591,9 @@ $</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">$ docker ps
+<pre class="CodeRay highlight"><code>$ docker ps
 CONTAINER ID   IMAGE     COMMAND       CREATED          STATUS         PORTS     NAMES
-34d28c35a11b   ubuntu    "/bin/bash"   23 minutes ago   Up 5 minutes             my-ubuntu2
+34d28c35a11b   ubuntu    &quot;/bin/bash&quot;   23 minutes ago   Up 5 minutes             my-ubuntu2
 
 $</code></pre>
 </div>
@@ -1572,7 +1660,7 @@ $</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">$ docker pull redhat/ubi8</code></pre>
+<pre class="CodeRay highlight"><code>$ docker pull redhat/ubi8</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1583,7 +1671,7 @@ $</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">$ docker images
+<pre class="CodeRay highlight"><code>$ docker images
 REPOSITORY                                                TAG       IMAGE ID       CREATED        SIZE
 redhat/ubi8                                               latest    cc0656847854   7 days ago     216MB
 $</code></pre>
@@ -1594,7 +1682,7 @@ $</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">$ docker run -dit -p 8080:80 --name nginx-ubi8 redhat/ubi8:latest</code></pre>
+<pre class="CodeRay highlight"><code>$ docker run -dit -p 8080:80 --name nginx-ubi8 redhat/ubi8:latest</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1602,9 +1690,9 @@ $</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">$ docker ps
+<pre class="CodeRay highlight"><code>$ docker ps
 CONTAINER ID   IMAGE                COMMAND       CREATED         STATUS         PORTS                  NAMES
-76304e983f34   redhat/ubi8:latest   "/bin/bash"   4 seconds ago   Up 3 seconds   0.0.0.0:8080-&gt;80/tcp   nginx-ubi8
+76304e983f34   redhat/ubi8:latest   &quot;/bin/bash&quot;   4 seconds ago   Up 3 seconds   0.0.0.0:8080-&gt;80/tcp   nginx-ubi8
 $</code></pre>
 </div>
 </div>
@@ -1613,7 +1701,7 @@ $</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">$ docker exec -it nginx-ubi8  /bin/bash
+<pre class="CodeRay highlight"><code>$ docker exec -it nginx-ubi8  /bin/bash
 [root@76304e983f34 /]#</code></pre>
 </div>
 </div>
@@ -1634,7 +1722,7 @@ $</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">yum install -y nginx</code></pre>
+<pre class="CodeRay highlight"><code>yum install -y nginx</code></pre>
 </div>
 </div>
 </div>
@@ -1660,7 +1748,7 @@ $</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-/etc/nginx/nginx.conf hljs" data-lang="/etc/nginx/nginx.conf"># For more information on configuration, see:
+<pre class="CodeRay highlight"><code data-lang="/etc/nginx/nginx.conf"># For more information on configuration, see:
 #   * Official English Documentation: http://nginx.org/en/docs/
 #   * Official Russian Documentation: http://nginx.org/ru/docs/
 
@@ -1678,9 +1766,9 @@ events {
 }
 
 http {
-    log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
-                      '$status $body_bytes_sent "$http_referer" '
-                      '"$http_user_agent" "$http_x_forwarded_for"';
+    log_format  main  '$remote_addr - $remote_user [$time_local] &quot;$request&quot; '
+                      '$status $body_bytes_sent &quot;$http_referer&quot; '
+                      '&quot;$http_user_agent&quot; &quot;$http_x_forwarded_for&quot;';
 
     access_log  /dev/stdout  main; #(2) stdoutに出力先を変更する
 
@@ -1727,8 +1815,8 @@ http {
 #        server_name  _;
 #        root         /usr/share/nginx/html;
 #
-#        ssl_certificate "/etc/pki/nginx/server.crt";
-#        ssl_certificate_key "/etc/pki/nginx/private/server.key";
+#        ssl_certificate &quot;/etc/pki/nginx/server.crt&quot;;
+#        ssl_certificate_key &quot;/etc/pki/nginx/private/server.key&quot;;
 #        ssl_session_cache shared:SSL:1m;
 #        ssl_session_timeout  10m;
 #        ssl_ciphers PROFILE=SYSTEM;
@@ -1764,7 +1852,7 @@ http {
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">nginx</code></pre>
+<pre class="CodeRay highlight"><code>nginx</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1776,7 +1864,7 @@ http {
 <h3 id="_コンテナからexit">6.6. コンテナからexit</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">exit</code></pre>
+<pre class="CodeRay highlight"><code>exit</code></pre>
 </div>
 </div>
 </div>
@@ -1784,7 +1872,7 @@ http {
 <h3 id="_nginx_にアクセスできる事を確認">6.7. nginx にアクセスできる事を確認</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">$ curl localhost:8080</code></pre>
+<pre class="CodeRay highlight"><code>$ curl localhost:8080</code></pre>
 </div>
 </div>
 </div>
@@ -1795,10 +1883,10 @@ http {
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-index.html hljs" data-lang="index.html">&lt;html&gt;
+<pre class="CodeRay highlight"><code data-lang="index.html">&lt;html&gt;
     &lt;head&gt;
         &lt;title&gt;Test Page for the Nginx HTTP Server on Red Hat Enterprise Linux&lt;/title&gt;
-        &lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /&gt;
+        &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot; /&gt;
     &lt;/head&gt;
     &lt;body&gt;
        &lt;p&gt; Hello World &lt;/p&gt;
@@ -1814,7 +1902,7 @@ http {
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">$ docker cp index.html nginx-ubi8:/usr/share/nginx/html/index.html</code></pre>
+<pre class="CodeRay highlight"><code>$ docker cp index.html nginx-ubi8:/usr/share/nginx/html/index.html</code></pre>
 </div>
 </div>
 </div>
@@ -1829,7 +1917,7 @@ http {
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">$ docker container commit -c 'ENTRYPOINT ["nginx"]'  -c 'CMD ["-g","daemon off;"]'  nginx-ubi8  nginx-ubi8:1.0</code></pre>
+<pre class="CodeRay highlight"><code>$ docker container commit -c 'ENTRYPOINT [&quot;nginx&quot;]'  -c 'CMD [&quot;-g&quot;,&quot;daemon off;&quot;]'  nginx-ubi8  nginx-ubi8:1.0</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1858,7 +1946,7 @@ http {
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">$ docker images
+<pre class="CodeRay highlight"><code>$ docker images
 REPOSITORY                                                TAG       IMAGE ID       CREATED         SIZE
 nginx-ubi8                                                1.0       3b9b3870655f   5 seconds ago   303MB
 redhat/ubi8                                               latest    cc0656847854   7 days ago           216MB</code></pre>
@@ -1879,7 +1967,7 @@ redhat/ubi8                                               latest    cc0656847854
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">$ docker run -d -p 8090:80 --name my-ubi-nginx nginx-ubi8:1.0</code></pre>
+<pre class="CodeRay highlight"><code>$ docker run -d -p 8090:80 --name my-ubi-nginx nginx-ubi8:1.0</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1887,11 +1975,11 @@ redhat/ubi8                                               latest    cc0656847854
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">$ curl localhost:8090
+<pre class="CodeRay highlight"><code>$ curl localhost:8090
 &lt;html&gt;
     &lt;head&gt;
         &lt;title&gt;Test Page for the Nginx HTTP Server on Red Hat Enterprise Linux&lt;/title&gt;
-        &lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /&gt;
+        &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot; /&gt;
     &lt;/head&gt;
     &lt;body&gt;
        &lt;p&gt; Hello World &lt;/p&gt;
@@ -1905,8 +1993,8 @@ $</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">$ docker logs my-ubi-nginx
-172.17.0.1 - - [16/Dec/2021:08:06:39 +0000] "GET / HTTP/1.1" 200 305 "-" "curl/7.58.0" "-"
+<pre class="CodeRay highlight"><code>$ docker logs my-ubi-nginx
+172.17.0.1 - - [16/Dec/2021:08:06:39 +0000] &quot;GET / HTTP/1.1&quot; 200 305 &quot;-&quot; &quot;curl/7.58.0&quot; &quot;-&quot;
 $</code></pre>
 </div>
 </div>
@@ -1924,7 +2012,7 @@ $</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">$ docker login
+<pre class="CodeRay highlight"><code>$ docker login
 Login with your Docker ID to push and pull images from Docker Hub. If you don't have a Docker ID, head over to https://hub.docker.com to create one.
 Username: &lt;username&gt;
 Password:
@@ -1947,7 +2035,7 @@ $</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">$  docker tag nginx-ubi8:1.0 &lt;username&gt;/nginx-ubi8:1.0</code></pre>
+<pre class="CodeRay highlight"><code>$  docker tag nginx-ubi8:1.0 &lt;username&gt;/nginx-ubi8:1.0</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1959,7 +2047,7 @@ $</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">$ docker images
+<pre class="CodeRay highlight"><code>$ docker images
 REPOSITORY                                                TAG       IMAGE ID       CREATED         SIZE
 nginx-ubi8                                                1.0       bee26a68d934   3 days ago      303MB
 yuhkih/nginx-ubi8                                         1.0       bee26a68d934   3 days ago      303MB
@@ -1972,7 +2060,7 @@ $</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">$ docker push yuhkih/nginx-ubi8:1.0
+<pre class="CodeRay highlight"><code>$ docker push yuhkih/nginx-ubi8:1.0
 The push refers to repository [docker.io/yuhkih/nginx-ubi8]
 6f0e4904cc79: Pushed
 0488bd866f64: Mounted from redhat/ubi8
@@ -2014,12 +2102,12 @@ $</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-Dockerfile hljs" data-lang="Dockerfile">FROM redhat/ubi8
+<pre class="CodeRay highlight"><code data-lang="Dockerfile">FROM redhat/ubi8
 RUN yum install -y nginx
 COPY index.html /usr/bin/share/nginx/html/index.html
 COPY nginx.conf /etc/nginx/nginx.conf
-CMD ["-g","daemon off;"]
-ENTRYPOINT ["nginx"]</code></pre>
+CMD [&quot;-g&quot;,&quot;daemon off;&quot;]
+ENTRYPOINT [&quot;nginx&quot;]</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2056,7 +2144,7 @@ ENTRYPOINT ["nginx"]</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-/etc/nginx/nginx.conf hljs" data-lang="/etc/nginx/nginx.conf"># For more information on configuration, see:
+<pre class="CodeRay highlight"><code data-lang="/etc/nginx/nginx.conf"># For more information on configuration, see:
 #   * Official English Documentation: http://nginx.org/en/docs/
 #   * Official Russian Documentation: http://nginx.org/ru/docs/
 
@@ -2074,9 +2162,9 @@ events {
 }
 
 http {
-    log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
-                      '$status $body_bytes_sent "$http_referer" '
-                      '"$http_user_agent" "$http_x_forwarded_for"';
+    log_format  main  '$remote_addr - $remote_user [$time_local] &quot;$request&quot; '
+                      '$status $body_bytes_sent &quot;$http_referer&quot; '
+                      '&quot;$http_user_agent&quot; &quot;$http_x_forwarded_for&quot;';
 
     access_log  /dev/stdout  main; #(2) stdoutに出力先を変更する
 
@@ -2123,8 +2211,8 @@ http {
 #        server_name  _;
 #        root         /usr/share/nginx/html;
 #
-#        ssl_certificate "/etc/pki/nginx/server.crt";
-#        ssl_certificate_key "/etc/pki/nginx/private/server.key";
+#        ssl_certificate &quot;/etc/pki/nginx/server.crt&quot;;
+#        ssl_certificate_key &quot;/etc/pki/nginx/private/server.key&quot;;
 #        ssl_session_cache shared:SSL:1m;
 #        ssl_session_timeout  10m;
 #        ssl_ciphers PROFILE=SYSTEM;
@@ -2150,10 +2238,10 @@ http {
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-index.html hljs" data-lang="index.html">&lt;html&gt;
+<pre class="CodeRay highlight"><code data-lang="index.html">&lt;html&gt;
     &lt;head&gt;
         &lt;title&gt;Test Page for the Nginx HTTP Server on Red Hat Enterprise Linux&lt;/title&gt;
-        &lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /&gt;
+        &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot; /&gt;
     &lt;/head&gt;
     &lt;body&gt;
        &lt;p&gt; Hello World &lt;/p&gt;
@@ -2167,7 +2255,7 @@ http {
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">$ ls -ltr
+<pre class="CodeRay highlight"><code>$ ls -ltr
 total 16
 -rw-r--r-- 1 yuhki yuhki  305 Dec 23 11:33 index.html
 -rw-r--r-- 1 yuhki yuhki  178 Dec 23 14:19 Dockerfile
@@ -2189,7 +2277,7 @@ $</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">$ docker build . -t yuhkih/nginx-ubi8-2:1.0</code></pre>
+<pre class="CodeRay highlight"><code>$ docker build . -t yuhkih/nginx-ubi8-2:1.0</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2222,7 +2310,7 @@ $</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">$ docker images
+<pre class="CodeRay highlight"><code>$ docker images
 REPOSITORY                                                TAG       IMAGE ID       CREATED         SIZE
 yuhkih/nginx-ubi8-2                                       1.0       9539618c5467   5 hours ago     307MB
 ...</code></pre>
@@ -2239,7 +2327,7 @@ yuhkih/nginx-ubi8-2                                       1.0       9539618c5467
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">$ docker login -u yuhkih -p &lt;パスワード&gt;</code></pre>
+<pre class="CodeRay highlight"><code>$ docker login -u yuhkih -p &lt;パスワード&gt;</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2247,7 +2335,7 @@ yuhkih/nginx-ubi8-2                                       1.0       9539618c5467
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">$ docker push yuhkih/nginx-ubi8</code></pre>
+<pre class="CodeRay highlight"><code>$ docker push yuhkih/nginx-ubi8</code></pre>
 </div>
 </div>
 </div>
@@ -2258,7 +2346,7 @@ yuhkih/nginx-ubi8-2                                       1.0       9539618c5467
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">$ docker search yuhkih
+<pre class="CodeRay highlight"><code>$ docker search yuhkih
 NAME                  DESCRIPTION   STARS     OFFICIAL   AUTOMATED
 yuhkih/nginx-ubi8-2                 0
 ...</code></pre>
@@ -2292,7 +2380,7 @@ yuhkih/nginx-ubi8-2                 0
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">docker run --rm -itd --name my-test  &lt;イメージ名&gt;</code></pre>
+<pre class="CodeRay highlight"><code>docker run --rm -itd --name my-test  &lt;イメージ名&gt;</code></pre>
 </div>
 </div>
 </div>
@@ -2303,7 +2391,7 @@ yuhkih/nginx-ubi8-2                 0
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">$ docker system prune
+<pre class="CodeRay highlight"><code>$ docker system prune
 WARNING! This will remove:
   - all stopped containers
   - all networks not used by at least one container
@@ -2324,15 +2412,8 @@ $</code></pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-12-29 17:18:47 UTC
+Last updated 2021-12-31 15:59:36 UTC
 </div>
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.3/highlight.min.js"></script>
-<script>
-if (!hljs.initHighlighting.called) {
-  hljs.initHighlighting.called = true
-  ;[].slice.call(document.querySelectorAll('pre.highlight > code')).forEach(function (el) { hljs.highlightBlock(el) })
-}
-</script>
 </body>
 </html>
