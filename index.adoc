@@ -2,7 +2,9 @@
 :toclevels: 5
 :sectnums:
 :toc-title: 目次
-:source-highlighter: highlight.js
+:highlightjsdir: highlight
+:source-highlighter: coderay
+
 
 include::chapter1.adoc[]
 include::chapter2.adoc[]
