@@ -38,8 +38,8 @@ $ docker pull redhat/ubi8
 
 ```
 $ docker images
-REPOSITORY                                                TAG       IMAGE ID       CREATED        SIZE
-redhat/ubi8                                               latest    cc0656847854   7 days ago     216MB
+REPOSITORY                             TAG       IMAGE ID       CREATED        SIZE
+redhat/ubi8                            latest    cc0656847854   7 days ago     216MB
 $
 ```
 
@@ -270,9 +270,9 @@ $ docker container commit -c 'ENTRYPOINT ["nginx"]'  -c 'CMD ["-g","daemon off;"
 
 ```
 $ docker images
-REPOSITORY                                                TAG       IMAGE ID       CREATED         SIZE
-nginx-ubi8                                                1.0       3b9b3870655f   5 seconds ago   303MB
-redhat/ubi8                                               latest    cc0656847854   7 days ago           216MB
+REPOSITORY                           TAG       IMAGE ID       CREATED            SIZE
+nginx-ubi8                           1.0       3b9b3870655f   5 seconds ago      303MB
+redhat/ubi8                          latest    cc0656847854   7 days ago         216MB
 ```
 
 `nginx-ubi8` で、 `TAG` が `1.0` のつまり `nginx-ubi8:1.0` が作成されているのがわかります。
@@ -347,13 +347,14 @@ $  docker tag nginx-ubi8:1.0 <username>/nginx-ubi8:1.0
 これで新しい名前のイメージができているはずです。
 `docker images` を確認します。全く同じものですが、頭に `<username>` が付加された名前のイメージができているはずです。
 
-ここでの `<username>` は、 `yuhkih` という私のテスト・アカウント名を使っています。
+ここでの `<username>` は、 `yuhkih` という私のテスト用のアカウントを使っています。
+ここはみなさんの `Docker Hub` のユーザー名で置き換えて読み替えて下さい。
 
 ```
 $ docker images
-REPOSITORY                                                TAG       IMAGE ID       CREATED         SIZE
-nginx-ubi8                                                1.0       bee26a68d934   3 days ago      303MB
-yuhkih/nginx-ubi8                                         1.0       bee26a68d934   3 days ago      303MB
+REPOSITORY                                TAG       IMAGE ID       CREATED         SIZE
+nginx-ubi8                                1.0       bee26a68d934   3 days ago      303MB
+yuhkih/nginx-ubi8                         1.0       bee26a68d934   3 days ago      303MB
 $
 ```
 
