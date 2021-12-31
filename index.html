@@ -1678,8 +1678,8 @@ $</code></pre>
 <div class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code>$ docker images
-REPOSITORY                                                TAG       IMAGE ID       CREATED        SIZE
-redhat/ubi8                                               latest    cc0656847854   7 days ago     216MB
+REPOSITORY                             TAG       IMAGE ID       CREATED        SIZE
+redhat/ubi8                            latest    cc0656847854   7 days ago     216MB
 $</code></pre>
 </div>
 </div>
@@ -1953,9 +1953,9 @@ http {
 <div class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code>$ docker images
-REPOSITORY                                                TAG       IMAGE ID       CREATED         SIZE
-nginx-ubi8                                                1.0       3b9b3870655f   5 seconds ago   303MB
-redhat/ubi8                                               latest    cc0656847854   7 days ago           216MB</code></pre>
+REPOSITORY                           TAG       IMAGE ID       CREATED            SIZE
+nginx-ubi8                           1.0       3b9b3870655f   5 seconds ago      303MB
+redhat/ubi8                          latest    cc0656847854   7 days ago         216MB</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2049,14 +2049,15 @@ $</code></pre>
 <code>docker images</code> を確認します。全く同じものですが、頭に <code>&lt;username&gt;</code> が付加された名前のイメージができているはずです。</p>
 </div>
 <div class="paragraph">
-<p>ここでの <code>&lt;username&gt;</code> は、 <code>yuhkih</code> という私のテスト・アカウント名を使っています。</p>
+<p>ここでの <code>&lt;username&gt;</code> は、 <code>yuhkih</code> という私のテスト用のアカウントを使っています。
+ここはみなさんの <code>Docker Hub</code> のユーザー名で置き換えて読み替えて下さい。</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code>$ docker images
-REPOSITORY                                                TAG       IMAGE ID       CREATED         SIZE
-nginx-ubi8                                                1.0       bee26a68d934   3 days ago      303MB
-yuhkih/nginx-ubi8                                         1.0       bee26a68d934   3 days ago      303MB
+REPOSITORY                                TAG       IMAGE ID       CREATED         SIZE
+nginx-ubi8                                1.0       bee26a68d934   3 days ago      303MB
+yuhkih/nginx-ubi8                         1.0       bee26a68d934   3 days ago      303MB
 $</code></pre>
 </div>
 </div>
@@ -2276,7 +2277,7 @@ $</code></pre>
 <p><code>docker build</code> コマンドを実行すると <code>Dockerfile</code> という名前のファイルを探してきてその内容の作業を実行して、新しいイメージを作成してくれます。 <code>Dockerfile</code> という名前は変更もできますが、変更した場合は変更後のファイルを引数で指定する必要があります。</p>
 </div>
 <div class="paragraph">
-<p>新しく生成されるイメージ名を　<code>yuhkih/nginx-ubi8-2:1.0</code>　にします。</p>
+<p>新しく生成されるイメージ名を <code>yuhkih/nginx-ubi8-2:1.0</code> にします。</p>
 </div>
 <div class="paragraph">
 <p>以下のコマンドでビルドを実行します。</p>
@@ -2299,11 +2300,11 @@ $</code></pre>
 </div>
 <div class="paragraph">
 <p>をくっつけたものです。
-<code>Docker Hub</code> のユーザー名を先頭につけたのは、後で <code>Docker Hub</code> にこのイメージを　<code>push</code>　する事を考えているためです。
-<code>Docker Hub</code>　に保管するイメージは、イメージ名の先頭に　<code>&lt;ユーザー名&gt;/</code>　を付ける事が決まりになっているため、イメージ作成時にあらかじめ付けておきます。逆に言うと、　<code>Docker Hub</code>　にイメージを <code>push</code> せずにローカルで使うだけであれば、こう言った名前の付け方は必要ありません。</p>
+<code>Docker Hub</code> のユーザー名を先頭につけたのは、後で <code>Docker Hub</code> にこのイメージを <code>push</code> する事を考えているためです。
+<code>Docker Hub</code> に保管するイメージは、イメージ名の先頭に <code>&lt;ユーザー名&gt;/</code> を付ける事が決まりになっているため、イメージ作成時にあらかじめ付けておきます。逆に言うと、 <code>Docker Hub</code> にイメージを <code>push</code> せずにローカルで使うだけであれば、こう言った名前の付け方は必要ありません。</p>
 </div>
 <div class="paragraph">
-<p>最後に　<code>1.0</code>　という名前のタグを付けていますが、これを付けなかった場合は、　<code>latest</code>　というタグが自動で付きます。</p>
+<p>最後に <code>1.0</code> という名前のタグを付けていますが、これを付けなかった場合は、 <code>latest</code> というタグが自動で付きます。</p>
 </div>
 <div class="paragraph">
 <p>名前の付け方にいろいろルールがあり面倒ですが、このネーミング・ルールになれる必要があります。</p>
@@ -2312,13 +2313,13 @@ $</code></pre>
 <div class="sect2">
 <h3 id="_build_したイメージの確認">7.3. build したイメージの確認</h3>
 <div class="paragraph">
-<p><code>docker images</code>　コマンドで、ビルドされたイメージを確認します。</p>
+<p><code>docker images</code> コマンドで、ビルドされたイメージを確認します。</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code>$ docker images
-REPOSITORY                                                TAG       IMAGE ID       CREATED         SIZE
-yuhkih/nginx-ubi8-2                                       1.0       9539618c5467   5 hours ago     307MB
+REPOSITORY                                      TAG       IMAGE ID       CREATED         SIZE
+yuhkih/nginx-ubi8-2                             1.0       9539618c5467   5 hours ago     307MB
 ...</code></pre>
 </div>
 </div>
@@ -2418,7 +2419,7 @@ $</code></pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-12-31 16:52:09 UTC
+Last updated 2021-12-31 23:45:47 UTC
 </div>
 </div>
 </body>
