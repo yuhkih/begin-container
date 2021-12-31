@@ -774,8 +774,8 @@ $</code></pre>
 <div class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code>$ docker ps -a
-CONTAINER ID   IMAGE                                                     COMMAND                  CREATED          STATUS                      PORTS                  NAMES
-b0d570e09018   nginx                                                     &quot;/docker-entrypoint.…&quot;   20 minutes ago   Exited (0) 5 minutes ago                           eager_benz
+CONTAINER ID   IMAGE     COMMAND                   CREATED            STATUS                        PORTS     NAMES
+b0d570e09018   nginx     &quot;/docker-entrypoint.…&quot;   20 minutes ago   Exited (0) 5 minutes ago                   eager_benz
 $</code></pre>
 </div>
 </div>
@@ -800,7 +800,7 @@ eager_benz</code></pre>
 <div class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code>$ docker ps -a
-CONTAINER ID   IMAGE                                                     COMMAND                  CREATED          STATUS                      PORTS                  NAMES
+CONTAINER ID     IMAGE       COMMAND       CREATED     STATUS         PORTS      NAMES
 $</code></pre>
 </div>
 </div>
@@ -814,8 +814,8 @@ $</code></pre>
 <div class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code>$ docker images
-REPOSITORY                                                TAG       IMAGE ID       CREATED         SIZE
-nginx                                                     latest    ea335eea17ab   1 weeks ago     141MB
+REPOSITORY                          TAG       IMAGE ID       CREATED         SIZE
+nginx                               latest    ea335eea17ab   1 weeks ago     141MB
 $</code></pre>
 </div>
 </div>
@@ -872,11 +872,11 @@ $</code></pre>
 <div class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code>$ docker images
-REPOSITORY                                                TAG       IMAGE ID       CREATED         SIZE
-nginx                                                     latest    f652ca386ed1   3 weeks ago     141MB
-nginx                                                     1.20      aedf7f31bdab   5 weeks ago     141MB
-redhat/ubi8                                               latest    cc0656847854   7 weeks ago     216MB
-ubuntu                                                    latest    ba6acccedd29   2 months ago    72.8MB</code></pre>
+REPOSITORY  　　　　　　            TAG       IMAGE ID       CREATED         SIZE
+nginx                              latest    f652ca386ed1   3 weeks ago     141MB
+nginx                              1.20      aedf7f31bdab   5 weeks ago     141MB
+redhat/ubi8                        latest    cc0656847854   7 weeks ago     216MB
+ubuntu                             latest    ba6acccedd29   2 months ago    72.8MB</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -908,14 +908,14 @@ ubuntu                                                    latest    ba6acccedd29
 <p><code>IMAGE ID</code> は、その <code>イメージ</code> のデータとしての一意性を示します。そのため、 <code>IMAGE ID</code> が同じでも違う <code>レポジトリ</code> 名 + <code>タグ</code> 名を持つイメージも存在しえます。</p>
 </div>
 <div class="paragraph">
-<p>以下の例は、ある <code>イメージ</code> を別の <code>イメージ</code> にコピーし作成した時の出力例です。これはデータとしては、同じものなので、同じ <code>IMAGE ID</code> を持っています。</p>
+<p>以下の例は、ある <code>イメージ</code> を別の <code>イメージ</code> にコピーし作成した時の出力例です。 <code>copy:1.0</code> と <code>nginx-ubi8:1.0</code> は、データとしては同じものなので、同じ <code>IMAGE ID</code> を持っています。</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code>$ docker images
-REPOSITORY                                                TAG       IMAGE ID       CREATED         SIZE
-copy                                                      1.0       6c364457d832   3 days ago      303MB
-nginx-ubi8                                                1.0       6c364457d832   3 days ago      303MB
+REPOSITORY                    TAG       IMAGE ID       CREATED         SIZE
+copy                          1.0       6c364457d832   3 days ago      303MB
+nginx-ubi8                    1.0       6c364457d832   3 days ago      303MB
 ...</code></pre>
 </div>
 </div>
@@ -926,7 +926,7 @@ nginx-ubi8                                                1.0       6c364457d832
 <div class="sect3">
 <h4 id="_docker_のイメージ名とは">2.3.2. Docker のイメージ名とは？</h4>
 <div class="paragraph">
-<p>Docker のマニュアルを <code>イメージ名(image name)</code> で検索すると、 <code>imagne name</code> という言葉の使われている場所は非常に少ないのですが、例えば、 <a href="https://docs.docker.com/engine/reference/commandline/inspect/#get-an-instances-image-name" target="_blank" rel="noopener">Get an instance’s image name</a> (インスタンスの「イメージ名」を取得する) で紹介されている <code>docker inspect</code> コマンドで得られる <code>imagne name</code> とされるものは、 <code>tag</code> を含んだ <code>&lt;レポジトリ&gt;:&lt;タグ&gt;</code> の値です。(タグがlatestの場合は省略される)。</p>
+<p>Docker のマニュアルを <code>イメージ名(image name)</code> で検索すると、 <code>image name</code> という言葉の使われている場所は非常に少ないのですが、例えば、 <a href="https://docs.docker.com/engine/reference/commandline/inspect/#get-an-instances-image-name" target="_blank" rel="noopener">Get an instance’s image name</a> (インスタンスの「イメージ名」を取得する) で紹介されている <code>docker inspect</code> コマンドで得られる <code>imagne name</code> とされるものは、 <code>tag</code> を含んだ <code>&lt;レポジトリ&gt;:&lt;タグ&gt;</code> の値です。(タグがlatestの場合は省略される)。</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -2418,7 +2418,7 @@ $</code></pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-12-31 16:29:58 UTC
+Last updated 2021-12-31 16:49:20 UTC
 </div>
 </div>
 </body>
