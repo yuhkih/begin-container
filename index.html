@@ -908,7 +908,7 @@ ubuntu                           latest    ba6acccedd29   2 months ago    72.8MB
 <p>ですので、 <code>docker images</code> の出力では、 <code>イメージ名</code> ではなく <code>レポジトリ</code> という表現になっています。</p>
 </div>
 <div class="paragraph">
-<p><code>レポジトリ名</code> だけでは、イメージを任意に区別できないので、 <code>レポジトリ</code> 名 + <code>タグ</code> 名の形で <code>docker</code> コマンドの引数に指定します。</p>
+<p><code>レポジトリ名</code> だけでは、イメージを任意に区別できないので、<code>docker</code> コマンドの引数に <code>イメージ</code> 名を指定する場合は、 <code>レポジトリ</code> 名 + <code>タグ</code> 名の形で指定します。</p>
 </div>
 <div class="paragraph">
 <p>例外として <code>docker start nginx</code>  のように <code>タグ</code> を省略した場合、自動的に <code>docker start nginx:latest</code> のように <code>latest</code> が付加されて解釈する事があります。</p>
@@ -2544,7 +2544,7 @@ $</code></pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-01-01 01:57:40 UTC
+Last updated 2022-01-01 01:59:01 UTC
 </div>
 </div>
 </body>
