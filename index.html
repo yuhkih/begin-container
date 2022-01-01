@@ -549,6 +549,7 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <ul class="sectlevel3">
 <li><a href="#_ユニークなイメージ">2.3.1. ユニークなイメージ</a></li>
 <li><a href="#_docker_のイメージ名とは">2.3.2. Docker のイメージ名とは？</a></li>
+<li><a href="#_レポジトリ名の表記">2.3.3. レポジトリ名の表記</a></li>
 </ul>
 </li>
 <li><a href="#_このセクションで使用したコマンド">2.4. このセクションで使用したコマンド</a></li>
@@ -883,10 +884,10 @@ ubuntu                           latest    ba6acccedd29   2 months ago    72.8MB
 <p>ヘッダー部分の所に <code>REPOSITORY</code> と書いています。</p>
 </div>
 <div class="paragraph">
-<p>少し前のステップで、イメージの削除は <code>docker rmi &lt;REPOSITORY名:TAG&gt;</code> で行う。とさらっと書きましたが、直感的には <code>イメージ名</code> で良いような気もします。この <code>REPOSITORY</code> とは何でしょうか。</p>
+<p>少し前のステップで、イメージの削除は <code>docker rmi &lt;REPOSITORY名:TAG&gt;</code> で行う。とさらっと <code>REPOSITORY名</code> という言葉をつかっています。直感的には、この <code>REPOSITORY名</code> の所は <code>イメージ名</code> で良いような気もします。この <code>REPOSITORY</code> とは何でしょうか。</p>
 </div>
 <div class="paragraph">
-<p>イメージは <code>latest</code> や、 <code>1.0</code> 等のバージョンを表す <code>タグ</code> を付ける事で、同じグループのイメージである事を示す事ができます。 <code>docker</code> では、このグループの概念を <code>レポジトリ</code> と読んでいます。</p>
+<p>イメージは <code>latest</code> や、 <code>1.0</code> 等のバージョンを表す <code>タグ</code> を付ける事で、同じグループのイメージである事を示す事ができます。 <code>タグ</code> より前の部分の名前が同じであれば、同じグループとみなされます。 <code>docker</code> では、このグループの概念を <code>レポジトリ</code> と読んでいます。</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -926,7 +927,7 @@ nginx-ubi8                    1.0       6c364457d832   3 days ago      303MB
 <div class="sect3">
 <h4 id="_docker_のイメージ名とは">2.3.2. Docker のイメージ名とは？</h4>
 <div class="paragraph">
-<p>Docker のマニュアルを <code>イメージ名(image name)</code> で検索すると、 <code>image name</code> という言葉の使われている場所は非常に少ないのですが、例えば、 <a href="https://docs.docker.com/engine/reference/commandline/inspect/#get-an-instances-image-name" target="_blank" rel="noopener">Get an instance’s image name</a> (インスタンスの「イメージ名」を取得する) で紹介されている <code>docker inspect</code> コマンドで得られる <code>imagne name</code> とされるものは、 <code>tag</code> を含んだ <code>&lt;レポジトリ&gt;:&lt;タグ&gt;</code> の値です。(タグがlatestの場合は省略される)。</p>
+<p>Docker の公式のドキュメントを <code>イメージ名(image name)</code> で検索すると、 <code>image name</code> という言葉の使われている場所は非常に少ないのです。が、例えば、 <a href="https://docs.docker.com/engine/reference/commandline/inspect/#get-an-instances-image-name" target="_blank" rel="noopener">Get an instance’s image name</a> (インスタンスの「イメージ名」を取得する) の項目で紹介されている <code>docker inspect</code> コマンドで得られる <code>imagne name</code> とされるものは、 <code>tag</code> を含んだ <code>&lt;レポジトリ&gt;:&lt;タグ&gt;</code> の値です。(タグがlatestの場合は省略される)。</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -936,10 +937,10 @@ $</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>ただ、一般的には <code>タグ</code> を抜いた <code>レポジトリ名</code> の事を <code>イメージ</code> 名と呼ぶケースもあり、 <code>イメージ(名)</code> の定義はきちんと定まっておらず曖昧に使われているのが現状です。ここは初学者にはつらい所です。</p>
+<p>ただ、一般的には <code>タグ</code> を抜いた <code>レポジトリ</code> 名の事を <code>イメージ</code> 名と呼んで説明しているケースもあり、 <code>イメージ(名)</code> の定義はきちんと定まっておらず曖昧に使われているのが現状で、インターネットを検索すると呼び方に関する議論も見つける事ができます。英語圏でもこの議論が見つかるので、翻訳の問題ではないようです。言葉の使われ方が安定していなのは、初学者にはつらい所です。</p>
 </div>
 <div class="paragraph">
-<p>以下は <code>docker tag</code> コマンドのヘルプですが、 <code>レポジトリ名</code> と解釈される所は <code>SOURCE_IMAGE/TARGET_IMAGE</code> と記載されていて <code>[:TAG]</code> を付ける事ができるとされています。つまり、ここでは <code>SOURCE_IMAGE/TARGET_IMAGE</code> 名が <code>REPOSITORY</code> 名と同じ意味で使われています。</p>
+<p>以下は <code>docker tag</code> コマンドのヘルプですが、 <code>レポジトリ名</code> と解釈される所は <code>SOURCE_IMAGE/TARGET_IMAGE</code> と記載されていて <code>[:TAG]</code> を付ける事ができるとされています。つまり、ここでは <code>SOURCE_IMAGE/TARGET_IMAGE</code> (つまりイメージ名) が <code>REPOSITORY</code> 名と同じ意味で使われています。</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -951,13 +952,67 @@ Usage:  docker tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG]</code></pre>
 <p>さらに、実際のコマンド実行時にどのように使われているかに目を向けると、 <code>docker run nginx</code> と書いた時の <code>nginx</code> は、 <code>&lt;レポジトリ名&gt;:&lt;タグ名&gt;</code> です。これは、表記上、省略されているだけで、実際には <code>nginx</code> は  <code>nginx:latest</code> と解釈されます。ですので、タグが無い=レポジトリ名という区別も単純にはできません。</p>
 </div>
 <div class="paragraph">
-<p><code>docker</code> では、省略した記述が許されているため <code>nginx</code> と書いた時にそれはコンテキストによって <code>レポジトリ</code> であったり、 <code>イメージ名</code> でもありえます。さらに前述した <code>docker tag</code> コマンドのヘルプのように、タグを抜いた部分を「イメージ」と呼んでいるケースもあります。</p>
+<p><code>docker</code> では、省略した記述が許されているため <code>nginx</code> と書いた時にそれはコンテキストによって <code>レポジトリ</code> であったり、 <code>イメージ名</code> でもありえます。さらに前述した <code>docker tag</code> コマンドのヘルプのように、タグを抜いた部分を「 <code>イメージ</code> (名)」と呼んでいるケースもあります。</p>
 </div>
 <div class="paragraph">
 <p>はじめのうちは混乱する部分なので、頭を柔軟に保つ必要があります。</p>
 </div>
 <div class="paragraph">
 <p>このガイドでは基本的に <code>&lt;レポジトリ名&gt;:&lt;タグ&gt;</code> の組み合わせを <code>イメージ</code> 名と呼ぶ事にします。</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_レポジトリ名の表記">2.3.3. レポジトリ名の表記</h4>
+<div class="paragraph">
+<p><code>レポジトリ名</code> と <code>イメージ(名)</code> についての基本を学んだので、初学者が混乱する <code>レポジトリ</code> 名の表記の種類について、実例をみながら理解を深めてみます。</p>
+</div>
+<div class="paragraph">
+<p>以下は <code>NGINX</code> 社が提供している <code>nginx</code> イメージの <code>レポジトリ</code> です。この <code>レポジトリ</code> 名は <code>nginx</code> です。
+この <code>ポジトリ</code> の最新イメージを使用したい時は、<code>nginx:latest</code> のように指定します。</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/2-repository-name-nginx.png" alt="left">
+</div>
+</div>
+<div class="paragraph">
+<p>以下は、 <code>ubuntu</code> が提供している <code>nginx</code> イメージの <code>レポジトリ</code> です。このレポジトリ名は <code>ubuntu/nginx</code> です。
+このレポジトリの最新イメージを使用したい時は、<code>ubuntu/nginx:latest</code> のように指定します。</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/2-repository-name-ubuntu.png" alt="left">
+</div>
+</div>
+<div class="paragraph">
+<p>以下は、 <code>ubuntu</code> が提供しているコンテナ用の <code>ubuntu</code> OSの <code>レポジトリ</code> です。この <code>レポジトリ</code> 名は <code>ubuntu/nginx</code> です。
+この <code>レポジトリ</code> の最新イメージを使用したい時は、<code>ubuntu:latest</code> のように指定します。</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/2-repository-name-ubuntu-os.png" alt="left">
+</div>
+</div>
+<div class="paragraph">
+<p>以下は、 <code>Red Hat</code> 社が提供しているコンテナ用の RHEL OS の <code>レポジトリ`です。 `Red Hat</code> 社は、コンテナ用の OSイメージは RHEL 8 のようには呼ばず <code>UBI (Universal Base Image) 8</code> のように呼びます。これは <code>ubi8</code> のイメージです。レポジトリ名は <code>redhat/ubi8</code> です。
+この <code>レポジトリ</code> の最新イメージを使用したい時は、 <code>redhat/ubi8:latest</code> のように指定します。</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/2-repository-name-redhat.png" alt="left">
+</div>
+</div>
+<div class="paragraph">
+<p>はじめのうちは、 <code>/</code> が入って居ると「 <code>/</code> の前が <code>レポジトリ名</code> で…」のように考えてしまいますが、 <code>レポジトリ</code> 名 には <code>/</code> が入って居る場合もありますし、そうで無い場合もあります。</p>
+</div>
+<div class="paragraph">
+<p>アプリケーションの提供ベンダーの名前が必ず <code>/</code> で区切られて <code>レポジトリ</code> 名に含まれている。という事もありません。</p>
+</div>
+<div class="paragraph">
+<p>後述しますが、 <code>Docker Hub</code> のユーザー名を <code>/</code> を使って <code>レポジトリ</code> 名として付加するケースもあるので、 <code>/</code> の前が必ずベンダー名という事もありません。</p>
+</div>
+<div class="paragraph">
+<p>「<code>レポジトリ</code> 名には <code>/</code> が入って居る場合もあるし、そうでない場合もある。区切りの意味もその時々」くらいに考えておいて、 <code>/</code> に必要以上に惑わされないようにしましょう。</p>
 </div>
 </div>
 </div>
@@ -2419,7 +2474,7 @@ $</code></pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-12-31 23:45:47 UTC
+Last updated 2022-01-01 00:55:33 UTC
 </div>
 </div>
 </body>
