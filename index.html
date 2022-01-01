@@ -556,10 +556,11 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <ul class="sectlevel3">
 <li><a href="#_コンテナの作成と起動">2.4.1. コンテナの作成と起動</a></li>
 <li><a href="#_起動しているコンテナの一覧">2.4.2. 起動しているコンテナの一覧</a></li>
-<li><a href="#_起動しているコンテナを停止">2.4.3. 起動しているコンテナを停止</a></li>
-<li><a href="#_停止したものも含めたコンテナの一覧">2.4.4. 停止したものも含めたコンテナの一覧</a></li>
-<li><a href="#_コンテナの削除">2.4.5. コンテナの削除</a></li>
-<li><a href="#_イメージの削除_2">2.4.6. イメージの削除</a></li>
+<li><a href="#_コンテナを停止">2.4.3. コンテナを停止</a></li>
+<li><a href="#_コンテナを起動">2.4.4. コンテナを起動</a></li>
+<li><a href="#_停止したものも含めたコンテナの一覧">2.4.5. 停止したものも含めたコンテナの一覧</a></li>
+<li><a href="#_コンテナの削除">2.4.6. コンテナの削除</a></li>
+<li><a href="#_イメージの削除_2">2.4.7. イメージの削除</a></li>
 </ul>
 </li>
 </ul>
@@ -1064,21 +1065,36 @@ Usage:  docker tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG]</code></pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_起動しているコンテナを停止">2.4.3. 起動しているコンテナを停止</h4>
+<h4 id="_コンテナを停止">2.4.3. コンテナを停止</h4>
 <div class="paragraph">
-<p>起動しているコンテナを停止します。</p>
+<p>コンテナを停止するには以下の通りです。</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code>$docker stop eager_benz</code></pre>
+<pre class="CodeRay highlight"><code>docker stop eager_benz</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>上記では <code>コンテナ</code> 名を指定していますが、 <code>CONTAINER ID</code> を指定して停止する事もできます。</p>
+<p>上記では <code>コンテナ</code> 名を指定していますが、 <code>CONTAINER ID</code> を指定する事もできます。</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_停止したものも含めたコンテナの一覧">2.4.4. 停止したものも含めたコンテナの一覧</h4>
+<h4 id="_コンテナを起動">2.4.4. コンテナを起動</h4>
+<div class="paragraph">
+<p>本文中では使用しなかったのですが、停止しているコンテナを起動するには以下の通りです。
+停止させる時の <code>stop</code> が <code>start</code> 変わるだけです。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>docker start eager_benz</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>上記では <code>コンテナ</code> 名を指定していますが、 <code>CONTAINER ID</code> を指定する事もできます。</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_停止したものも含めたコンテナの一覧">2.4.5. 停止したものも含めたコンテナの一覧</h4>
 <div class="paragraph">
 <p>停止したものも含めたコンテナの一覧を表示します。</p>
 </div>
@@ -1089,7 +1105,7 @@ Usage:  docker tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG]</code></pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_コンテナの削除">2.4.5. コンテナの削除</h4>
+<h4 id="_コンテナの削除">2.4.6. コンテナの削除</h4>
 <div class="paragraph">
 <p>コンテナを削除します。</p>
 </div>
@@ -1103,7 +1119,7 @@ Usage:  docker tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG]</code></pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_イメージの削除_2">2.4.6. イメージの削除</h4>
+<h4 id="_イメージの削除_2">2.4.7. イメージの削除</h4>
 <div class="paragraph">
 <p>イメージをローカルの <code>レポジトリ</code> (自分が使用している端末の <code>レポジトリ</code> )から削除します。</p>
 </div>
@@ -2522,7 +2538,7 @@ $</code></pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-01-01 01:33:49 UTC
+Last updated 2022-01-01 01:45:29 UTC
 </div>
 </div>
 </body>
