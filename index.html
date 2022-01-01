@@ -549,12 +549,12 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <ul class="sectlevel3">
 <li><a href="#_ユニークなイメージ">2.3.1. ユニークなイメージ</a></li>
 <li><a href="#_docker_のイメージ名とは">2.3.2. Docker のイメージ名とは？</a></li>
-<li><a href="#_レポジトリ名の表記">2.3.3. レポジトリ名の表記</a></li>
+<li><a href="#_レポジトリ名の実際">2.3.3. レポジトリ名の実際</a></li>
 </ul>
 </li>
 <li><a href="#_このセクションで使用したコマンド">2.4. このセクションで使用したコマンド</a>
 <ul class="sectlevel3">
-<li><a href="#_コンテナの起動">2.4.1. コンテナの起動</a></li>
+<li><a href="#_コンテナの作成と起動">2.4.1. コンテナの作成と起動</a></li>
 <li><a href="#_起動しているコンテナの一覧">2.4.2. 起動しているコンテナの一覧</a></li>
 <li><a href="#_起動しているコンテナを停止">2.4.3. 起動しているコンテナを停止</a></li>
 <li><a href="#_停止したものも含めたコンテナの一覧">2.4.4. 停止したものも含めたコンテナの一覧</a></li>
@@ -971,7 +971,7 @@ Usage:  docker tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG]</code></pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_レポジトリ名の表記">2.3.3. レポジトリ名の表記</h4>
+<h4 id="_レポジトリ名の実際">2.3.3. レポジトリ名の実際</h4>
 <div class="paragraph">
 <p><code>レポジトリ(名)</code> と <code>イメージ(名)</code> についての基本を学んだので、初学者が混乱する <code>レポジトリ</code> 名の表記の種類について、実例をみながら理解を深めてみます。</p>
 </div>
@@ -1031,20 +1031,31 @@ Usage:  docker tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG]</code></pre>
 <p>初めのうちはコマンドを覚えられないと思うので、このセクションで使用した基本的なコマンドをまとめておきます。</p>
 </div>
 <div class="sect3">
-<h4 id="_コンテナの起動">2.4.1. コンテナの起動</h4>
+<h4 id="_コンテナの作成と起動">2.4.1. コンテナの作成と起動</h4>
 <div class="paragraph">
-<p>イメージ名 <code>nginx</code> (タグを省略しているので <code>nginx:latest</code> と解釈される)を <code>Docker Hub</code> からダウンロードして、 <code>-d (デタッチ）</code> で起動。コンテナ名は自動でランダム付ける</p>
+<p>イメージ名 <code>nginx</code> を <code>Docker Hub</code> からダウンロードして、 <code>-d (デタッチ）</code> で起動します。コンテナ名は自動でランダム付きます。</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code>docker run -d nginx</code></pre>
 </div>
 </div>
+<div class="paragraph">
+<p>上では、タグを省略しているので <code>latest</code> を付けて <code>nginx:latest</code> と解釈されます。</p>
+</div>
+<div class="paragraph">
+<p>尚、解説の中では使いませんでしたが、コンテナ名を自分で指定したい場合は <code>--name</code> &lt;付けたい名前&gt; のように指定できます。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>docker run -d --name &lt;my-contaienr&gt; nginx</code></pre>
+</div>
+</div>
 </div>
 <div class="sect3">
 <h4 id="_起動しているコンテナの一覧">2.4.2. 起動しているコンテナの一覧</h4>
 <div class="paragraph">
-<p>起動しているコンテナの一覧</p>
+<p>起動しているコンテナの一覧を表示します。</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1055,45 +1066,55 @@ Usage:  docker tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG]</code></pre>
 <div class="sect3">
 <h4 id="_起動しているコンテナを停止">2.4.3. 起動しているコンテナを停止</h4>
 <div class="paragraph">
-<p>起動しているコンテナを停止</p>
+<p>起動しているコンテナを停止します。</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code>$docker stop eager_benz   # eager_benz は自動でランダムに付けられたコンテナ名</code></pre>
+<pre class="CodeRay highlight"><code>$docker stop eager_benz</code></pre>
 </div>
+</div>
+<div class="paragraph">
+<p>上記では <code>コンテナ</code> 名を指定していますが、 <code>CONTAINER ID</code> を指定して停止する事もできます。</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_停止したものも含めたコンテナの一覧">2.4.4. 停止したものも含めたコンテナの一覧</h4>
 <div class="paragraph">
-<p>停止したものも含めたコンテナの一覧</p>
+<p>停止したものも含めたコンテナの一覧を表示します。</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code>docker ps　-a</code></pre>
+<pre class="CodeRay highlight"><code>docker ps -a</code></pre>
 </div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_コンテナの削除">2.4.5. コンテナの削除</h4>
 <div class="paragraph">
-<p>コンテナの削除</p>
+<p>コンテナを削除します。</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code>docker rm eager_benz　　 # eager_genz はコンテナ名</code></pre>
+<pre class="CodeRay highlight"><code>docker rm eager_benz</code></pre>
 </div>
+</div>
+<div class="paragraph">
+<p>上記では <code>コンテナ</code> 名を指定していますが、 <code>CONTAINER ID</code> を指定して削除する事もできます。</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_イメージの削除_2">2.4.6. イメージの削除</h4>
 <div class="paragraph">
-<p>イメージの削除</p>
+<p>イメージをローカルの <code>レポジトリ</code> (自分が使用している端末の <code>レポジトリ</code> )から削除します。<br>
+尚、このイメージを使用したコンテナが存在している時は削除できないようになっています。</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code>docker rmi nginx:lattest   # nginx:latest はイメージ名</code></pre>
+<pre class="CodeRay highlight"><code>docker rmi nginx:latest</code></pre>
 </div>
+</div>
+<div class="paragraph">
+<p>上記では <code>イメージ</code> 名を指定していますが、 <code>IMAGE ID</code> を指定して削除する事もできます。</p>
 </div>
 </div>
 </div>
@@ -2501,7 +2522,7 @@ $</code></pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-01-01 01:00:17 UTC
+Last updated 2022-01-01 01:14:43 UTC
 </div>
 </div>
 </body>
