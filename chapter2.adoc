@@ -264,7 +264,7 @@ Usage:  docker tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG]
 image::images/2-repository-name-nginx.png[left]
 
 
-以下は、 `Ubuntu Linux`` のディストリビューターである `Canonical` 社が提供している `nginx` イメージの `レポジトリ` です。このレポジトリ名は `ubuntu/nginx` です。
+以下は、 `Ubuntu Linux` のディストリビューターである `Canonical` 社が提供している `nginx` イメージの `レポジトリ` です。このレポジトリ名は `ubuntu/nginx` です。
 このレポジトリの最新イメージを使用したい時は、`ubuntu/nginx:latest` のように指定します。
 
 image::images/2-repository-name-ubuntu.png[left]
