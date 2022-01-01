@@ -270,7 +270,7 @@ image::images/2-repository-name-nginx.png[left]
 image::images/2-repository-name-ubuntu.png[left]
 
 
-以下は、 `ubuntu` が提供しているコンテナ用の `ubuntu` OSの `レポジトリ` です。この `レポジトリ` 名は `ubuntu/nginx` です。
+以下は、 `Canonical` 社が提供しているコンテナ用の `ubuntu` OSの `レポジトリ` です。この `レポジトリ` 名は `ubuntu/nginx` です。
 この `レポジトリ` の最新イメージを使用したい時は、`ubuntu:latest` のように指定します。
 
 image::images/2-repository-name-ubuntu-os.png[left]
