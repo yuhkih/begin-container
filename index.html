@@ -982,40 +982,68 @@ Usage:  docker tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG]</code></pre>
 <div class="paragraph">
 <p><code>レポジトリ(名)</code> と <code>イメージ(名)</code> についての基本を学んだので、初学者が混乱する <code>レポジトリ</code> 名の表記の種類について、実例をみながら理解を深めてみます。</p>
 </div>
+<div class="ulist">
+<ul>
+<li>
+<p>レポジトリ「nginx」</p>
+</li>
+</ul>
+</div>
 <div class="paragraph">
-<p>以下は <code>NGINX</code> 社が提供している <code>nginx</code> イメージの <code>レポジトリ</code> です。この <code>レポジトリ</code> 名は <code>nginx</code> です。
-この <code>ポジトリ</code> の最新イメージを使用したい時は、<code>nginx:latest</code> のように指定します。</p>
+<p>以下は <code>NGINX</code> 社が提供している <code>nginx</code> イメージの <code>レポジトリ</code> です。この <code>レポジトリ</code> 名は 「 <code>nginx</code> 」 です。
+この <code>レポジトリ</code> 内の最新イメージを使用したい時は、「 <code>nginx:latest</code> 」のように指定します。</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/2-repository-name-nginx.png" alt="left">
+<img src="images/2-repository-name-nginx.png" alt="nginx" width="600" height="left">
 </div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>レポジトリ「ubuntu/nginx」</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p>以下は、 <code>Ubuntu Linux</code> のディストリビューターである <code>Canonical</code> 社が提供している <code>nginx</code> イメージの <code>レポジトリ</code> です。このレポジトリ名は <code>ubuntu/nginx</code> です。
-このレポジトリの最新イメージを使用したい時は、<code>ubuntu/nginx:latest</code> のように指定します。</p>
+<p>以下は、 <code>Ubuntu Linux</code> のディストリビューターである <code>Canonical</code> 社が提供している <code>nginx</code> イメージの <code>レポジトリ</code> です。このレポジトリ名は「 <code>ubuntu/nginx</code> 」です。
+この <code>レポジトリ</code> 内の最新イメージを使用したい時は、「 <code>ubuntu/nginx:latest</code> 」のように指定します。</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/2-repository-name-ubuntu.png" alt="left">
+<img src="images/2-repository-name-ubuntu.png" alt="ubuntu/nginx" width="600" height="left">
 </div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>レポジトリ「ubuntu」</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p>以下は、 <code>Canonical</code> 社が提供しているコンテナ用の <code>ubuntu</code> OSの <code>レポジトリ</code> です。この <code>レポジトリ</code> 名は <code>ubuntu/nginx</code> です。
-この <code>レポジトリ</code> の最新イメージを使用したい時は、<code>ubuntu:latest</code> のように指定します。</p>
+<p>以下は、 <code>Canonical</code> 社が提供しているコンテナ用の <code>ubuntu</code> OSの <code>レポジトリ</code> です。この <code>レポジトリ</code> 名は「 <code>ubuntu</code> 」です。
+この <code>レポジトリ</code> 内の最新イメージを使用したい時は、「 <code>ubuntu:latest</code> 」のように指定します。</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/2-repository-name-ubuntu-os.png" alt="left">
+<img src="images/2-repository-name-ubuntu-os.png" alt="ubuntu" width="600" height="left">
 </div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>レポジトリ「redhat/ubi8」</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p>以下は、 <code>Red Hat</code> 社が提供しているコンテナ用の RHEL OS の <code>レポジトリ`です。 `Red Hat</code> 社は、コンテナ用の OSイメージは RHEL 8 のようには呼ばず <code>UBI (Universal Base Image) 8</code> のように呼びます。これは <code>ubi8</code> のイメージです。レポジトリ名は <code>redhat/ubi8</code> です。
-この <code>レポジトリ</code> の最新イメージを使用したい時は、 <code>redhat/ubi8:latest</code> のように指定します。</p>
+<p>以下は、 <code>Red Hat</code> 社が提供しているコンテナ用の RHEL OS の <code>レポジトリ`です。 `Red Hat</code> 社は、コンテナ用の OSイメージは RHEL 8 のようには呼ばず <code>UBI (Universal Base Image) 8</code> のように呼びます。これは <code>ubi8</code> のイメージです。レポジトリ名は「 <code>redhat/ubi8</code> 」です。
+この <code>レポジトリ</code> 内の最新イメージを使用したい時は、「 <code>redhat/ubi8:latest</code> 」のように指定します。</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/2-repository-name-redhat.png" alt="left">
+<img src="images/2-repository-name-redhat.png" alt="ubi8" width="600" height="left">
 </div>
 </div>
 <div class="paragraph">
@@ -1025,10 +1053,10 @@ Usage:  docker tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG]</code></pre>
 <p>アプリケーションの提供ベンダーの名前が必ず <code>/</code> で区切られて <code>レポジトリ</code> 名に含まれている。という事もありません。</p>
 </div>
 <div class="paragraph">
-<p>後述しますが、 <code>Docker Hub</code> のユーザー名を <code>/</code> を使って <code>レポジトリ</code> 名として付加するケースもあるので、 <code>/</code> の前が必ずベンダー名という事もありません。</p>
+<p>後述しますが、 <code>Docker Hub</code> のユーザー名を <code>/</code> を使って <code>レポジトリ</code> 名の中に付加するケースもあるので、 <code>/</code> の前が必ずベンダー名という事もありません。</p>
 </div>
 <div class="paragraph">
-<p>「<code>レポジトリ</code> 名には <code>/</code> が入って居る場合もあるし、そうでない場合もある。区切りの意味もその時々」くらいに考えておいて、 <code>/</code> に必要以上に惑わされないようにしましょう。</p>
+<p>「 <code>レポジトリ</code> 名には <code>/</code> が入って居る場合もあるし、そうでない場合もある。区切りの意味もその時々」くらいに考えておいて、 <code>/</code> に必要以上に惑わされないようにしましょう。</p>
 </div>
 </div>
 </div>
@@ -2544,7 +2572,7 @@ $</code></pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-01-01 02:00:36 UTC
+Last updated 2022-01-02 06:23:48 UTC
 </div>
 </div>
 </body>

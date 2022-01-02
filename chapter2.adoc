@@ -262,36 +262,42 @@ Usage:  docker tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG]
 
 `レポジトリ(名)` と `イメージ(名)` についての基本を学んだので、初学者が混乱する `レポジトリ` 名の表記の種類について、実例をみながら理解を深めてみます。
 
-以下は `NGINX` 社が提供している `nginx` イメージの `レポジトリ` です。この `レポジトリ` 名は `nginx` です。
-この `ポジトリ` の最新イメージを使用したい時は、`nginx:latest` のように指定します。
+* レポジトリ「nginx」
 
-image::images/2-repository-name-nginx.png[left]
+以下は `NGINX` 社が提供している `nginx` イメージの `レポジトリ` です。この `レポジトリ` 名は 「 `nginx` 」 です。
+この `レポジトリ` 内の最新イメージを使用したい時は、「 `nginx:latest` 」のように指定します。
+
+image::images/2-repository-name-nginx.png[nginx,600,left] 
+
+* レポジトリ「ubuntu/nginx」
+
+以下は、 `Ubuntu Linux` のディストリビューターである `Canonical` 社が提供している `nginx` イメージの `レポジトリ` です。このレポジトリ名は「 `ubuntu/nginx` 」です。
+この `レポジトリ` 内の最新イメージを使用したい時は、「 `ubuntu/nginx:latest` 」のように指定します。
+
+image::images/2-repository-name-ubuntu.png[ubuntu/nginx,600,left]
+
+* レポジトリ「ubuntu」
+
+以下は、 `Canonical` 社が提供しているコンテナ用の `ubuntu` OSの `レポジトリ` です。この `レポジトリ` 名は「 `ubuntu` 」です。
+この `レポジトリ` 内の最新イメージを使用したい時は、「 `ubuntu:latest` 」のように指定します。
+
+image::images/2-repository-name-ubuntu-os.png[ubuntu,600,left]
 
 
-以下は、 `Ubuntu Linux` のディストリビューターである `Canonical` 社が提供している `nginx` イメージの `レポジトリ` です。このレポジトリ名は `ubuntu/nginx` です。
-このレポジトリの最新イメージを使用したい時は、`ubuntu/nginx:latest` のように指定します。
+* レポジトリ「redhat/ubi8」
 
-image::images/2-repository-name-ubuntu.png[left]
+以下は、 `Red Hat` 社が提供しているコンテナ用の RHEL OS の `レポジトリ`です。 `Red Hat` 社は、コンテナ用の OSイメージは RHEL 8 のようには呼ばず `UBI (Universal Base Image) 8` のように呼びます。これは `ubi8` のイメージです。レポジトリ名は「 `redhat/ubi8` 」です。
+この `レポジトリ` 内の最新イメージを使用したい時は、「 `redhat/ubi8:latest` 」のように指定します。
 
-
-以下は、 `Canonical` 社が提供しているコンテナ用の `ubuntu` OSの `レポジトリ` です。この `レポジトリ` 名は `ubuntu/nginx` です。
-この `レポジトリ` の最新イメージを使用したい時は、`ubuntu:latest` のように指定します。
-
-image::images/2-repository-name-ubuntu-os.png[left]
-
-
-以下は、 `Red Hat` 社が提供しているコンテナ用の RHEL OS の `レポジトリ`です。 `Red Hat` 社は、コンテナ用の OSイメージは RHEL 8 のようには呼ばず `UBI (Universal Base Image) 8` のように呼びます。これは `ubi8` のイメージです。レポジトリ名は `redhat/ubi8` です。
-この `レポジトリ` の最新イメージを使用したい時は、 `redhat/ubi8:latest` のように指定します。
-
-image::images/2-repository-name-redhat.png[left]
+image::images/2-repository-name-redhat.png[ubi8,600,left]
 
 はじめのうちは、 `/` が入って居ると「 `/` の前が `レポジトリ名` で…」のように考えてしまいますが、 `レポジトリ` 名 には `/` が入って居る場合もありますし、そうで無い場合もあります。
 
 アプリケーションの提供ベンダーの名前が必ず `/` で区切られて `レポジトリ` 名に含まれている。という事もありません。
 
-後述しますが、 `Docker Hub` のユーザー名を `/` を使って `レポジトリ` 名として付加するケースもあるので、 `/` の前が必ずベンダー名という事もありません。
+後述しますが、 `Docker Hub` のユーザー名を `/` を使って `レポジトリ` 名の中に付加するケースもあるので、 `/` の前が必ずベンダー名という事もありません。
 
-「`レポジトリ` 名には `/` が入って居る場合もあるし、そうでない場合もある。区切りの意味もその時々」くらいに考えておいて、 `/` に必要以上に惑わされないようにしましょう。
+「 `レポジトリ` 名には `/` が入って居る場合もあるし、そうでない場合もある。区切りの意味もその時々」くらいに考えておいて、 `/` に必要以上に惑わされないようにしましょう。
 
 === このセクションで使用したコマンド
 
