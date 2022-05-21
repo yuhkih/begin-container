@@ -607,8 +607,9 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <li><a href="#_dockerfile_を書く">7.1. Dockerfile を書く</a></li>
 <li><a href="#_build_する">7.2. build する</a></li>
 <li><a href="#_build_したイメージの確認">7.3. build したイメージの確認</a></li>
-<li><a href="#_docker_hub_に_push_する">7.4. Docker Hub に push する。</a></li>
-<li><a href="#_docker_hub_に_上がった事を確認する">7.5. Docker Hub に 上がった事を確認する</a></li>
+<li><a href="#_build_したイメージのアクセス確認">7.4. build したイメージのアクセス確認</a></li>
+<li><a href="#_docker_hub_に_push_する">7.5. Docker Hub に push する。</a></li>
+<li><a href="#_docker_hub_に_上がった事を確認する">7.6. Docker Hub に 上がった事を確認する</a></li>
 </ul>
 </li>
 <li><a href="#_閑話休題コンテナの整理に便利なオプション">8. 閑話休題：コンテナの整理に便利なオプション</a>
@@ -2489,7 +2490,47 @@ yuhkih/nginx-ubi8-2                             1.0       9539618c5467   5 hours
 </div>
 </div>
 <div class="sect2">
-<h3 id="_docker_hub_に_push_する">7.4. Docker Hub に push する。</h3>
+<h3 id="_build_したイメージのアクセス確認">7.4. build したイメージのアクセス確認</h3>
+<div class="paragraph">
+<p>ここで <code>--rm</code> というオプションを足します。これを付けると、コンテナを停止した時に自動でコンテナを削除してくれます。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>$ docker run --rm -d -p 8080:80 --name my-test yuhkih/nginx-ubi8-2:1.0
+8a6ac05c170edf6bdf6c5c4e1bb7fb3a3529ecbfc05816243b216a87c5ea9e2d</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>curl コマンドでアクセスを確認します。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>$ curl http://localhost:8080
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;Test Page for the Nginx HTTP Server on Red Hat Enterprise Linux&lt;/title&gt;
+        &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot; /&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+       &lt;p&gt; Hello World &lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+$</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>コンテナを停止します。<code>--rm</code> を付けて起動しているので、コンテナは自動で削除されます。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>$ docker stop my-test
+my-test
+$</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_docker_hub_に_push_する">7.5. Docker Hub に push する。</h3>
 <div class="paragraph">
 <p>作成したイメージを <code>Docker Hub</code>　に <code>push</code>　します。</p>
 </div>
@@ -2511,7 +2552,7 @@ yuhkih/nginx-ubi8-2                             1.0       9539618c5467   5 hours
 </div>
 </div>
 <div class="sect2">
-<h3 id="_docker_hub_に_上がった事を確認する">7.5. Docker Hub に 上がった事を確認する</h3>
+<h3 id="_docker_hub_に_上がった事を確認する">7.6. Docker Hub に 上がった事を確認する</h3>
 <div class="paragraph">
 <p><code>Repository</code> 名を引数に <code>docker search</code> する事で <code>docker Hub</code> 上のイメージを確認できます。</p>
 </div>
@@ -2547,7 +2588,7 @@ yuhkih/nginx-ubi8-2                 0
 <div class="sect2">
 <h3 id="_docker_run_時に_rm_オプションを付ける">8.1. docker run 時に <code>--rm</code> オプションを付ける</h3>
 <div class="paragraph">
-<p><code>--rm</code> オプションで、停止 (<code>docker stop</code>)した時に自動的に削除される <code>コンテナ</code> を作る事ができます。</p>
+<p>演習中でも使用しましたが、 <code>--rm</code> オプションで、停止 (<code>docker stop</code>)した時に自動的に削除される <code>コンテナ</code> を作る事ができます。</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -2583,7 +2624,7 @@ $</code></pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-05-21 06:39:20 UTC
+Last updated 2022-05-21 07:18:28 UTC
 </div>
 </div>
 </body>

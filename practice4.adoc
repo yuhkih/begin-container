@@ -197,6 +197,40 @@ yuhkih/nginx-ubi8-2                             1.0       9539618c5467   5 hours
 ...
 ```
 
+=== build したイメージのアクセス確認
+
+ここで `--rm` というオプションを足します。これを付けると、コンテナを停止した時に自動でコンテナを削除してくれます。 
+
+```
+$ docker run --rm -d -p 8080:80 --name my-test yuhkih/nginx-ubi8-2:1.0
+8a6ac05c170edf6bdf6c5c4e1bb7fb3a3529ecbfc05816243b216a87c5ea9e2d
+```
+
+curl コマンドでアクセスを確認します。
+
+```
+$ curl http://localhost:8080
+<html>
+    <head>
+        <title>Test Page for the Nginx HTTP Server on Red Hat Enterprise Linux</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    </head>
+    <body>
+       <p> Hello World </p>
+    </body>
+</html>
+$ 
+```
+
+コンテナを停止します。`--rm` を付けて起動しているので、コンテナは自動で削除されます。
+
+```
+$ docker stop my-test
+my-test
+$ 
+```
+
+
 === Docker Hub に push する。
 
 作成したイメージを `Docker Hub`　に `push`　します。
