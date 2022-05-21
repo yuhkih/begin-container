@@ -1245,12 +1245,15 @@ Usage:  docker tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG]</code></pre>
 </div>
 <div class="paragraph">
 <p>タグは、 <code>:(コロン)</code> を挟んで付加します。
-タグの <code>latest</code> 部分は、ユーザーがイメージを作成する時に自由に付ける事ができます。<code>latest</code> は予約語のように最新番を表すものとして決まっていますが、一般的には <code>1.20</code> のように数字を使ってバージョンを付けます。</p>
+タグの <code>latest</code> 部分は、ユーザーがイメージを作成する時に自由に付ける事ができます。<code>latest</code> は予約語として最新番を表すものとして決まっていますが、使い方は自由です。<code>stable</code> のように付けたり、<code>stable-1.20</code> のようにしたり、<code>1.20</code> のように数字だけを使っても大丈夫です。</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code>docker pull nginx:1.20</code></pre>
 </div>
+</div>
+<div class="paragraph">
+<p>このようにタグは、イメージのバージョンを管理するために使われます。使い方は自由なので、イメージ毎に違います。</p>
 </div>
 <div class="paragraph">
 <p><code>Registry</code> 上のイメージにどんなタグが付いているかの一覧の取得は、標準の <code>docker</code> コマンドではサポートされておらず、 <a href="https://registry.hub.docker.com/_/nginx?tab=tags" target="_blank" rel="noopener">Docker Hub</a> にアクセスして確認する必要があります。</p>
@@ -2633,7 +2636,7 @@ $</code></pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-05-21 23:41:02 UTC
+Last updated 2022-05-21 23:44:10 UTC
 </div>
 </div>
 </body>
