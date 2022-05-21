@@ -1233,7 +1233,7 @@ Usage:  docker tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG]</code></pre>
 <p><code>docker</code> コマンドでは、 <code>nginx</code> と指定しただけで <a href="https://hub.docker.com" target="_blank" rel="noopener">Docker Hub</a> というコンテナレジストリにアクセスして、 <code>nginx</code> という名前のコンテナで <code>latest</code> というタグが付いたものを探してダウンロード( <code>pull</code> )してきます。</p>
 </div>
 <div class="paragraph">
-<p>なので省略されていますが、上のコマンドは以下のものと同じになります。</p>
+<p>なので省略されていますが、上のコマンドは以下のコマンドを実行している事になります。</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1241,7 +1241,11 @@ Usage:  docker tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG]</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>タグは、 <code>:(コロン)</code> を挟んで付加します。タグの <code>latest</code> 部分は、 <code>1.20</code> のようにバージョンを付ける事もあります。</p>
+<p>省略を補完してくれるのは慣れてくると便利な機能なのですが、動作を理解するためには混乱するかもしれません。</p>
+</div>
+<div class="paragraph">
+<p>タグは、 <code>:(コロン)</code> を挟んで付加します。
+タグの <code>latest</code> 部分は、ユーザーがイメージを作成する時に自由に付ける事ができます。<code>latest</code> は予約語のように最新番を表すものとして決まっていますが、一般的には <code>1.20</code> のように数字を使ってバージョンを付けます。</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1269,7 +1273,7 @@ Usage:  docker tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG]</code></pre>
 <p>この例であげている <code>レポジトリ</code> 名 <code>centos/centos</code> は、名前の中に <code>/</code> が入っています。 <code>レポジトリ</code> 名は、このように <code>/</code> が中に入っていたり、単純に <code>centos</code> のように <code>/</code> が無い名前までいろいろあり得ます。必ずしも <code>/</code> があるからと言って、 <code>レポジトリ</code> 名と <code>レジストリ</code> 名の区切りという訳ではないので、慣れる必要があります。</p>
 </div>
 <div class="paragraph">
-<p>上記のコマンドは以下と同じになります。</p>
+<p>上記のコマンドは以下を示している事になります。</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -2629,7 +2633,7 @@ $</code></pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-05-21 07:39:48 UTC
+Last updated 2022-05-21 23:41:02 UTC
 </div>
 </div>
 </body>
