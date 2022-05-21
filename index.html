@@ -2302,13 +2302,6 @@ ENTRYPOINT [&quot;nginx&quot;]</code></pre>
 <div class="paragraph">
 <p><code>Dockerfile</code> の中身の解説は以下の通りです。</p>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Note</div>
-</td>
-<td class="content">
 <div class="paragraph">
 <p><strong>FROM redhat/ubi8</strong> : Docker Hub から redhat/ubi8 を PULLします。<br>
 <strong>RUN yum install -y nginx</strong> :  redhat/ubi8 に nginx をインストールします。<br>
@@ -2317,9 +2310,8 @@ ENTRYPOINT [&quot;nginx&quot;]</code></pre>
 <strong>CMD ["-g","daemon off;"]</strong> : コンテナ実行時に実行するコマンドのオプションです。演習3で <code>docker container comit</code> コマンドの引数で指定したのと同じものです。<br>
 <strong>ENTRYPOINT ["nginx"]</strong> : コンテナ実行時に実行するコマンドです。演習3で <code>docker container comit</code> コマンドの引数で指定したのと同じものです</p>
 </div>
-</td>
-</tr>
-</table>
+<div class="paragraph">
+<p>はじめはちょっととっつきにくいですが、ファイルをインターネットからもってきたり、ローカルのファイルをコンテナ内にコピーしたり、コンテナ起動時に実行するコマンドを指定したり。とやっている事は単純です。</p>
 </div>
 <div class="paragraph">
 <p>次にコンテナ内にコピーする <code>nginx.conf</code> と <code>index.html</code> を作ります。コピペ用に以下に内容を書きますが、内容は演習3で作成したものと全く同じです。</p>
@@ -2637,7 +2629,7 @@ $</code></pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-05-21 07:33:14 UTC
+Last updated 2022-05-21 07:39:48 UTC
 </div>
 </div>
 </body>
