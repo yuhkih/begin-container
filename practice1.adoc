@@ -85,7 +85,7 @@ image::images/practice1-browser.png[left]
 curl localhost:8080
 ```
 
-実際に実行してみます。
+実際に実行すると以下のようになるはずです。
 
 ```
 $ curl localhost:8080
