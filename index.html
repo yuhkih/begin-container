@@ -1906,7 +1906,7 @@ $</code></pre>
 <p><code>Docker</code> では標準出力と標準エラー出力を <code>コンテナ</code> を動かしているホスト上に残す事ができ、吐き出したログは <code>docker logs</code> コマンドでホスト上で確認できます。</p>
 </div>
 <div class="paragraph">
-<p><code>nginx</code> の構成ファイルである <code>nginx.conf</code> を編集して、 <code>nginx</code> のログを標準出力、標準エラー出力に書き出すように編集します。</p>
+<p><code>nginx</code> の構成ファイルである <code>/etc/nginx/nginx.conf</code> を編集して、 <code>nginx</code> のログを標準出力、標準エラー出力に書き出すように編集します。</p>
 </div>
 <div class="paragraph">
 <p>編集は <code>vi</code> で行います。 <code>vi</code> の使い方はここでは省略します。</p>
@@ -2136,9 +2136,12 @@ redhat/ubi8                          latest    cc0656847854   7 days ago        
 <p>イメージ名 <code>nginx-ubi8:1.0</code> を指定して以下のように実行します。
 <code>8080</code> ポートが使ったコンテナが動いてなけれれば <code>8080</code> を使っても良いですが、今度は <code>8090</code> を使ってみます。</p>
 </div>
+<div class="paragraph">
+<p>さらに <code>--rm</code> オプションを付けてみます。 <code>--rm</code> オプションを付ける事でコンテナを停止すると自動でコンテナが削除されるようになります。</p>
+</div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code>$ docker run -d -p 8090:80 --name my-ubi-nginx nginx-ubi8:1.0</code></pre>
+<pre class="CodeRay highlight"><code>$ docker run -d -p 8090:80 --name my-test nginx-ubi8:1.0</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2164,8 +2167,18 @@ $</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code>$ docker logs my-ubi-nginx
+<pre class="CodeRay highlight"><code>$ docker logs my-test
 172.17.0.1 - - [16/Dec/2021:08:06:39 +0000] &quot;GET / HTTP/1.1&quot; 200 305 &quot;-&quot; &quot;curl/7.58.0&quot; &quot;-&quot;
+$</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>作成した確認用のコンテナを停止します。<code>--rm</code> オプションを付けて起動しているので停止時にコンテナは自動で削除されます。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>$ docker stop my-test
+my-test
 $</code></pre>
 </div>
 </div>
@@ -2624,7 +2637,7 @@ $</code></pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-05-21 07:19:56 UTC
+Last updated 2022-05-21 07:33:14 UTC
 </div>
 </div>
 </body>
