@@ -7,7 +7,7 @@ image::images/practice4-procedure.png[left]
 
 === Dockerfile を書く
 
-`Dockerfile` を使うと、演習3でやった元ネタになるイメージのダウンロード、イメージへの `nginx` のインストールまでの各種作業をスクリプト化できます。
+`Dockerfile` を使うと、演習3でやった元ネタになるイメージのダウンロード、イメージへの `nginx` のインストール等の各種作業をスクリプト化できます。
 
 演習3でやった作業を `Dockerfile` にすると以下になります。
 
