@@ -291,7 +291,7 @@ image::images/2-repository-name-ubuntu-os.png[ubuntu,600,left]
 
 * レポジトリ「redhat/ubi8」
 
-以下は、 `Red Hat` 社が提供しているコンテナ用の RHEL OS の `レポジトリ`です。 `Red Hat` 社は、コンテナ用の OSイメージは RHEL 8 のようには呼ばず `UBI (Universal Base Image) 8` のように呼びます。これは `ubi8` のイメージです。レポジトリ名は「 `redhat/ubi8` 」です。
+以下は、 `Red Hat` 社が提供しているコンテナ用の RHEL OS の `レポジトリ` です。 `Red Hat` 社は、コンテナ用の OSイメージは RHEL 8 のようには呼ばず `UBI (Universal Base Image) 8` のように呼びます。これは `ubi8` のイメージです。レポジトリ名は「 `redhat/ubi8` 」です。
 この `レポジトリ` 内の最新イメージを使用したい時は、「 `redhat/ubi8:latest` 」のように指定します。
 
 image::images/2-repository-name-redhat.png[ubi8,600,left]
