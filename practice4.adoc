@@ -249,7 +249,7 @@ $ docker push yuhkih/nginx-ubi8
 
 === Docker Hub に 上がった事を確認する
 
-`Repository` 名を引数に `docker search` する事で `docker Hub` 上のイメージを確認できます。
+`Repository` 名を引数に `docker search` する事で `docker Hub` 上のイメージを確認できます。(検索にかかるようになるまで、少し時間がかかる事があります。)
 
 ```
 $ docker search yuhkih
